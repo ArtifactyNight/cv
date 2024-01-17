@@ -7,9 +7,9 @@ export const RESUME_DATA = {
   initials: "Mr",
   location: "Nakhon Ratchasima, Thailand",
   locationLink: "https://www.google.com/maps/place/Nakhonratchasima",
-  about: "Student, Freelancer and Gamer",
+  about: "Student aiming to be a Full-stack developer. Freelancer and gamer. Balancing studies, coding, and gaming. 🚀🎮",
   summary:
-    "I am a full-time student with big dreams of becoming a Full-stack developer, I am currently studying at Rajamangala University of Technology Isan, I am a freelance developer and I am also a gamer.",
+    "I'm a full-time student at Rajamangala University of Technology Isan, working towards becoming a Full-stack developer. Currently freelancing in development, and yes, I'm also a gamer. Balancing studies, work, and my passion for gaming keeps things interesting. It's all part of the journey to make my mark in the tech world.",
   avatarUrl: "https://avatars.githubusercontent.com/u/53427253?v=4",
   personalWebsiteUrl: "https://nightkungz.me",
   contact: {
