@@ -53,6 +53,7 @@ export const RESUME_DATA = {
     },
     {
       company: "Mythic Development",
+      link: "https://www.facebook.com/mythicdev",
       badges: ["Remote"],
       title: "Founder & Developer",
       start: "2022",
