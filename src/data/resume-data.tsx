@@ -1,5 +1,4 @@
 import { GitHubIcon } from "@/components/icons";
-import { ConsultlyLogo } from "@/images/logos";
 import { FacebookIcon } from "lucide-react";
 
 export const RESUME_DATA = {
@@ -7,7 +6,8 @@ export const RESUME_DATA = {
   initials: "Mr",
   location: "Nakhon Ratchasima, Thailand",
   locationLink: "https://www.google.com/maps/place/Nakhonratchasima",
-  about: "Student aiming to be a Full-stack developer. Freelancer and gamer. Balancing studies, coding, and gaming. 🚀🎮",
+  about:
+    "Student aiming to be a Full-stack developer. Freelancer and gamer. Balancing studies, coding, and gaming. 🚀🎮",
   summary:
     "I'm a full-time student at Rajamangala University of Technology Isan, working towards becoming a Full-stack developer. Currently freelancing in development, and yes, I'm also a gamer. Balancing studies, work, and my passion for gaming keeps things interesting. It's all part of the journey to make my mark in the tech world.",
   avatarUrl: "https://avatars.githubusercontent.com/u/53427253?v=4",
@@ -47,37 +47,55 @@ export const RESUME_DATA = {
       link: "https://rdcw.th/",
       badges: ["Remote"],
       title: "Fullstack Developer",
-      start: "2020",
+      start: "2021",
       end: "Now",
       description: "Making side projects and freelance work",
     },
+    {
+      company: "Mythic Development",
+      badges: ["Remote"],
+      title: "Founder & Developer",
+      start: "2022",
+      end: "Now",
+      description: "Creating and managing self projects",
+    },
   ],
   skills: [
-    "JavaScript",
     "TypeScript",
-    "Next.js",
+    "Next.js (app router)",
     "Nuxt 3",
     "SvelteKit",
     "TailwindCSS",
-    "Node.js (Express.js, Nest.js)",
+    "Nest.js",
     "Prisma",
+    "DrizzleORM",
     "MySQL",
     "Postgresql",
-    "Golang (go-gin, go-fiber)",
+    "Golang",
+    "Docker",
   ],
   projects: [
     {
       title: "Dzee Zones",
-      techStack: [
-        "TypeScript",
-        "Next.js 14 (Server Actions)",
-        "Prisma",
-        "MySQL",
-      ],
+      techStack: ["Next.js", "Prisma", "MySQL"],
       description: "A platform to sold roblox items",
       link: {
         label: "dzeezones.com",
         href: "https://dzeezones.com",
+      },
+    },
+    {
+      title: "Arcane Realms Store",
+      techStack: ["Next.js", "Prisma", "Postgresql"],
+      description: "A platform to sold minecraft digital items",
+    },
+    {
+      title: "Lamalia Landing Page",
+      techStack: ["Sveltekit"],
+      description: "Landing page for Minecraft server",
+      link: {
+        label: "lamalia.net",
+        href: "https://lamalia.net",
       },
     },
   ],
