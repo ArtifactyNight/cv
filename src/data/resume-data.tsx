@@ -44,7 +44,7 @@ export const RESUME_DATA = {
   work: [
     {
       company: "RDCW",
-      link: "https://rdcw.th/",
+      link: "https://rdcw.co.th/",
       badges: ["Remote"],
       title: "Fullstack Developer",
       start: "2021",
@@ -63,16 +63,21 @@ export const RESUME_DATA = {
   ],
   skills: [
     "TypeScript",
-    "Next.js (app router)",
+    "Next.js",
     "Nuxt 3",
     "SvelteKit",
     "TailwindCSS",
+    "Zustand",
+    "Redux Toolkit",
+    "React Query",
     "Nest.js",
+    "Elysia.js"
     "Prisma",
     "DrizzleORM",
     "MySQL",
     "Postgresql",
     "Golang",
+    "Supabase",
     "Docker",
   ],
   projects: [
