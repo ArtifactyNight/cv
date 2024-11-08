@@ -1,5 +1,7 @@
 import { GitHubIcon } from "@/components/icons";
-import { FacebookIcon } from "lucide-react";
+import { DiscordLogo } from "@/images/logos";
+import { Contact, ContactIcon, FacebookIcon } from "lucide-react";
+import { RiDiscordLine, RiGithubLine } from "react-icons/ri";
 
 export const RESUME_DATA = {
   name: "Kidsanaphon Kaeopha",
@@ -13,24 +15,24 @@ export const RESUME_DATA = {
   avatarUrl: "https://avatars.githubusercontent.com/u/53427253?v=4",
   personalWebsiteUrl: "https://nightkungz.me",
   contact: {
-    email: "itsnight321789@gmail.com",
-    tel: "+66998342650",
+    email: "nightkungz@proton.me",
+    tel: undefined,
     social: [
       {
         name: "GitHub",
         url: "https://github.com/ArtifactyNight",
-        icon: GitHubIcon,
-      },
-      {
-        name: "Facebook",
-        url: "https://www.facebook.com/NightKunGz/",
-        icon: FacebookIcon,
+        icon: RiGithubLine,
       },
       // {
-      //   name: "Discord",
-      //   url: "https://discordapp.com/users/304952308893220864",
-      //   icon: DiscordLogo,
+      //   name: "Facebook",
+      //   url: "https://www.facebook.com/NightKunGz/",
+      //   icon: FacebookIcon,
       // },
+      {
+        name: "Discord",
+        url: "https://discordapp.com/users/304952308893220864",
+        icon: RiDiscordLine,
+      },
     ],
   },
   education: [
@@ -65,13 +67,14 @@ export const RESUME_DATA = {
     "TypeScript",
     "Next.js",
     "Nuxt 3",
-    "SvelteKit",
+    "Svelte",
     "TailwindCSS",
-    "Zustand",
+    "shadcn/ui",
     "Redux Toolkit",
     "React Query",
+    "Zustand",
     "Nest.js",
-    "Elysia.js"
+    "Elysia.js",
     "Prisma",
     "DrizzleORM",
     "MySQL",
@@ -79,6 +82,7 @@ export const RESUME_DATA = {
     "Golang",
     "Supabase",
     "Docker",
+    "Kubernetes",
   ],
   projects: [
     {
