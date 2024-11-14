@@ -39,6 +39,12 @@ type Project = {
   };
 };
 
+export type SkillItem = {
+  icon?: string;
+  title: string;
+  link: string;
+};
+
 export type ResumeData = {
   name: string;
   initials: string;
@@ -51,6 +57,6 @@ export type ResumeData = {
   contact: ContactInfo;
   education: Education[];
   work: WorkExperience[];
-  skills: string[];
+  skills: SkillItem[];
   projects: Project[];
 };

@@ -1,6 +1,73 @@
-import { RiDiscordLine, RiGithubLine } from "react-icons/ri";
-import { ResumeData } from "../types/resume";
 import { FaDiscord, FaGithub } from "react-icons/fa";
+import { ResumeData, SkillItem } from "../types/resume";
+
+const skillsData: SkillItem[] = [
+  {
+    icon: "/svgs/typescript.svg",
+    title: "TypeScript",
+    link: "https://www.typescriptlang.org/",
+  },
+  {
+    icon: "/svgs/nextjs_icon_dark.svg",
+    title: "Next.js",
+    link: "https://nextjs.org/",
+  },
+  {
+    icon: "/svgs/nuxt.svg",
+    title: "Nuxt 3",
+    link: "https://nuxt.com/",
+  },
+  {
+    icon: "/svgs/svelte.svg",
+    title: "SvelteKit",
+    link: "https://svelte.dev/",
+  },
+  {
+    icon: "/svgs/shadcn-ui.svg",
+    title: "shadcn/ui",
+    link: "https://ui.shadcn.com/",
+  },
+  {
+    icon: "/svgs/redux.svg",
+    title: "Redux",
+    link: "https://redux.js.org/",
+  },
+  {
+    icon: "/svgs/react-query.svg",
+    title: "React Query",
+    link: "https://tanstack.com/query/latest",
+  },
+  {
+    icon: "/svgs/elysiajs.svg",
+    title: "Elysia.js",
+    link: "https://elysiajs.com/",
+  },
+  {
+    icon: "/svgs/prisma.svg",
+    title: "Prisma",
+    link: "https://www.prisma.io/",
+  },
+  {
+    icon: "/svgs/mysql.svg",
+    title: "MySQL",
+    link: "https://www.mysql.com/",
+  },
+  {
+    icon: "/svgs/postgresql.svg",
+    title: "Postgresql",
+    link: "https://www.postgresql.org/",
+  },
+  {
+    icon: "/svgs/supabase.svg",
+    title: "Supabase",
+    link: "https://supabase.com/",
+  },
+  {
+    icon: "/svgs/kubernetes.svg",
+    title: "Kubernetes",
+    link: "https://kubernetes.io/",
+  },
+];
 
 export const RESUME_DATA: ResumeData = {
   name: "Kidsanaphon Kaeopha",
@@ -57,36 +124,16 @@ export const RESUME_DATA: ResumeData = {
       description: "Creating and managing self projects with passions",
     },
     {
-      company: "Fastwork Freelancer",
+      company: "Fastwork",
       link: "https://fastwork.co/user/nightkungz",
       badges: ["Remote"],
-      title: "Fullstack Developer",
+      title: "Freelance Developer",
       start: "2023",
       end: "Now",
       description: "Freelancer at Fastwork",
     },
   ],
-  skills: [
-    "TypeScript",
-    "Next.js",
-    "Nuxt 3",
-    "Svelte",
-    "TailwindCSS",
-    "shadcn/ui",
-    "Redux Toolkit",
-    "React Query",
-    "Zustand",
-    "Nest.js",
-    "Elysia.js",
-    "Prisma",
-    "DrizzleORM",
-    "MySQL",
-    "Postgresql",
-    "Golang",
-    "Supabase",
-    "Docker",
-    "Kubernetes",
-  ],
+  skills: skillsData,
   projects: [
     {
       title: "Dzee Zones",
@@ -98,7 +145,7 @@ export const RESUME_DATA: ResumeData = {
       },
     },
     {
-      title: "Arcane Realms Store",
+      title: "Arcane Realms",
       techStack: ["Next.js", "TailwindCSS", "Prisma", "Postgresql"],
       description: "A platform to sell minecraft digital items.",
     },

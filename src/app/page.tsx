@@ -7,7 +7,8 @@ import { Section } from "@/components/ui/section";
 import { RESUME_DATA } from "@/data/resume-data";
 import { GlobeIcon, PhoneIcon } from "lucide-react";
 import { Metadata } from "next";
-import { RiMailAddLine } from "react-icons/ri";
+import Link from "next/link";
+import { FaPhone } from "react-icons/fa";
 
 export const metadata: Metadata = {
   title: `${RESUME_DATA.name} | ${RESUME_DATA.about}`,
@@ -43,7 +44,7 @@ export default function Page() {
                   asChild
                 >
                   <a href={`mailto:${RESUME_DATA.contact.email}`}>
-                    <RiMailAddLine className="size-4" />
+                    <FaPhone className="size-4" />
                   </a>
                 </Button>
               ) : null}
@@ -162,13 +163,31 @@ export default function Page() {
           <h2 className="text-xl font-bold">Skills</h2>
           <div className="flex flex-wrap gap-1">
             {RESUME_DATA.skills.map((skill) => {
-              return <Badge key={skill}>{skill}</Badge>;
+              return (
+                <Badge variant="outline" key={skill.title}>
+                  <Link
+                    href={skill.link}
+                    key={skill.title}
+                    target="_blank"
+                    className="inline-flex items-center gap-x-1"
+                  >
+                    {skill.icon ? (
+                      <img
+                        src={skill.icon}
+                        alt={skill.title}
+                        className="mr-1 size-3.5"
+                      />
+                    ) : null}
+                    {skill.title}
+                  </Link>
+                </Badge>
+              );
             })}
           </div>
         </Section>
 
         <Section className="print-force-new-page scroll-mb-16">
-          <h2 className="text-xl font-bold">Projects</h2>
+          <h2 className="text-xl font-bold">Recent Projects</h2>
           <div className="-mx-3 grid grid-cols-1 gap-3 md:grid-cols-2 lg:grid-cols-3 print:grid-cols-3 print:gap-2">
             {RESUME_DATA.projects.map((project) => {
               return (
