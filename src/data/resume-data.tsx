@@ -7,9 +7,9 @@ export const RESUME_DATA: ResumeData = {
   location: "Nakhon Ratchasima, Thailand",
   locationLink: "https://www.google.com/maps/place/Nakhonratchasima",
   about:
-    "Passionate Next.js developer crafting modern web experiences. Full-stack enthusiast with an eye for clean design and seamless functionality. When not pushing pixels or debugging code. ✨",
+    "Next.js developer focused on modern web experiences. Full-stack enthusiast with an eye for clean design. ✨",
   summary:
-    "I'm a full-time student at Rajamangala University of Technology Isan, working towards becoming a Full-stack developer. Currently freelancing in development, and yes, I'm also a gamer. Balancing studies, work, and my passion for gaming keeps things interesting. It's all part of the journey to make my mark in the tech world.",
+    "I study full-time at Rajamangala University of Technology Isan. I want to be a Full-stack developer. Right now, I work as a freelance developer and enjoy playing games in my free time. I try to balance my time between studying, working, and gaming. This is how I grow and learn to become better in technology.",
   avatarUrl: "https://m1r.ai/jiEq.jpg",
   personalWebsiteUrl: "https://nightkungz.me",
   contact: {

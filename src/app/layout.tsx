@@ -1,6 +1,6 @@
 import { Analytics } from "@vercel/analytics/react";
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Geist } from "next/font/google";
 
 import React from "react";
 import "./globals.css";
@@ -8,10 +8,36 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "Kidsanaphon Kaeopha - cv",
   description: "Student, Freelancer and Gamer",
+  keywords: [
+    "Kidsanaphon Kaeopha",
+    "Developer",
+    "Freelancer",
+    "Student",
+    "Portfolio",
+    "CV",
+  ],
+  authors: [{ name: "Kidsanaphon Kaeopha" }],
+  creator: "Kidsanaphon Kaeopha",
+  openGraph: {
+    title: "Kidsanaphon Kaeopha - cv",
+    description: "Student, Freelancer and Gamer",
+    type: "website",
+    locale: "en_US",
+    siteName: "Kidsanaphon Kaeopha Portfolio",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Kidsanaphon Kaeopha - cv",
+    description: "Student, Freelancer and Gamer",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
-// If loading a variable font, you don't need to specify the font weight
-const inter = Inter({
+const font = Geist({
+  weight: ["100", "200", "300", "400", "500", "600", "700"],
   subsets: ["latin"],
   display: "swap",
 });
@@ -22,7 +48,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={inter.className}>
+    <html lang="en" style={{ fontFamily: font.style.fontFamily }}>
+      <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+      </head>
       <body>{children}</body>
       <Analytics />
     </html>
