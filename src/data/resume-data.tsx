@@ -78,8 +78,8 @@ export const RESUME_DATA: ResumeData = {
     "Next.js developer focused on modern web experiences. Full-stack enthusiast with an eye for clean design. ✨",
   summary:
     "I study full-time at Rajamangala University of Technology Isan. I want to be a Full-stack developer. Right now, I work as a freelance developer and enjoy playing games in my free time. I try to balance my time between studying, working, and gaming. This is how I grow and learn to become better in technology.",
-  avatarUrl: "https://m1r.ai/jiEq.jpg",
-  personalWebsiteUrl: "https://nightkungz.me",
+  avatarUrl: "https://m1r.ai/VxFsA.png",
+  personalWebsiteUrl: "https://kidsanaphon.vercel.app",
   contact: {
     email: "nightkungz@proton.me",
     tel: undefined,
