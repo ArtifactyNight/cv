@@ -1,18 +1,16 @@
-import { GitHubIcon } from "@/components/icons";
-import { DiscordLogo } from "@/images/logos";
-import { Contact, ContactIcon, FacebookIcon } from "lucide-react";
 import { RiDiscordLine, RiGithubLine } from "react-icons/ri";
+import { ResumeData } from "../types/resume";
 
-export const RESUME_DATA = {
+export const RESUME_DATA: ResumeData = {
   name: "Kidsanaphon Kaeopha",
   initials: "Mr",
   location: "Nakhon Ratchasima, Thailand",
   locationLink: "https://www.google.com/maps/place/Nakhonratchasima",
   about:
-    "Student aiming to be a Full-stack developer. Freelancer and gamer. Balancing studies, coding, and gaming. 🚀🎮",
+    "Passionate Next.js developer crafting modern web experiences. Full-stack enthusiast with an eye for clean design and seamless functionality. When not pushing pixels or debugging code. ✨",
   summary:
     "I'm a full-time student at Rajamangala University of Technology Isan, working towards becoming a Full-stack developer. Currently freelancing in development, and yes, I'm also a gamer. Balancing studies, work, and my passion for gaming keeps things interesting. It's all part of the journey to make my mark in the tech world.",
-  avatarUrl: "https://avatars.githubusercontent.com/u/53427253?v=4",
+  avatarUrl: "https://m1r.ai/jiEq.jpg",
   personalWebsiteUrl: "https://nightkungz.me",
   contact: {
     email: "nightkungz@proton.me",
@@ -23,11 +21,6 @@ export const RESUME_DATA = {
         url: "https://github.com/ArtifactyNight",
         icon: RiGithubLine,
       },
-      // {
-      //   name: "Facebook",
-      //   url: "https://www.facebook.com/NightKunGz/",
-      //   icon: FacebookIcon,
-      // },
       {
         name: "Discord",
         url: "https://discordapp.com/users/304952308893220864",
@@ -51,16 +44,25 @@ export const RESUME_DATA = {
       title: "Fullstack Developer",
       start: "2021",
       end: "Now",
-      description: "Making side projects and freelance work",
+      description: "Making side projects and commission work",
     },
     {
       company: "Mythic Development",
-      link: "https://www.facebook.com/mythicdev",
+      link: "#",
       badges: ["Remote"],
       title: "Founder & Developer",
       start: "2022",
       end: "Now",
-      description: "Creating and managing self projects",
+      description: "Creating and managing self projects with passions",
+    },
+    {
+      company: "Fastwork Freelancer",
+      link: "https://fastwork.co/user/nightkungz",
+      badges: ["Remote"],
+      title: "Fullstack Developer",
+      start: "2023",
+      end: "Now",
+      description: "Freelancer at Fastwork",
     },
   ],
   skills: [
@@ -88,7 +90,7 @@ export const RESUME_DATA = {
     {
       title: "Dzee Zones",
       techStack: ["Next.js", "Prisma", "MySQL"],
-      description: "A platform to sold roblox items",
+      description: "A platform to sell roblox contents.",
       link: {
         label: "dzeezones.com",
         href: "https://dzeezones.com",
@@ -96,17 +98,29 @@ export const RESUME_DATA = {
     },
     {
       title: "Arcane Realms Store",
-      techStack: ["Next.js", "Prisma", "Postgresql"],
-      description: "A platform to sold minecraft digital items",
+      techStack: ["Next.js", "TailwindCSS", "Prisma", "Postgresql"],
+      description: "A platform to sell minecraft digital items.",
     },
     {
       title: "Lamalia Landing Page",
-      techStack: ["Sveltekit"],
-      description: "Landing page for Minecraft server",
-      link: {
-        label: "lamalia.net",
-        href: "https://lamalia.net",
-      },
+      techStack: ["Sveltekit", "TailwindCSS"],
+      description: "Cool and Modern Landing page for Minecraft server,",
+    },
+    {
+      title: "Botfin",
+      techStack: ["Next.js", "TailwindCSS", "Prisma", "Postgresql", "Redis"],
+      description: "A platform to manage or automation Forex bot.",
+    },
+    {
+      title: "Overmine",
+      techStack: [
+        "Next.js",
+        "TailwindCSS",
+        "DrizzleORM",
+        "MySql",
+        "Postgresql",
+      ],
+      description: "Hand-crafted Minecraft server webstore.",
     },
   ],
 } as const;
