@@ -1,5 +1,6 @@
 import { RiDiscordLine, RiGithubLine } from "react-icons/ri";
 import { ResumeData } from "../types/resume";
+import { FaDiscord, FaGithub } from "react-icons/fa";
 
 export const RESUME_DATA: ResumeData = {
   name: "Kidsanaphon Kaeopha",
@@ -19,12 +20,12 @@ export const RESUME_DATA: ResumeData = {
       {
         name: "GitHub",
         url: "https://github.com/ArtifactyNight",
-        icon: RiGithubLine,
+        icon: FaGithub,
       },
       {
         name: "Discord",
         url: "https://discordapp.com/users/304952308893220864",
-        icon: RiDiscordLine,
+        icon: FaDiscord,
       },
     ],
   },
