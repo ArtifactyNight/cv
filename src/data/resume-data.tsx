@@ -155,6 +155,15 @@ export const RESUME_DATA: ResumeData = {
       description: "Cool and Modern Landing page for Minecraft server,",
     },
     {
+      title: "Blixy Portfolio",
+      techStack: ["Next.js", "TailwindCSS", "framer-motion"],
+      description: "A comission portfolio website.",
+      link: {
+        label: "Blixy Portfolio",
+        href: "https://nightkungz-blixy.vercel.app/en/",
+      },
+    },
+    {
       title: "Botfin",
       techStack: ["Next.js", "TailwindCSS", "Prisma", "Postgresql", "Redis"],
       description: "A platform to manage or automation Forex bot.",
