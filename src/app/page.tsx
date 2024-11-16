@@ -15,6 +15,25 @@ export const metadata: Metadata = {
   description: RESUME_DATA.summary,
 };
 
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: RESUME_DATA.name,
+  description: RESUME_DATA.about,
+  image: RESUME_DATA.avatarUrl,
+  jobTitle: "Full-stack Developer",
+  url: RESUME_DATA.personalWebsiteUrl,
+  sameAs: [
+    RESUME_DATA.contact.social[0].url, // GitHub
+    RESUME_DATA.contact.social[1].url, // Discord
+  ],
+  worksFor: RESUME_DATA.work.map((work) => ({
+    "@type": "Organization",
+    name: work.company,
+    url: work.link,
+  })),
+};
+
 export default function Page() {
   return (
     <main className="container relative mx-auto scroll-my-12 overflow-auto p-4 md:p-16 print:p-12">
@@ -205,6 +224,10 @@ export default function Page() {
           </div>
         </Section>
       </section>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
     </main>
   );
 }

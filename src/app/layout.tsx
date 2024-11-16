@@ -9,6 +9,7 @@ export const metadata: Metadata = {
   title: "Kidsanaphon Kaeopha - cv",
   description: "Student, Freelancer and Gamer",
   keywords: [
+    "NightKunGz",
     "Kidsanaphon Kaeopha",
     "Developer",
     "Freelancer",
