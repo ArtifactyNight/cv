@@ -26,14 +26,14 @@ export default function Page() {
               {RESUME_DATA.about}
             </p>
             <p className="max-w-md items-center text-pretty text-xs text-muted-foreground">
-              <a
+              <Link
                 className="inline-flex gap-x-1.5 align-baseline leading-none hover:underline"
                 href={RESUME_DATA.locationLink}
                 target="_blank"
               >
                 <GlobeIcon className="size-3" />
                 {RESUME_DATA.location}
-              </a>
+              </Link>
             </p>
             <div className="flex gap-x-1 pt-1 text-sm text-muted-foreground print:hidden">
               {RESUME_DATA.contact.email ? (
@@ -43,9 +43,9 @@ export default function Page() {
                   size="icon"
                   asChild
                 >
-                  <a href={`mailto:${RESUME_DATA.contact.email}`}>
+                  <Link href={`mailto:${RESUME_DATA.contact.email}`}>
                     <FaPhone className="size-4" />
-                  </a>
+                  </Link>
                 </Button>
               ) : null}
               {RESUME_DATA.contact.tel ? (
@@ -55,9 +55,9 @@ export default function Page() {
                   size="icon"
                   asChild
                 >
-                  <a href={`tel:${RESUME_DATA.contact.tel}`}>
+                  <Link href={`tel:${RESUME_DATA.contact.tel}`}>
                     <PhoneIcon className="size-4" />
-                  </a>
+                  </Link>
                 </Button>
               ) : null}
               {RESUME_DATA.contact.social.map((social) => (
@@ -68,22 +68,22 @@ export default function Page() {
                   size="icon"
                   asChild
                 >
-                  <a href={social.url} target="_blank">
+                  <Link href={social.url} target="_blank">
                     <social.icon className="size-4" />
-                  </a>
+                  </Link>
                 </Button>
               ))}
             </div>
             <div className="hidden flex-col gap-x-1 text-sm text-muted-foreground print:flex">
               {RESUME_DATA.contact.email ? (
-                <a href={`mailto:${RESUME_DATA.contact.email}`}>
+                <Link href={`mailto:${RESUME_DATA.contact.email}`}>
                   <span className="underline">{RESUME_DATA.contact.email}</span>
-                </a>
+                </Link>
               ) : null}
               {RESUME_DATA.contact.tel ? (
-                <a href={`tel:${RESUME_DATA.contact.tel}`}>
+                <Link href={`tel:${RESUME_DATA.contact.tel}`}>
                   <span className="underline">{RESUME_DATA.contact.tel}</span>
-                </a>
+                </Link>
               ) : null}
             </div>
           </div>
@@ -107,9 +107,13 @@ export default function Page() {
                 <CardHeader>
                   <div className="flex items-center justify-between gap-x-2 text-base">
                     <h3 className="inline-flex items-center justify-center gap-x-1 font-semibold leading-none">
-                      <a className="hover:underline" href={work.link}>
+                      <Link
+                        className="hover:underline"
+                        href={work.link}
+                        target="_blank"
+                      >
                         {work.company}
-                      </a>
+                      </Link>
 
                       <span className="inline-flex gap-x-1">
                         {work.badges.map((badge) => (

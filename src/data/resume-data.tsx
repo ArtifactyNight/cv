@@ -23,6 +23,16 @@ const skillsData: SkillItem[] = [
     link: "https://svelte.dev/",
   },
   {
+    icon: "/svgs/materialui.svg",
+    title: "Material UI",
+    link: "https://mui.com/",
+  },
+  {
+    icon: "/svgs/tailwindcss.svg",
+    title: "TailwindCSS",
+    link: "https://tailwindcss.com/",
+  },
+  {
     icon: "/svgs/shadcn-ui.svg",
     title: "shadcn/ui",
     link: "https://ui.shadcn.com/",
@@ -36,6 +46,11 @@ const skillsData: SkillItem[] = [
     icon: "/svgs/react-query.svg",
     title: "React Query",
     link: "https://tanstack.com/query/latest",
+  },
+  {
+    icon: "/svgs/trpc.svg",
+    title: "tRPC",
+    link: "https://trpc.io/",
   },
   {
     icon: "/svgs/elysiajs.svg",
@@ -67,6 +82,16 @@ const skillsData: SkillItem[] = [
     title: "Kubernetes",
     link: "https://kubernetes.io/",
   },
+  {
+    icon: "/svgs/figma.svg",
+    title: "Figma",
+    link: "https://www.figma.com/",
+  },
+  {
+    icon: "/svgs/framer.svg",
+    title: "Framer",
+    link: "https://www.framer.com/",
+  },
 ];
 
 export const RESUME_DATA: ResumeData = {
@@ -75,9 +100,9 @@ export const RESUME_DATA: ResumeData = {
   location: "Nakhon Ratchasima, Thailand",
   locationLink: "https://www.google.com/maps/place/Nakhonratchasima",
   about:
-    "Next.js developer focused on modern web experiences. Full-stack enthusiast with an eye for clean design. ✨",
+    "Web developer who focused on modern web experiences. Full-stack enthusiast with an eye for clean design. ✨",
   summary:
-    "I study full-time at Rajamangala University of Technology Isan. I want to be a Full-stack developer. Right now, I work as a freelance developer and enjoy playing games in my free time. I try to balance my time between studying, working, and gaming. This is how I grow and learn to become better in technology.",
+    "I study full-time at Rajamangala University of Technology Isan. I want to be a Full-stack developer with a focus on modern web design. Right now, I work as a freelance developer, constantly learning and exploring new technologies to enhance my skills in both development and design.",
   avatarUrl: "https://m1r.ai/VxFsA.png",
   personalWebsiteUrl: "https://kidsanaphon.vercel.app",
   contact: {
@@ -127,7 +152,7 @@ export const RESUME_DATA: ResumeData = {
       company: "Fastwork",
       link: "https://fastwork.co/user/nightkungz",
       badges: ["Remote"],
-      title: "Freelance Developer",
+      title: "Fullstack Developer",
       start: "2023",
       end: "Now",
       description: "Freelancer at Fastwork",
@@ -150,7 +175,7 @@ export const RESUME_DATA: ResumeData = {
       description: "A platform to sell minecraft digital items.",
     },
     {
-      title: "Lamalia Landing Page",
+      title: "Lamalia",
       techStack: ["Sveltekit", "TailwindCSS"],
       description: "Cool and Modern Landing page for Minecraft server,",
     },

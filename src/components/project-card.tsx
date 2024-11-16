@@ -1,3 +1,5 @@
+import { LucideSquareArrowOutUpRight } from "lucide-react";
+import Link from "next/link";
 import { Badge } from "./ui/badge";
 import {
   Card,
@@ -16,22 +18,22 @@ interface Props {
 
 export function ProjectCard({ title, description, tags, link }: Props) {
   return (
-    <Card className=" group flex flex-col overflow-hidden border border-border p-3 transition-all duration-300">
+    <Card className="group relative flex flex-col overflow-hidden border border-border p-3 transition-all duration-300">
       <CardHeader className="">
         <div className="space-y-1">
           <CardTitle className="text-base">
             {link ? (
-              <a
+              <Link
                 href={link}
                 target="_blank"
                 className="inline-flex items-center gap-2"
               >
-                <span className="">{title}</span>
+                <span className="hover:underline">{title}</span>
                 <span className="size-1 rounded-full bg-green-500" />
                 <span className="-translate-x-2 text-xs text-green-500 opacity-0 transition-all group-hover:translate-x-0 group-hover:opacity-100">
-                  Production
+                  Public
                 </span>
-              </a>
+              </Link>
             ) : (
               <div className="inline-flex items-center gap-2">
                 <span>{title}</span>
@@ -61,6 +63,17 @@ export function ProjectCard({ title, description, tags, link }: Props) {
           ))}
         </div>
       </CardContent>
+      {link && (
+        <div className="absolute right-2 top-2 rounded-md p-2 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+          <Link
+            href={link}
+            target="_blank"
+            className="transition hover:bg-muted"
+          >
+            <LucideSquareArrowOutUpRight className="size-3.5 text-muted-foreground" />
+          </Link>
+        </div>
+      )}
     </Card>
   );
 }
