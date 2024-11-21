@@ -95,8 +95,8 @@ const skillsData: SkillItem[] = [
 ];
 
 export const RESUME_DATA: ResumeData = {
-  name: "Kidsanaphon Kaeopha",
-  initials: "Mr",
+  name: "Kidsanaphon Kaeopha (Night)",
+  initials: "Mr.",
   location: "Nakhon Ratchasima, Thailand",
   locationLink: "https://www.google.com/maps/place/Nakhonratchasima",
   about:
@@ -106,7 +106,7 @@ export const RESUME_DATA: ResumeData = {
   avatarUrl: "https://m1r.ai/VxFsA.png",
   personalWebsiteUrl: "https://kidsanaphon.vercel.app",
   contact: {
-    email: undefined,
+    email: "nightkungz@proton.me",
     tel: undefined,
     social: [
       {
@@ -114,11 +114,11 @@ export const RESUME_DATA: ResumeData = {
         url: "https://github.com/ArtifactyNight",
         icon: FaGithub,
       },
-      // {
-      //   name: "Discord",
-      //   url: "https://discordapp.com/users/304952308893220864",
-      //   icon: FaDiscord,
-      // },
+      {
+        name: "Discord",
+        url: "https://discordapp.com/users/304952308893220864",
+        icon: FaDiscord,
+      },
     ],
   },
   education: [
