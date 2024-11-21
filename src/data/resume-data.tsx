@@ -137,7 +137,7 @@ export const RESUME_DATA: ResumeData = {
       title: "Fullstack Developer",
       start: "2021",
       end: "Now",
-      description: "Making side projects and commission work",
+      description: "Making side projects and commission work.",
     },
     {
       company: "Mythic Development",
@@ -146,7 +146,7 @@ export const RESUME_DATA: ResumeData = {
       title: "Founder & Developer",
       start: "2022",
       end: "Now",
-      description: "Creating and managing self projects with passions",
+      description: "Creating and managing self projects with passions.",
     },
     {
       company: "Fastwork",
