@@ -7,7 +7,7 @@ type Social = {
 };
 
 type ContactInfo = {
-  email: string;
+  email: string | undefined;
   tel: string | undefined;
   social: Social[];
 };
