@@ -25,7 +25,7 @@ const jsonLd = {
   url: RESUME_DATA.personalWebsiteUrl,
   sameAs: [
     RESUME_DATA.contact.social[0].url, // GitHub
-    RESUME_DATA.contact.social[1].url, // Discord
+    // RESUME_DATA.contact.social[1].url, // Discord
   ],
   worksFor: RESUME_DATA.work.map((work) => ({
     "@type": "Organization",
