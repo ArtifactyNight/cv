@@ -7,7 +7,7 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Kidsanaphon Kaeopha - cv",
-  description: "Student, Freelancer and Gamer",
+  description: "Student & Freelancer",
   keywords: [
     "NightKunGz",
     "Kidsanaphon Kaeopha",
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   creator: "Kidsanaphon Kaeopha",
   openGraph: {
     title: "Kidsanaphon Kaeopha - cv",
-    description: "Student, Freelancer and Gamer",
+    description: "Student & Freelancer",
     type: "website",
     locale: "en_US",
     siteName: "Kidsanaphon Kaeopha Portfolio",
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Kidsanaphon Kaeopha - cv",
-    description: "Student, Freelancer and Gamer",
+    description: "Student & Freelancer",
   },
   robots: {
     index: true,
