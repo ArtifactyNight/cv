@@ -92,6 +92,11 @@ const skillsData: SkillItem[] = [
     title: "Framer",
     link: "https://www.framer.com/",
   },
+  {
+    icon: "/svgs/golang.svg",
+    title: "Golang",
+    link: "https://golang.org/",
+  },
 ];
 
 export const RESUME_DATA: ResumeData = {
