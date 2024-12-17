@@ -3,7 +3,7 @@ import { ResumeData, SkillItem } from "../types/resume";
 
 const skillsData: SkillItem[] = [
   {
-    icon: "/svgs/aws_light.png",
+    icon: "/svgs/aws_light.svg",
     title: "AWS",
     link: "https://aws.amazon.com/",
   },
