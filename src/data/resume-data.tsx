@@ -3,9 +3,49 @@ import { ResumeData, SkillItem } from "../types/resume";
 
 const skillsData: SkillItem[] = [
   {
-    icon: "/svgs/typescript.svg",
-    title: "TypeScript",
-    link: "https://www.typescriptlang.org/",
+    icon: "/svgs/aws_light.png",
+    title: "AWS",
+    link: "https://aws.amazon.com/",
+  },
+  {
+    icon: "/svgs/bun.svg",
+    title: "Bun",
+    link: "https://bun.sh/",
+  },
+  {
+    icon: "/svgs/drizzle-orm_light.svg",
+    title: "DrizzleORM",
+    link: "https://orm.drizzle.team/",
+  },
+  {
+    icon: "/svgs/elysiajs.svg",
+    title: "Elysia.js",
+    link: "https://elysiajs.com/",
+  },
+  {
+    icon: "/svgs/figma.svg",
+    title: "Figma",
+    link: "https://www.figma.com/",
+  },
+  {
+    icon: "/svgs/golang.svg",
+    title: "Golang",
+    link: "https://golang.org/",
+  },
+  {
+    icon: "/svgs/kubernetes.svg",
+    title: "Kubernetes",
+    link: "https://kubernetes.io/",
+  },
+  {
+    icon: "/svgs/materialui.svg",
+    title: "Material UI",
+    link: "https://mui.com/",
+  },
+  {
+    icon: "/svgs/mysql.svg",
+    title: "MySQL",
+    link: "https://www.mysql.com/",
   },
   {
     icon: "/svgs/nextjs_icon_dark.svg",
@@ -18,54 +58,9 @@ const skillsData: SkillItem[] = [
     link: "https://nuxt.com/",
   },
   {
-    icon: "/svgs/svelte.svg",
-    title: "SvelteKit",
-    link: "https://svelte.dev/",
-  },
-  {
-    icon: "/svgs/materialui.svg",
-    title: "Material UI",
-    link: "https://mui.com/",
-  },
-  {
-    icon: "/svgs/tailwindcss.svg",
-    title: "TailwindCSS",
-    link: "https://tailwindcss.com/",
-  },
-  {
-    icon: "/svgs/shadcn-ui.svg",
-    title: "shadcn/ui",
-    link: "https://ui.shadcn.com/",
-  },
-  {
-    icon: "/svgs/redux.svg",
-    title: "Redux",
-    link: "https://redux.js.org/",
-  },
-  {
-    icon: "/svgs/react-query.svg",
-    title: "React Query",
-    link: "https://tanstack.com/query/latest",
-  },
-  {
-    icon: "/svgs/trpc.svg",
-    title: "tRPC",
-    link: "https://trpc.io/",
-  },
-  {
-    icon: "/svgs/elysiajs.svg",
-    title: "Elysia.js",
-    link: "https://elysiajs.com/",
-  },
-  {
-    icon: "/svgs/prisma.svg",
-    title: "Prisma",
-    link: "https://www.prisma.io/",
-  },
-  {
-    icon: "/svgs/mysql.svg",
-    title: "MySQL",
-    link: "https://www.mysql.com/",
+    icon: "/svgs/pm2.svg",
+    title: "PM2",
+    link: "https://pm2.keymetrics.io/",
   },
   {
     icon: "/svgs/postgresql.svg",
@@ -73,29 +68,64 @@ const skillsData: SkillItem[] = [
     link: "https://www.postgresql.org/",
   },
   {
+    icon: "/svgs/prisma.svg",
+    title: "Prisma",
+    link: "https://www.prisma.io/",
+  },
+  {
+    icon: "/svgs/react-query.svg",
+    title: "Tanstack Query",
+    link: "https://tanstack.com/query/latest",
+  },
+  {
+    icon: "/svgs/redis.svg",
+    title: "Redis",
+    link: "https://redis.io/",
+  },
+  {
+    icon: "/svgs/redux.svg",
+    title: "Redux Toolkit",
+    link: "https://redux-toolkit.js.org/",
+  },
+  {
+    icon: "/svgs/shadcn-ui.svg",
+    title: "shadcn/ui",
+    link: "https://ui.shadcn.com/",
+  },
+  {
     icon: "/svgs/supabase.svg",
     title: "Supabase",
     link: "https://supabase.com/",
   },
   {
-    icon: "/svgs/kubernetes.svg",
-    title: "Kubernetes",
-    link: "https://kubernetes.io/",
+    icon: "/svgs/svelte.svg",
+    title: "SvelteKit",
+    link: "https://svelte.dev/",
   },
   {
-    icon: "/svgs/figma.svg",
-    title: "Figma",
-    link: "https://www.figma.com/",
+    icon: "/svgs/tailwindcss.svg",
+    title: "TailwindCSS",
+    link: "https://tailwindcss.com/",
   },
   {
-    icon: "/svgs/framer.svg",
-    title: "Framer",
-    link: "https://www.framer.com/",
+    icon: "/svgs/trpc.svg",
+    title: "tRPC",
+    link: "https://trpc.io/",
   },
   {
-    icon: "/svgs/golang.svg",
-    title: "Golang",
-    link: "https://golang.org/",
+    icon: "/svgs/turborepo.svg",
+    title: "Turborepo",
+    link: "https://turborepo.org/",
+  },
+  {
+    icon: "/svgs/typescript.svg",
+    title: "TypeScript",
+    link: "https://www.typescriptlang.org/",
+  },
+  {
+    icon: "/svgs/zod.svg",
+    title: "Zod",
+    link: "https://zod.dev/",
   },
 ];
 
