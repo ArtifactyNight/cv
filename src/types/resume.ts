@@ -42,7 +42,7 @@ type Project = {
 export type SkillItem = {
   icon?: string;
   title: string;
-  link: string;
+  link?: string;
 };
 
 export type ResumeData = {
@@ -58,5 +58,6 @@ export type ResumeData = {
   education: Education[];
   work: WorkExperience[];
   skills: SkillItem[];
+  softSkills: SkillItem[];
   projects: Project[];
 };

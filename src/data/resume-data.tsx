@@ -2,35 +2,11 @@ import { FaDiscord, FaGithub } from "react-icons/fa";
 import { ResumeData, SkillItem } from "../types/resume";
 
 const skillsData: SkillItem[] = [
+  // Cloud & Infrastructure
   {
     icon: "/svgs/aws_light.svg",
     title: "AWS",
     link: "https://aws.amazon.com/",
-  },
-  {
-    icon: "/svgs/bun.svg",
-    title: "Bun",
-    link: "https://bun.sh/",
-  },
-  {
-    icon: "/svgs/drizzle-orm_light.svg",
-    title: "DrizzleORM",
-    link: "https://orm.drizzle.team/",
-  },
-  {
-    icon: "/svgs/elysiajs.svg",
-    title: "Elysia.js",
-    link: "https://elysiajs.com/",
-  },
-  {
-    icon: "/svgs/figma.svg",
-    title: "Figma",
-    link: "https://www.figma.com/",
-  },
-  {
-    icon: "/svgs/golang.svg",
-    title: "Golang",
-    link: "https://golang.org/",
   },
   {
     icon: "/svgs/kubernetes.svg",
@@ -38,15 +14,56 @@ const skillsData: SkillItem[] = [
     link: "https://kubernetes.io/",
   },
   {
-    icon: "/svgs/materialui.svg",
-    title: "Material UI",
-    link: "https://mui.com/",
+    icon: "/svgs/pm2.svg",
+    title: "PM2",
+    link: "https://pm2.keymetrics.io/",
+  },
+
+  // Languages & Runtimes
+  {
+    icon: "/svgs/bun.svg",
+    title: "Bun",
+    link: "https://bun.sh/",
   },
   {
-    icon: "/svgs/mysql.svg",
-    title: "MySQL",
-    link: "https://www.mysql.com/",
+    icon: "/svgs/golang.svg",
+    title: "Golang",
+    link: "https://golang.org/",
   },
+  {
+    icon: "/svgs/typescript.svg",
+    title: "TypeScript",
+    link: "https://www.typescriptlang.org/",
+  },
+
+  // Backend Frameworks
+  {
+    icon: "/svgs/elysiajs.svg",
+    title: "Elysia.js",
+    link: "https://elysiajs.com/",
+  },
+  {
+    icon: "/svgs/expressjs.svg",
+    title: "Express",
+    link: "https://expressjs.com/",
+  },
+  {
+    icon: "/svgs/hono.svg",
+    title: "Hono",
+    link: "https://hono.dev/",
+  },
+  {
+    icon: "/svgs/nestjs.svg",
+    title: "NestJS",
+    link: "https://nestjs.com/",
+  },
+  {
+    icon: "/svgs/trpc.svg",
+    title: "tRPC",
+    link: "https://trpc.io/",
+  },
+
+  // Frontend Frameworks & Libraries
   {
     icon: "/svgs/nextjs_icon_dark.svg",
     title: "Next.js",
@@ -58,9 +75,65 @@ const skillsData: SkillItem[] = [
     link: "https://nuxt.com/",
   },
   {
-    icon: "/svgs/pm2.svg",
-    title: "PM2",
-    link: "https://pm2.keymetrics.io/",
+    icon: "/svgs/react.svg",
+    title: "React",
+    link: "https://react.dev/",
+  },
+  {
+    icon: "/svgs/svelte.svg",
+    title: "SvelteKit",
+    link: "https://svelte.dev/",
+  },
+  {
+    icon: "/svgs/vue.svg",
+    title: "Vue",
+    link: "https://vuejs.org/",
+  },
+
+  // UI Libraries & Tools
+  {
+    icon: "/svgs/figma.svg",
+    title: "Figma",
+    link: "https://www.figma.com/",
+  },
+  {
+    icon: "/svgs/materialui.svg",
+    title: "Material UI",
+    link: "https://mui.com/",
+  },
+  {
+    icon: "/svgs/shadcn-ui.svg",
+    title: "shadcn/ui",
+    link: "https://ui.shadcn.com/",
+  },
+  {
+    icon: "/svgs/tailwindcss.svg",
+    title: "TailwindCSS",
+    link: "https://tailwindcss.com/",
+  },
+
+  // State Management & Data Fetching
+  {
+    icon: "/svgs/react-query.svg",
+    title: "Tanstack Query",
+    link: "https://tanstack.com/query/latest",
+  },
+  {
+    icon: "/svgs/redux.svg",
+    title: "Redux Toolkit",
+    link: "https://redux-toolkit.js.org/",
+  },
+
+  // Databases & ORMs
+  {
+    icon: "/svgs/drizzle-orm_light.svg",
+    title: "DrizzleORM",
+    link: "https://orm.drizzle.team/",
+  },
+  {
+    icon: "/svgs/mysql.svg",
+    title: "MySQL",
+    link: "https://www.mysql.com/",
   },
   {
     icon: "/svgs/postgresql.svg",
@@ -73,59 +146,59 @@ const skillsData: SkillItem[] = [
     link: "https://www.prisma.io/",
   },
   {
-    icon: "/svgs/react-query.svg",
-    title: "Tanstack Query",
-    link: "https://tanstack.com/query/latest",
-  },
-  {
     icon: "/svgs/redis.svg",
     title: "Redis",
     link: "https://redis.io/",
   },
+
+  // Backend as a Service & CMS
   {
-    icon: "/svgs/redux.svg",
-    title: "Redux Toolkit",
-    link: "https://redux-toolkit.js.org/",
+    icon: "/svgs/directus.svg",
+    title: "Directus",
+    link: "https://directus.io/",
   },
   {
-    icon: "/svgs/shadcn-ui.svg",
-    title: "shadcn/ui",
-    link: "https://ui.shadcn.com/",
+    icon: "/svgs/strapi.svg",
+    title: "Strapi",
+    link: "https://strapi.io/",
   },
   {
     icon: "/svgs/supabase.svg",
     title: "Supabase",
     link: "https://supabase.com/",
   },
-  {
-    icon: "/svgs/svelte.svg",
-    title: "SvelteKit",
-    link: "https://svelte.dev/",
-  },
-  {
-    icon: "/svgs/tailwindcss.svg",
-    title: "TailwindCSS",
-    link: "https://tailwindcss.com/",
-  },
-  {
-    icon: "/svgs/trpc.svg",
-    title: "tRPC",
-    link: "https://trpc.io/",
-  },
+
+  // Development Tools
   {
     icon: "/svgs/turborepo.svg",
     title: "Turborepo",
     link: "https://turborepo.org/",
   },
   {
-    icon: "/svgs/typescript.svg",
-    title: "TypeScript",
-    link: "https://www.typescriptlang.org/",
-  },
-  {
     icon: "/svgs/zod.svg",
     title: "Zod",
     link: "https://zod.dev/",
+  },
+];
+
+const softSkillsData: SkillItem[] = [
+  {
+    title: "Communication",
+  },
+  {
+    title: "Problem Solving",
+  },
+  {
+    title: "Time Management",
+  },
+  {
+    title: "Agile Development",
+  },
+  {
+    title: "Clean Code",
+  },
+  {
+    title: "Self-Learning",
   },
 ];
 
@@ -194,6 +267,7 @@ export const RESUME_DATA: ResumeData = {
     },
   ],
   skills: skillsData,
+  softSkills: softSkillsData,
   projects: [
     {
       title: "Dzee Zones",
