@@ -181,8 +181,9 @@ export default function Page() {
             );
           })}
         </Section>
+
         <Section>
-          <h2 className="text-xl font-bold">Hard Skills</h2>
+          <h2 className="text-xl font-bold">Skills</h2>
           <div className="flex flex-wrap gap-1">
             {RESUME_DATA.skills.map((skill) => {
               return (
@@ -202,19 +203,6 @@ export default function Page() {
                     ) : null}
                     {skill.title}
                   </Link>
-                </Badge>
-              );
-            })}
-          </div>
-        </Section>
-
-        <Section>
-          <h2 className="text-xl font-bold">Soft Skills</h2>
-          <div className="flex flex-wrap gap-1">
-            {RESUME_DATA.softSkills.map((skill) => {
-              return (
-                <Badge variant="outline" key={skill.title}>
-                  {skill.title}
                 </Badge>
               );
             })}
