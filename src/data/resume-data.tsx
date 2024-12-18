@@ -1,5 +1,6 @@
-import { FaDiscord, FaGithub } from "react-icons/fa";
+import { FaDiscord, FaGithub, FaLinkedin } from "react-icons/fa";
 import { ResumeData, SkillItem } from "../types/resume";
+import { RiDiscordFill, RiGithubFill, RiLinkedinFill } from "react-icons/ri";
 
 const skillsData: SkillItem[] = [
   // Cloud & Infrastructure
@@ -212,6 +213,7 @@ export const RESUME_DATA: ResumeData = {
   initials: "Mr",
   location: "Nakhon Ratchasima, Thailand",
   locationLink: "https://www.google.com/maps/place/Nakhonratchasima",
+  openToWork: true,
   about:
     "Web developer who focused on modern web experiences. Full-stack enthusiast with an eye for clean design. ✨",
   summary:
@@ -225,12 +227,17 @@ export const RESUME_DATA: ResumeData = {
       {
         name: "GitHub",
         url: "https://github.com/ArtifactyNight",
-        icon: FaGithub,
+        icon: RiGithubFill,
+      },
+      {
+        name: "Linkedin",
+        url: "https://www.linkedin.com/in/kidsanaphon/",
+        icon: RiLinkedinFill,
       },
       {
         name: "Discord",
         url: "https://discordapp.com/users/304952308893220864",
-        icon: FaDiscord,
+        icon: RiDiscordFill,
       },
     ],
   },

@@ -50,6 +50,7 @@ export type ResumeData = {
   initials: string;
   location: string;
   locationLink: string;
+  openToWork: boolean;
   about: string;
   summary: string;
   avatarUrl: string;

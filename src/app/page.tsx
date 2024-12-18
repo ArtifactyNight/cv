@@ -6,10 +6,10 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Section } from "@/components/ui/section";
 import { RESUME_DATA } from "@/data/resume-data";
-import { GlobeIcon, PhoneIcon } from "lucide-react";
+import { LucideGlobe } from "lucide-react";
 import { Metadata } from "next";
 import Link from "next/link";
-import { FaPhone } from "react-icons/fa";
+import { RiMailFill } from "react-icons/ri";
 
 export const metadata: Metadata = {
   title: `${RESUME_DATA.name} | ${RESUME_DATA.about}`,
@@ -59,7 +59,7 @@ export default function Page() {
                   href={RESUME_DATA.locationLink}
                   target="_blank"
                 >
-                  <GlobeIcon className="size-3" />
+                  <LucideGlobe className="size-3" />
                   {RESUME_DATA.location}
                 </Link>
               </p>
@@ -75,19 +75,7 @@ export default function Page() {
                   asChild
                 >
                   <Link href={`mailto:${RESUME_DATA.contact.email}`}>
-                    <FaPhone className="size-4" />
-                  </Link>
-                </Button>
-              ) : null}
-              {RESUME_DATA.contact.tel ? (
-                <Button
-                  className="size-8"
-                  variant="outline"
-                  size="icon"
-                  asChild
-                >
-                  <Link href={`tel:${RESUME_DATA.contact.tel}`}>
-                    <PhoneIcon className="size-4" />
+                    <RiMailFill className="size-4" />
                   </Link>
                 </Button>
               ) : null}
