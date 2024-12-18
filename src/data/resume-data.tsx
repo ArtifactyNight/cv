@@ -14,6 +14,11 @@ const skillsData: SkillItem[] = [
     link: "https://kubernetes.io/",
   },
   {
+    icon: "/svgs/docker.svg",
+    title: "Docker",
+    link: "https://www.docker.com/",
+  },
+  {
     icon: "/svgs/pm2.svg",
     title: "PM2",
     link: "https://pm2.keymetrics.io/",
