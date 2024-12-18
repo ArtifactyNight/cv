@@ -1,3 +1,4 @@
+import { GitHubContributions } from "@/components/github-contributions";
 import { ProjectCard } from "@/components/project-card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
@@ -35,25 +36,36 @@ const jsonLd = {
 };
 
 export default function Page() {
+  // Extract GitHub username from your social links
+  const githubUsername =
+    RESUME_DATA.contact.social
+      .find((social) => social.name === "GitHub")
+      ?.url.split("/")
+      .pop() || "ArtifactyNight";
+
   return (
     <main className="container relative mx-auto scroll-my-12 overflow-auto p-4 md:p-16 print:p-12">
-      <section className="mx-auto w-full max-w-2xl space-y-8 bg-white print:space-y-6">
+      <section className="mx-auto w-full max-w-screen-md space-y-8 bg-white print:space-y-6">
         <div className="flex items-center justify-between">
           <div className="flex-1 space-y-1.5">
             <h1 className="text-2xl font-bold">{RESUME_DATA.name}</h1>
             <p className="max-w-md text-pretty text-sm text-muted-foreground">
               {RESUME_DATA.about}
             </p>
-            <p className="max-w-md items-center text-pretty text-xs text-muted-foreground">
-              <Link
-                className="inline-flex gap-x-1.5 align-baseline leading-none hover:underline"
-                href={RESUME_DATA.locationLink}
-                target="_blank"
-              >
-                <GlobeIcon className="size-3" />
-                {RESUME_DATA.location}
-              </Link>
-            </p>
+            <div className="flex flex-col gap-1">
+              <p className="max-w-md items-center text-pretty text-xs text-muted-foreground">
+                <Link
+                  className="inline-flex gap-x-1.5 align-baseline leading-none hover:underline"
+                  href={RESUME_DATA.locationLink}
+                  target="_blank"
+                >
+                  <GlobeIcon className="size-3" />
+                  {RESUME_DATA.location}
+                </Link>
+              </p>
+              {/* <SpotifyNowPlaying />
+              <DiscordStatus /> */}
+            </div>
             <div className="flex gap-x-1 pt-1 text-sm text-muted-foreground print:hidden">
               {RESUME_DATA.contact.email ? (
                 <Button
@@ -112,6 +124,7 @@ export default function Page() {
             <AvatarFallback>{RESUME_DATA.initials}</AvatarFallback>
           </Avatar>
         </div>
+
         <Section>
           <h2 className="text-xl font-bold">About</h2>
           <p className="text-pretty text-sm text-muted-foreground">
@@ -221,7 +234,7 @@ export default function Page() {
         </Section>
 
         <Section className="print-force-new-page scroll-mb-16">
-          <h2 className="text-xl font-bold">Recent Projects</h2>
+          <h2 className="text-xl font-bold">Works</h2>
           <div className="-mx-3 grid grid-cols-1 gap-3 md:grid-cols-2 lg:grid-cols-3 print:grid-cols-3 print:gap-2">
             {RESUME_DATA.projects.map((project) => {
               return (
@@ -235,6 +248,11 @@ export default function Page() {
               );
             })}
           </div>
+        </Section>
+
+        <Section className="mt-8">
+          <h2 className="text-xl font-bold">GitHub Contributions</h2>
+          <GitHubContributions username={githubUsername} />
         </Section>
       </section>
       <script

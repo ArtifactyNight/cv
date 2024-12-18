@@ -1,7 +1,7 @@
+import { Providers } from "@/components/providers";
 import { Analytics } from "@vercel/analytics/react";
 import type { Metadata } from "next";
 import { Geist } from "next/font/google";
-
 import React from "react";
 import "./globals.css";
 
@@ -53,8 +53,10 @@ export default function RootLayout({
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </head>
-      <body>{children}</body>
-      <Analytics />
+      <body>
+        <Providers>{children}</Providers>
+        <Analytics />
+      </body>
     </html>
   );
 }
