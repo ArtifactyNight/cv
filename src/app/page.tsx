@@ -1,240 +1,238 @@
-import { GitHubContributions } from "@/components/github-contributions";
+/* eslint-disable @next/next/no-img-element */
+import { HackathonCard } from "@/components/hackathon-card";
+import BlurFade from "@/components/magicui/blur-fade";
+import BlurFadeText from "@/components/magicui/blur-fade-text";
 import { ProjectCard } from "@/components/project-card";
+import { ResumeCard } from "@/components/resume-card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader } from "@/components/ui/card";
-import { Section } from "@/components/ui/section";
-import { RESUME_DATA } from "@/data/resume-data";
-import { LucideGlobe } from "lucide-react";
-import { Metadata } from "next";
+import { DATA } from "@/data/resume";
 import Link from "next/link";
-import { RiMailFill } from "react-icons/ri";
+import Markdown from "react-markdown";
 
-export const metadata: Metadata = {
-  title: `${RESUME_DATA.name} | ${RESUME_DATA.about}`,
-  description: RESUME_DATA.summary,
-};
-
-const jsonLd = {
-  "@context": "https://schema.org",
-  "@type": "Person",
-  name: RESUME_DATA.name,
-  description: RESUME_DATA.about,
-  image: RESUME_DATA.avatarUrl,
-  jobTitle: "Full-stack Developer",
-  url: RESUME_DATA.personalWebsiteUrl,
-  sameAs: [
-    RESUME_DATA.contact.social[0].url, // GitHub
-    // RESUME_DATA.contact.social[1].url, // Discord
-  ],
-  worksFor: RESUME_DATA.work.map((work) => ({
-    "@type": "Organization",
-    name: work.company,
-    url: work.link,
-  })),
-};
+const BLUR_FADE_DELAY = 0.04;
 
 export default function Page() {
-  // Extract GitHub username from your social links
-  const githubUsername =
-    RESUME_DATA.contact.social
-      .find((social) => social.name === "GitHub")
-      ?.url.split("/")
-      .pop() || "ArtifactyNight";
-
   return (
-    <main className="container relative mx-auto scroll-my-12 overflow-auto p-4 md:p-16 print:p-12">
-      <section className="mx-auto w-full max-w-screen-md space-y-8 bg-white print:space-y-6">
-        <div className="flex items-center justify-between">
-          <div className="flex-1 space-y-1.5">
-            <h1 className="text-2xl font-bold">{RESUME_DATA.name}</h1>
-            <p className="max-w-md text-pretty text-sm text-muted-foreground">
-              {RESUME_DATA.about}
-            </p>
-            <div className="flex flex-col gap-1">
-              <p className="max-w-md items-center text-pretty text-xs text-muted-foreground">
-                <Link
-                  className="inline-flex gap-x-1.5 align-baseline leading-none hover:underline"
-                  href={RESUME_DATA.locationLink}
-                  target="_blank"
-                >
-                  <LucideGlobe className="size-3" />
-                  {RESUME_DATA.location}
-                </Link>
-              </p>
-              {/* <SpotifyNowPlaying />
-              <DiscordStatus /> */}
+    <main className="flex flex-col min-h-[100dvh] space-y-10">
+      <section id="hero">
+        <div className="mx-auto w-full max-w-2xl space-y-8">
+          <div className="gap-2 flex justify-between">
+            <div className="flex-col flex flex-1 space-y-1.5">
+              <BlurFadeText
+                delay={BLUR_FADE_DELAY}
+                className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none"
+                yOffset={8}
+                text={`Hi, I'm ${DATA.name.split(" ")[0]} 👋`}
+              />
+              <BlurFadeText
+                className="max-w-[600px] md:text-xl"
+                delay={BLUR_FADE_DELAY}
+                text={DATA.description}
+              />
             </div>
-            <div className="flex gap-x-1 pt-1 text-sm text-muted-foreground print:hidden">
-              {RESUME_DATA.contact.email ? (
-                <Button
-                  className="size-8"
-                  variant="outline"
-                  size="icon"
-                  asChild
-                >
-                  <Link href={`mailto:${RESUME_DATA.contact.email}`}>
-                    <RiMailFill className="size-4" />
-                  </Link>
-                </Button>
-              ) : null}
-              {RESUME_DATA.contact.social.map((social) => (
-                <Button
-                  key={social.name}
-                  className="size-8"
-                  variant="outline"
-                  size="icon"
-                  asChild
-                >
-                  <Link href={social.url} target="_blank">
-                    <social.icon className="size-4" />
-                  </Link>
-                </Button>
-              ))}
-            </div>
-            <div className="hidden flex-col gap-x-1 text-sm text-muted-foreground print:flex">
-              {RESUME_DATA.contact.email ? (
-                <Link href={`mailto:${RESUME_DATA.contact.email}`}>
-                  <span className="underline">{RESUME_DATA.contact.email}</span>
-                </Link>
-              ) : null}
-              {RESUME_DATA.contact.tel ? (
-                <Link href={`tel:${RESUME_DATA.contact.tel}`}>
-                  <span className="underline">{RESUME_DATA.contact.tel}</span>
-                </Link>
-              ) : null}
-            </div>
+            <BlurFade delay={BLUR_FADE_DELAY}>
+              <Avatar className="size-28 border">
+                <AvatarImage alt={DATA.name} src={DATA.avatarUrl} />
+                <AvatarFallback>{DATA.initials}</AvatarFallback>
+              </Avatar>
+            </BlurFade>
           </div>
-
-          <Avatar className="size-28">
-            <AvatarImage alt={RESUME_DATA.name} src={RESUME_DATA.avatarUrl} />
-            <AvatarFallback>{RESUME_DATA.initials}</AvatarFallback>
-          </Avatar>
         </div>
-
-        <Section>
+      </section>
+      <section id="about">
+        <BlurFade delay={BLUR_FADE_DELAY * 3}>
           <h2 className="text-xl font-bold">About</h2>
-          <p className="text-pretty text-sm text-muted-foreground">
-            {RESUME_DATA.summary}
-          </p>
-        </Section>
-        <Section>
-          <h2 className="text-xl font-bold">Work Experience</h2>
-          {RESUME_DATA.work.map((work) => {
-            return (
-              <Card key={work.company}>
-                <CardHeader>
-                  <div className="flex items-center justify-between gap-x-2 text-base">
-                    <h3 className="inline-flex items-center justify-center gap-x-1 font-semibold leading-none">
-                      <Link
-                        className="hover:underline"
-                        href={work.link}
-                        target="_blank"
-                      >
-                        {work.company}
-                      </Link>
-
-                      <span className="inline-flex gap-x-1">
-                        {work.badges.map((badge) => (
-                          <Badge
-                            variant="secondary"
-                            className="align-middle text-xs"
-                            key={badge}
-                          >
-                            {badge}
-                          </Badge>
-                        ))}
-                      </span>
-                    </h3>
-                    <div className="text-sm tabular-nums text-gray-500">
-                      {work.start} - {work.end}
-                    </div>
-                  </div>
-
-                  <h4 className="text-sm leading-none">{work.title}</h4>
-                </CardHeader>
-                <CardContent className="mt-2 text-xs">
-                  {work.description}
-                </CardContent>
-              </Card>
-            );
-          })}
-        </Section>
-        <Section>
-          <h2 className="text-xl font-bold">Education</h2>
-          {RESUME_DATA.education.map((education) => {
-            return (
-              <Card key={education.school}>
-                <CardHeader>
-                  <div className="flex items-center justify-between gap-x-2 text-base">
-                    <h3 className="font-semibold leading-none">
-                      {education.school}
-                    </h3>
-                    <div className="text-sm tabular-nums text-gray-500">
-                      {education.start} - {education.end}
-                    </div>
-                  </div>
-                </CardHeader>
-                <CardContent className="mt-2">{education.degree}</CardContent>
-              </Card>
-            );
-          })}
-        </Section>
-
-        <Section>
-          <h2 className="text-xl font-bold">Skills</h2>
+        </BlurFade>
+        <BlurFade delay={BLUR_FADE_DELAY * 4}>
+          <Markdown className="prose max-w-full text-pretty font-sans text-sm text-muted-foreground dark:prose-invert">
+            {DATA.summary}
+          </Markdown>
+        </BlurFade>
+      </section>
+      <section id="work">
+        <div className="flex min-h-0 flex-col gap-y-3">
+          <BlurFade delay={BLUR_FADE_DELAY * 5}>
+            <h2 className="text-xl font-bold">Work Experience</h2>
+          </BlurFade>
+          {DATA.work.map((work, id) => (
+            <BlurFade
+              key={work.company}
+              delay={BLUR_FADE_DELAY * 6 + id * 0.05}
+            >
+              <ResumeCard
+                key={work.company}
+                logoUrl={work.logoUrl}
+                altText={work.company}
+                title={work.company}
+                subtitle={work.title}
+                href={work.href}
+                badges={work.badges}
+                period={`${work.start} - ${work.end ?? "Present"}`}
+                description={work.description}
+              />
+            </BlurFade>
+          ))}
+        </div>
+      </section>
+      <section id="education">
+        <div className="flex min-h-0 flex-col gap-y-3">
+          <BlurFade delay={BLUR_FADE_DELAY * 7}>
+            <h2 className="text-xl font-bold">Education</h2>
+          </BlurFade>
+          {DATA.education.map((education, id) => (
+            <BlurFade
+              key={education.school}
+              delay={BLUR_FADE_DELAY * 8 + id * 0.05}
+            >
+              <ResumeCard
+                key={education.school}
+                href={education.href}
+                logoUrl={education.logoUrl}
+                altText={education.school}
+                title={education.school}
+                subtitle={education.degree}
+                period={`${education.start} - ${education.end}`}
+              />
+            </BlurFade>
+          ))}
+        </div>
+      </section>
+      <section id="skills">
+        <div className="flex min-h-0 flex-col gap-y-3">
+          <BlurFade delay={BLUR_FADE_DELAY * 9}>
+            <h2 className="text-xl font-bold">Skills</h2>
+          </BlurFade>
           <div className="flex flex-wrap gap-1">
-            {RESUME_DATA.skills.map((skill) => {
-              return (
-                <Badge variant="outline" key={skill.title}>
-                  <Link
-                    href={skill.link ?? "#"}
-                    key={skill.title}
-                    target="_blank"
-                    className="inline-flex items-center gap-x-1"
-                  >
-                    {skill.icon ? (
-                      <img
-                        src={skill.icon}
-                        alt={skill.title}
-                        className="mr-1 size-3.5"
-                      />
-                    ) : null}
-                    {skill.title}
-                  </Link>
+            {DATA.skills.map((skill, id) => (
+              <BlurFade
+                key={skill.title}
+                delay={BLUR_FADE_DELAY * 10 + id * 0.05}
+              >
+                <Badge key={skill.title}>
+                  {/* {skill.icon ? (
+                    <img
+                      src={skill.icon}
+                      alt={skill.title}
+                      className="mr-1 size-3.5"
+                    />
+                  ) : null} */}
+                  {skill.title}
                 </Badge>
-              );
-            })}
+              </BlurFade>
+            ))}
           </div>
-        </Section>
-
-        <Section className="print-force-new-page scroll-mb-16">
-          <h2 className="text-xl font-bold">Works</h2>
-          <div className="-mx-3 grid grid-cols-1 gap-3 md:grid-cols-2 lg:grid-cols-3 print:grid-cols-3 print:gap-2">
-            {RESUME_DATA.projects.map((project) => {
-              return (
+        </div>
+      </section>
+      <section id="projects">
+        <div className="space-y-12 w-full py-12">
+          <BlurFade delay={BLUR_FADE_DELAY * 11}>
+            <div className="flex flex-col items-center justify-center space-y-4 text-center">
+              <div className="space-y-2">
+                <div className="inline-block rounded-lg bg-foreground text-background px-3 py-1 text-sm">
+                  My Projects
+                </div>
+                <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
+                  Check out my latest work
+                </h2>
+                <p className="text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+                  I&apos;ve worked on a variety of projects, from simple
+                  websites to complex web applications. Here are a few of my
+                  favorites.
+                </p>
+              </div>
+            </div>
+          </BlurFade>
+          <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 max-w-[800px] mx-auto">
+            {DATA.projects.map((project, id) => (
+              <BlurFade
+                key={project.title}
+                delay={BLUR_FADE_DELAY * 12 + id * 0.05}
+              >
                 <ProjectCard
+                  href={project.href}
                   key={project.title}
                   title={project.title}
                   description={project.description}
-                  tags={project.techStack}
-                  link={"link" in project ? project.link?.href : undefined}
+                  dates={project.dates}
+                  tags={project.technologies}
+                  image={project.image}
+                  video={project.video}
+                  links={project.links}
                 />
-              );
-            })}
+              </BlurFade>
+            ))}
           </div>
-        </Section>
-
-        <Section className="mt-8">
-          <h2 className="text-xl font-bold">GitHub Contributions</h2>
-          <GitHubContributions username={githubUsername} />
-        </Section>
+        </div>
       </section>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
+      <section id="hackathons" className="hidden">
+        <div className="space-y-12 w-full py-12">
+          <BlurFade delay={BLUR_FADE_DELAY * 13}>
+            <div className="flex flex-col items-center justify-center space-y-4 text-center">
+              <div className="space-y-2">
+                <div className="inline-block rounded-lg bg-foreground text-background px-3 py-1 text-sm">
+                  Hackathons
+                </div>
+                <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
+                  I like building things
+                </h2>
+                <p className="text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+                  During my time in university, I attended{" "}
+                  {DATA.hackathons.length}+ hackathons. People from around the
+                  country would come together and build incredible things in 2-3
+                  days. It was eye-opening to see the endless possibilities
+                  brought to life by a group of motivated and passionate
+                  individuals.
+                </p>
+              </div>
+            </div>
+          </BlurFade>
+          <BlurFade delay={BLUR_FADE_DELAY * 14}>
+            <ul className="mb-4 ml-4 divide-y divide-dashed border-l">
+              {DATA.hackathons.map((project, id) => (
+                <BlurFade
+                  key={project.title + project.dates}
+                  delay={BLUR_FADE_DELAY * 15 + id * 0.05}
+                >
+                  <HackathonCard
+                    title={project.title}
+                    description={project.description}
+                    location={project.location}
+                    dates={project.dates}
+                    image={project.image}
+                    links={project.links}
+                  />
+                </BlurFade>
+              ))}
+            </ul>
+          </BlurFade>
+        </div>
+      </section>
+      <section id="contact">
+        <div className="grid items-center justify-center gap-4 px-4 text-center md:px-6 w-full py-12">
+          <BlurFade delay={BLUR_FADE_DELAY * 16}>
+            <div className="space-y-3">
+              <div className="inline-block rounded-lg bg-foreground text-background px-3 py-1 text-sm">
+                Contact
+              </div>
+              <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
+                Get in Touch
+              </h2>
+              <p className="mx-auto max-w-[600px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+                Want to chat? Just shoot me a dm{" "}
+                <Link
+                  href={DATA.contact.social.Discord.url}
+                  className="text-blue-500 hover:underline"
+                >
+                  with a direct question on discord
+                </Link>{" "}
+                and I&apos;ll respond whenever I can. I will ignore all
+                soliciting.
+              </p>
+            </div>
+          </BlurFade>
+        </div>
+      </section>
     </main>
   );
 }
