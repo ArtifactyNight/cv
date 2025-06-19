@@ -16,6 +16,18 @@ import { cn } from "@/lib/utils";
 export const metadata: Metadata = {
   title: `${RESUME_DATA.name} | ${RESUME_DATA.about}`,
   description: RESUME_DATA.summary,
+  keywords: [
+    "NightKunGz",
+    "Kidsanaphon Kaeopha",
+    "Developer",
+    "Freelancer",
+    "Student",
+    "Portfolio",
+    "CV",
+  ],
+  icons: {
+    icon: "/favicon.ico",
+  },
 };
 
 const jsonLd = {
@@ -28,13 +40,22 @@ const jsonLd = {
   url: RESUME_DATA.personalWebsiteUrl,
   sameAs: [
     RESUME_DATA.contact.social[0].url, // GitHub
-    // RESUME_DATA.contact.social[1].url, // Discord
+    RESUME_DATA.contact.social[1].url, // Discord
+    RESUME_DATA.contact.social[2].url, // Telegram
+    RESUME_DATA.contact.social[3].url, // LinkedIn
   ],
   worksFor: RESUME_DATA.work.map((work) => ({
     "@type": "Organization",
     name: work.company,
     url: work.link,
   })),
+  email: RESUME_DATA.contact.email,
+  telephone: RESUME_DATA.contact.tel,
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Nakhon Ratchasima",
+    addressCountry: "Thailand",
+  },
 };
 
 export default function Page() {
