@@ -4,12 +4,14 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
+import { GridPattern } from "@/components/ui/grid-pattern";
 import { Section } from "@/components/ui/section";
 import { RESUME_DATA } from "@/data/resume-data";
 import { LucideGlobe } from "lucide-react";
 import { Metadata } from "next";
 import Link from "next/link";
 import { RiMailFill } from "react-icons/ri";
+import { cn } from "@/lib/utils";
 
 export const metadata: Metadata = {
   title: `${RESUME_DATA.name} | ${RESUME_DATA.about}`,
@@ -44,8 +46,20 @@ export default function Page() {
       .pop() || "ArtifactyNight";
 
   return (
-    <main className="relative container mx-auto scroll-my-12 overflow-auto p-4 md:p-16 print:p-12">
-      <section className="mx-auto w-full max-w-(--breakpoint-md) space-y-8 bg-white print:space-y-6">
+    <main className="relative mx-auto scroll-my-12 p-4 md:p-16 print:p-12">
+      {/* Grid background */}
+      <GridPattern
+        width={20}
+        height={20}
+        x={-1}
+        y={-1}
+        className={cn(
+          "[mask-image:linear-gradient(to_bottom_right,white,transparent,transparent)] opacity-50",
+          "print:hidden",
+        )}
+      />
+
+      <section className="relative mx-auto w-full max-w-(--breakpoint-md) space-y-8 print:space-y-6">
         <div className="flex items-center justify-between">
           <div className="flex-1 space-y-1.5">
             <h1 className="text-2xl font-bold">{RESUME_DATA.name}</h1>
