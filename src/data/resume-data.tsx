@@ -241,7 +241,7 @@ export const RESUME_DATA: ResumeData = {
       },
       {
         name: "Telegram",
-        url: "https://t.me/nightkungz",
+        url: "https://t.me/nightsoeepy",
         icon: FaTelegram,
       },
     ],
