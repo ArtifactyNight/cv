@@ -1,4 +1,4 @@
-import { FaDiscord, FaGithub, FaLinkedin } from "react-icons/fa";
+import { FaDiscord, FaGithub, FaLinkedin, FaTelegram } from "react-icons/fa";
 import { ResumeData, SkillItem } from "../types/resume";
 import { RiDiscordFill, RiGithubFill, RiLinkedinFill } from "react-icons/ri";
 
@@ -221,7 +221,7 @@ export const RESUME_DATA: ResumeData = {
   avatarUrl: "https://m1r.ai/VxFsA.png",
   personalWebsiteUrl: "https://kidsanaphon.vercel.app",
   contact: {
-    email: "nightkungz@proton.me",
+    email: "contact@nightz.me",
     tel: undefined,
     social: [
       {
@@ -238,6 +238,11 @@ export const RESUME_DATA: ResumeData = {
         name: "Discord",
         url: "https://discordapp.com/users/304952308893220864",
         icon: RiDiscordFill,
+      },
+      {
+        name: "Telegram",
+        url: "https://t.me/nightkungz",
+        icon: FaTelegram,
       },
     ],
   },
