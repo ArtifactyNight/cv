@@ -260,7 +260,7 @@ export const RESUME_DATA: ResumeData = {
       link: "https://rdcw.co.th/",
       badges: ["Remote"],
       title: "Fullstack Developer",
-      start: "2021",
+      start: "2022",
       end: "Now",
       description:
         "Led development of client projects using Next.js, React and Node.js. Built responsive designs and E2E APIs.",
