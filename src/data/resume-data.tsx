@@ -1,4 +1,4 @@
-import { FaDiscord, FaGithub, FaLinkedin, FaTelegram } from "react-icons/fa";
+import { FaTelegram } from "react-icons/fa";
 import { ResumeData, SkillItem } from "../types/resume";
 import { RiDiscordFill, RiGithubFill, RiLinkedinFill } from "react-icons/ri";
 
@@ -263,23 +263,23 @@ export const RESUME_DATA: ResumeData = {
       start: "2021",
       end: "Now",
       description:
-        "Led development of client projects using Next.js, React and Node.js. Built responsive designs and RESTful APIs.",
+        "Led development of client projects using Next.js, React and Node.js. Built responsive designs and E2E APIs.",
     },
     {
       company: "Mythic Development",
       link: "#",
-      badges: ["Remote", "Founder"],
-      title: "Founder & Lead Developer",
+      badges: ["Remote"],
+      title: "CEO & Founder",
       start: "2022",
       end: "Now",
       description:
-        "Founded web development studio. Built projects with modern tech stack. Managed team and client relationships.",
+        "Owned web development studio. Built projects with modern tech stack. Managed team and client relationships.",
     },
     {
       company: "Fastwork",
       link: "https://fastwork.co/user/nightkungz",
-      badges: ["Remote", "Freelance"],
-      title: "Fullstack Developer",
+      badges: ["Remote"],
+      title: "FreelanceFullstack Developer",
       start: "2023",
       end: "Now",
       description:
@@ -292,11 +292,8 @@ export const RESUME_DATA: ResumeData = {
     {
       title: "Dzee Zones",
       techStack: ["Next.js", "Prisma", "MySQL"],
-      description: "A platform to sell roblox contents.",
-      link: {
-        label: "dzeezones.com",
-        href: "https://dzeezones.com",
-      },
+      description:
+        "A platform to sell roblox contents. Made for Youtuber who have 2M subscribers.",
     },
     {
       title: "Arcane Realms",
@@ -312,10 +309,6 @@ export const RESUME_DATA: ResumeData = {
       title: "Blixy Portfolio",
       techStack: ["Next.js", "TailwindCSS", "framer-motion"],
       description: "A comission portfolio website.",
-      link: {
-        label: "Blixy Portfolio",
-        href: "https://nightkungz-blixy.vercel.app/en/",
-      },
     },
     {
       title: "Botfin",
