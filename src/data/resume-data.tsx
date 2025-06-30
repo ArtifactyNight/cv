@@ -1,6 +1,6 @@
 import { FaTelegram } from "react-icons/fa";
-import { ResumeData, SkillItem } from "../types/resume";
 import { RiDiscordFill, RiGithubFill, RiLinkedinFill } from "react-icons/ri";
+import { ResumeData, SkillItem } from "../types/resume";
 
 const skillsData: SkillItem[] = [
   // Cloud & Infrastructure
@@ -271,7 +271,7 @@ export const RESUME_DATA: ResumeData = {
       badges: ["Remote"],
       title: "CEO & Founder",
       start: "2022",
-      end: "Now",
+      end: "2024",
       description:
         "Owned web development studio. Built projects with modern tech stack. Managed team and client relationships.",
     },
@@ -279,9 +279,9 @@ export const RESUME_DATA: ResumeData = {
       company: "Fastwork",
       link: "https://fastwork.co/user/nightkungz",
       badges: ["Remote"],
-      title: "FreelanceFullstack Developer",
+      title: "Fullstack Developer",
       start: "2023",
-      end: "Now",
+      end: "2025",
       description:
         "Provide freelance full-stack development services. Maintain 5-star rating with 100% client satisfaction.",
     },
