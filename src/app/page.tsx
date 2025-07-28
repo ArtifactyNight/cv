@@ -285,6 +285,24 @@ export default function Page() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
+      {/* Webring Icon - fixed bottom right */}
+      <Link
+        href="https://webring.wonderful.software#nightkungz.dev"
+        title="วงแหวนเว็บ"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="fixed right-4 bottom-4 z-50 transition-all duration-300 hover:scale-120 hover:rotate-12 print:hidden"
+        style={{ width: 40, height: 40 }}
+        aria-label="วงแหวนเว็บ (Webring)"
+      >
+        <img
+          src="https://webring.wonderful.software/webring.black.svg"
+          alt="วงแหวนเว็บ"
+          width={40}
+          height={40}
+          style={{ display: "block" }}
+        />
+      </Link>
     </main>
   );
 }
