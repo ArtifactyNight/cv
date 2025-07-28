@@ -287,7 +287,7 @@ export default function Page() {
       />
       {/* Webring Icon - fixed bottom right */}
       <Link
-        href="https://webring.wonderful.software#nightkungz.dev"
+        href="https://webring.wonderful.software#nightz.me"
         title="วงแหวนเว็บ"
         target="_blank"
         rel="noopener noreferrer"
