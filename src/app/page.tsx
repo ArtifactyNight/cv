@@ -191,15 +191,19 @@ export default function Page() {
                           ))}
                         </span>
                       </h3>
-                      <div className="text-sm text-gray-500 tabular-nums">
+                      <div className="text-muted-foreground text-sm tabular-nums">
                         {work.start} - {work.end}
                       </div>
                     </div>
 
                     <h4 className="text-sm leading-none">{work.title}</h4>
                   </CardHeader>
-                  <CardContent className="mt-2 text-xs">
-                    {work.description}
+                  <CardContent className="mt-2 text-sm">
+                    <ul className="ml-2 list-inside list-disc space-y-1">
+                      {work.description.map((item, index) => (
+                        <li key={index}>{item}</li>
+                      ))}
+                    </ul>
                   </CardContent>
                 </Card>
               );

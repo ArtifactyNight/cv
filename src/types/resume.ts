@@ -26,7 +26,7 @@ type WorkExperience = {
   title: string;
   start: string;
   end: string;
-  description: string;
+  description: string[];
 };
 
 type Project = {
