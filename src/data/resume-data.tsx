@@ -209,19 +209,18 @@ const softSkillsData: SkillItem[] = [
 ];
 
 export const RESUME_DATA: ResumeData = {
-  name: "Kidsanaphon Kaeopha",
+  name: "Kritsanaphon (Night) Kaewpha",
   initials: "Mr",
   location: "Nakhon Ratchasima, Thailand",
   locationLink: "https://www.google.com/maps/place/Nakhonratchasima",
   openToWork: true,
-  about:
-    "Web developer who focused on modern web experiences. Full-stack enthusiast with an eye for clean design. ✨",
+  about: "Full-stack developer enthusiast with an eye for clean design. ✨",
   summary:
-    "I study full-time at Rajamangala University of Technology Isan. I want to be a Full-stack developer with a focus on modern web design. Right now, I work as a freelance developer, constantly learning and exploring new technologies to enhance my skills in both development and design.",
+    "An indie Full-stack developer with a focus on modern web design. Right now, I work as a freelance developer, constantly learning and exploring new technologies to enhance my skills in both development and design.",
   avatarUrl: "https://m1r.ai/VxFsA.png",
   personalWebsiteUrl: "https://kidsanaphon.vercel.app",
   contact: {
-    email: "contact@nightz.me",
+    email: "hi@nightz.me",
     tel: undefined,
     social: [
       {
