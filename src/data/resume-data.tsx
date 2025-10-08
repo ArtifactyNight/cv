@@ -228,6 +228,11 @@ export const RESUME_DATA: ResumeData = {
         url: "https://t.me/nightsoeepy",
         icon: FaTelegram,
       },
+      {
+        name: "Webring",
+        url: "https://webring.wonderful.software/#/nightz.me",
+        icon: "https://webring.wonderful.software/webring.black.svg",
+      },
     ],
   },
   education: [

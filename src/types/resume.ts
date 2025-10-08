@@ -3,7 +3,7 @@ import { IconType } from "react-icons";
 type Social = {
   name: string;
   url: string;
-  icon: IconType;
+  icon: IconType | string;
 };
 
 type ContactInfo = {

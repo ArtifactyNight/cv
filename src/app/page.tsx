@@ -126,7 +126,15 @@ export default function Page() {
                     asChild
                   >
                     <Link href={social.url} target="_blank">
-                      <social.icon className="size-4" />
+                      {typeof social.icon === "string" ? (
+                        <img
+                          src={social.icon}
+                          alt={social.name}
+                          className="size-4"
+                        />
+                      ) : (
+                        <social.icon className="size-4" />
+                      )}
                     </Link>
                   </Button>
                 ))}
@@ -293,24 +301,6 @@ export default function Page() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      {/* Webring Icon - fixed bottom right */}
-      <Link
-        href="https://webring.wonderful.software#nightz.me"
-        title="วงแหวนเว็บ"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="fixed right-4 bottom-4 z-50 transition-all duration-300 hover:scale-120 hover:rotate-12 print:hidden"
-        style={{ width: 40, height: 40 }}
-        aria-label="วงแหวนเว็บ (Webring)"
-      >
-        <img
-          src="https://webring.wonderful.software/webring.black.svg"
-          alt="วงแหวนเว็บ"
-          width={40}
-          height={40}
-          style={{ display: "block" }}
-        />
-      </Link>
     </main>
   );
 }
