@@ -18,7 +18,7 @@ interface Props {
 
 export function ProjectCard({ title, description, tags, link }: Props) {
   return (
-    <Card className="group relative flex flex-col overflow-hidden border border-border p-3 transition-all duration-300">
+    <Card className="group border-border relative flex flex-col overflow-hidden border p-3 ring-2 ring-transparent transition-all duration-300 hover:border-orange-500 hover:ring-orange-500/30">
       <CardHeader className="">
         <div className="space-y-1">
           <CardTitle className="text-base">
@@ -64,13 +64,13 @@ export function ProjectCard({ title, description, tags, link }: Props) {
         </div>
       </CardContent>
       {link && (
-        <div className="absolute right-2 top-2 rounded-md p-2 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+        <div className="absolute top-2 right-2 rounded-md p-2 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
           <Link
             href={link}
             target="_blank"
-            className="transition hover:bg-muted"
+            className="hover:bg-muted transition"
           >
-            <LucideSquareArrowOutUpRight className="size-3.5 text-muted-foreground" />
+            <LucideSquareArrowOutUpRight className="text-muted-foreground size-3.5" />
           </Link>
         </div>
       )}

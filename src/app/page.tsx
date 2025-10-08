@@ -238,7 +238,11 @@ export default function Page() {
             <div className="flex flex-wrap gap-1">
               {RESUME_DATA.skills.map((skill) => {
                 return (
-                  <Badge variant="outline" key={skill.title}>
+                  <Badge
+                    variant="outline"
+                    key={skill.title}
+                    className="hover:text-accent-foreground px-2 py-1 hover:border-orange-500 hover:bg-orange-50"
+                  >
                     <Link
                       href={skill.link ?? "#"}
                       key={skill.title}
@@ -263,7 +267,7 @@ export default function Page() {
         <BlurFade delay={(sectionDelay += 0.25)}>
           <Section className="print-force-new-page scroll-mb-16">
             <h2 className="text-xl font-bold">Works</h2>
-            <div className="-mx-3 grid grid-cols-1 gap-3 md:grid-cols-2 lg:grid-cols-3 print:grid-cols-3 print:gap-2">
+            <div className="grid grid-cols-1 gap-3 md:grid-cols-2 lg:grid-cols-3 print:grid-cols-3 print:gap-2">
               {RESUME_DATA.projects.map((project) => {
                 return (
                   <ProjectCard

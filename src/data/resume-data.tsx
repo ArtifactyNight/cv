@@ -5,185 +5,170 @@ import { ResumeData, SkillItem } from "../types/resume";
 const skillsData: SkillItem[] = [
   // Cloud & Infrastructure
   {
-    icon: "/svgs/aws_light.svg",
+    icon: "https://svgl.app/library/aws_light.svg",
     title: "AWS",
     link: "https://aws.amazon.com/",
   },
   {
-    icon: "/svgs/kubernetes.svg",
+    icon: "https://svgl.app/library/kubernetes.svg",
     title: "Kubernetes",
     link: "https://kubernetes.io/",
   },
   {
-    icon: "/svgs/docker.svg",
+    icon: "https://svgl.app/library/docker.svg",
     title: "Docker",
     link: "https://www.docker.com/",
   },
   {
-    icon: "/svgs/pm2.svg",
+    icon: "https://svgl.app/library/pm2.svg",
     title: "PM2",
     link: "https://pm2.keymetrics.io/",
   },
 
   // Languages & Runtimes
   {
-    icon: "/svgs/bun.svg",
+    icon: "https://svgl.app/library/bun.svg",
     title: "Bun",
     link: "https://bun.sh/",
   },
   {
-    icon: "/svgs/golang.svg",
+    icon: "https://svgl.app/library/golang.svg",
     title: "Golang",
     link: "https://golang.org/",
   },
   {
-    icon: "/svgs/typescript.svg",
+    icon: "https://svgl.app/library/typescript.svg",
     title: "TypeScript",
     link: "https://www.typescriptlang.org/",
   },
 
   // Backend Frameworks
   {
-    icon: "/svgs/elysiajs.svg",
+    icon: "https://svgl.app/library/elysiajs.svg",
     title: "Elysia.js",
     link: "https://elysiajs.com/",
   },
   {
-    icon: "/svgs/expressjs.svg",
+    icon: "https://svgl.app/library/expressjs.svg",
     title: "Express",
     link: "https://expressjs.com/",
   },
   {
-    icon: "/svgs/hono.svg",
+    icon: "https://svgl.app/library/hono.svg",
     title: "Hono",
     link: "https://hono.dev/",
   },
   {
-    icon: "/svgs/nestjs.svg",
+    icon: "https://svgl.app/library/nestjs.svg",
     title: "NestJS",
     link: "https://nestjs.com/",
   },
   {
-    icon: "/svgs/trpc.svg",
+    icon: "https://svgl.app/library/trpc.svg",
     title: "tRPC",
     link: "https://trpc.io/",
   },
 
   // Frontend Frameworks & Libraries
   {
-    icon: "/svgs/nextjs_icon_dark.svg",
+    icon: "https://svgl.app/library/nextjs_icon_dark.svg",
     title: "Next.js",
     link: "https://nextjs.org/",
   },
   {
-    icon: "/svgs/nuxt.svg",
+    icon: "https://svgl.app/library/nuxt.svg",
     title: "Nuxt 3",
     link: "https://nuxt.com/",
   },
   {
-    icon: "/svgs/react.svg",
+    icon: "https://svgl.app/library/react_light.svg",
     title: "React",
     link: "https://react.dev/",
   },
   {
-    icon: "/svgs/svelte.svg",
+    icon: "https://svgl.app/library/svelte.svg",
     title: "SvelteKit",
     link: "https://svelte.dev/",
   },
   {
-    icon: "/svgs/vue.svg",
+    icon: "https://svgl.app/library/vue.svg",
     title: "Vue",
     link: "https://vuejs.org/",
   },
 
   // UI Libraries & Tools
   {
-    icon: "/svgs/figma.svg",
+    icon: "https://svgl.app/library/figma.svg",
     title: "Figma",
     link: "https://www.figma.com/",
   },
   {
-    icon: "/svgs/materialui.svg",
+    icon: "https://svgl.app/library/tailwindcss.svg",
+    title: "TailwindCSS",
+    link: "https://tailwindcss.com/",
+  },
+  {
+    icon: "https://svgl.app/library/sass.svg",
+    title: "SCSS",
+    link: "https://tailwindcss.com/",
+  },
+  {
+    icon: "https://svgl.app/library/materialui.svg",
     title: "Material UI",
     link: "https://mui.com/",
   },
   {
-    icon: "/svgs/shadcn-ui.svg",
+    icon: "https://svgl.app/library/shadcn-ui.svg",
     title: "shadcn/ui",
     link: "https://ui.shadcn.com/",
-  },
-  {
-    icon: "/svgs/tailwindcss.svg",
-    title: "TailwindCSS",
-    link: "https://tailwindcss.com/",
   },
 
   // State Management & Data Fetching
   {
-    icon: "/svgs/react-query.svg",
-    title: "Tanstack Query",
-    link: "https://tanstack.com/query/latest",
-  },
-  {
-    icon: "/svgs/redux.svg",
-    title: "Redux Toolkit",
-    link: "https://redux-toolkit.js.org/",
+    icon: "https://svgl.app/library/tanstack.svg",
+    title: "Tanstack",
+    link: "https://tanstack.com/",
   },
 
   // Databases & ORMs
   {
-    icon: "/svgs/drizzle-orm_light.svg",
+    icon: "https://svgl.app/library/drizzle-orm_light.svg",
     title: "DrizzleORM",
     link: "https://orm.drizzle.team/",
   },
   {
-    icon: "/svgs/mysql.svg",
-    title: "MySQL",
-    link: "https://www.mysql.com/",
-  },
-  {
-    icon: "/svgs/postgresql.svg",
-    title: "Postgresql",
-    link: "https://www.postgresql.org/",
-  },
-  {
-    icon: "/svgs/prisma.svg",
+    icon: "https://svgl.app/library/prisma.svg",
     title: "Prisma",
     link: "https://www.prisma.io/",
   },
   {
-    icon: "/svgs/redis.svg",
+    icon: "https://svgl.app/library/mysql.svg",
+    title: "MySQL",
+    link: "https://www.mysql.com/",
+  },
+  {
+    icon: "https://svgl.app/library/postgresql.svg",
+    title: "Postgresql",
+    link: "https://www.postgresql.org/",
+  },
+
+  {
+    icon: "https://svgl.app/library/redis.svg",
     title: "Redis",
     link: "https://redis.io/",
   },
 
-  // Backend as a Service & CMS
   {
-    icon: "/svgs/directus.svg",
-    title: "Directus",
-    link: "https://directus.io/",
-  },
-  {
-    icon: "/svgs/strapi.svg",
-    title: "Strapi",
-    link: "https://strapi.io/",
-  },
-  {
-    icon: "/svgs/supabase.svg",
+    icon: "https://svgl.app/library/supabase.svg",
     title: "Supabase",
     link: "https://supabase.com/",
   },
 
   // Development Tools
   {
-    icon: "/svgs/turborepo.svg",
+    icon: "https://svgl.app/library/turborepo.svg",
     title: "Turborepo",
     link: "https://turborepo.org/",
-  },
-  {
-    icon: "/svgs/zod.svg",
-    title: "Zod",
-    link: "https://zod.dev/",
   },
 ];
 
@@ -209,7 +194,7 @@ const softSkillsData: SkillItem[] = [
 ];
 
 export const RESUME_DATA: ResumeData = {
-  name: "Kritsanaphon (Night) Kaewpha",
+  name: "Kidsanaphon (Night) Kaeopha",
   initials: "Mr",
   location: "Nakhon Ratchasima, Thailand",
   locationLink: "https://www.google.com/maps/place/Nakhonratchasima",
