@@ -260,20 +260,7 @@ export const RESUME_DATA: ResumeData = {
       description: [
         "Led development of client projects using Next.js, React and Node.js",
         "Built responsive designs and E2E APIs",
-        "Maintained and updated existing systems",
-      ],
-    },
-    {
-      company: "Fastwork",
-      link: "https://fastwork.co/user/nightkungz",
-      badges: [],
-      title: "Fullstack Developer",
-      start: "2024",
-      end: "Now",
-      description: [
-        "Provide freelance full-stack development services",
-        "Maintain 5-star rating with 100% client satisfaction",
-        "Handle projects from design to deployment",
+        "Maintained and updated existing projects",
       ],
     },
   ],
@@ -302,19 +289,8 @@ export const RESUME_DATA: ResumeData = {
       description: "A comission portfolio website.",
     },
     {
-      title: "Botfin",
-      techStack: ["Next.js", "TailwindCSS", "Prisma", "Postgresql", "Redis"],
-      description: "A platform to manage or automation Forex bot.",
-    },
-    {
       title: "Overmine",
-      techStack: [
-        "Next.js",
-        "TailwindCSS",
-        "DrizzleORM",
-        "MySql",
-        "Postgresql",
-      ],
+      techStack: ["Next.js", "TailwindCSS", "DrizzleORM", "MySQL"],
       description: "Hand-crafted Minecraft server webstore.",
       link: {
         label: "Overmine",
