@@ -163,13 +163,6 @@ const skillsData: SkillItem[] = [
     title: "Supabase",
     link: "https://supabase.com/",
   },
-
-  // Development Tools
-  {
-    icon: "https://svgl.app/library/turborepo.svg",
-    title: "Turborepo",
-    link: "https://turborepo.org/",
-  },
 ];
 
 const softSkillsData: SkillItem[] = [
