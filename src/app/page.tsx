@@ -218,7 +218,7 @@ export default function Page() {
             })}
           </Section>
         </BlurFade>
-        <BlurFade delay={(sectionDelay += 0.15)}>
+        {/* <BlurFade delay={(sectionDelay += 0.15)}>
           <Section>
             <h2 className="text-xl font-bold">Education</h2>
             {RESUME_DATA.education.map((education) => {
@@ -239,7 +239,7 @@ export default function Page() {
               );
             })}
           </Section>
-        </BlurFade>
+        </BlurFade> */}
         <BlurFade delay={(sectionDelay += 0.2)}>
           <Section>
             <h2 className="text-xl font-bold">Skills</h2>

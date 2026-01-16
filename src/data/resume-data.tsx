@@ -142,7 +142,7 @@ const skillsData: SkillItem[] = [
     link: "https://www.prisma.io/",
   },
   {
-    icon: "https://svgl.app/library/mysql.svg",
+    icon: "https://svgl.app/library/mysql-icon-light.svg",
     title: "MySQL",
     link: "https://www.mysql.com/",
   },
