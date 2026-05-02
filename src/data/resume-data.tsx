@@ -163,6 +163,18 @@ const skillsData: SkillItem[] = [
     title: "Supabase",
     link: "https://supabase.com/",
   },
+
+  // Automation
+  {
+    icon: "https://svgl.app/library/n8n.svg",
+    title: "n8n",
+    link: "https://n8n.io/",
+  },
+  {
+    icon: "https://svgl.app/library/openclaw.svg",
+    title: "OpenClaw",
+    link: "https://openclaw.ai/",
+  },
 ];
 
 const softSkillsData: SkillItem[] = [
@@ -247,7 +259,7 @@ export const RESUME_DATA: ResumeData = {
       description: [
         "Developed low-code solutions using Appsmith and Supabase",
         "Collaborated with team to deliver internal tools efficiently",
-        "Integrated APIs and automated workflows for business processes",
+        "Integrated APIs and automated workflows using n8n for internal processes",
       ],
     },
     {
@@ -258,7 +270,7 @@ export const RESUME_DATA: ResumeData = {
       start: "2023",
       end: "Now",
       description: [
-        "Led development of client projects using Next.js, React and Node.js",
+        "Led development of client projects using Next.js and Elysia.js",
         "Built responsive designs and E2E APIs",
         "Maintained and updated existing projects",
       ],
@@ -290,11 +302,20 @@ export const RESUME_DATA: ResumeData = {
     },
     {
       title: "Overmine",
-      techStack: ["Next.js", "TailwindCSS", "DrizzleORM", "MySQL"],
+      techStack: ["Next.js", "shadcn/ui", "DrizzleORM", "MySQL"],
       description: "Hand-crafted Minecraft server webstore.",
       link: {
         label: "Overmine",
         href: "https://store.overmine.online",
+      },
+    },
+    {
+      title: "Ironshop",
+      techStack: ["Next.js", "shadcn/ui", "Prisma", "oRPC"],
+      description: "A bigger platform to sell game account.",
+      link: {
+        label: "Ironshop",
+        href: "https://ironshop.shop/",
       },
     },
   ],

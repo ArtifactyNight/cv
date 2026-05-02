@@ -105,28 +105,25 @@ export default function Page() {
               <DiscordStatus /> */}
               </div>
               <div className="text-muted-foreground flex gap-x-1 pt-1 text-sm print:hidden">
-                {RESUME_DATA.contact.email ? (
-                  <Button
-                    className="size-8"
-                    variant="outline"
-                    size="icon"
-                    asChild
-                  >
-                    <Link href={`mailto:${RESUME_DATA.contact.email}`}>
-                      <RiMailFill className="size-4" />
-                    </Link>
-                  </Button>
-                ) : null}
-                {RESUME_DATA.contact.social.map((social) => (
-                  <Button
-                    key={social.name}
-                    className="size-8"
-                    variant="outline"
-                    size="icon"
-                    asChild
-                  >
-                    <Link href={social.url} target="_blank">
-                      {typeof social.icon === "string" ? (
+                {[
+                  ...(RESUME_DATA.contact.email
+                    ? [
+                        {
+                          key: "contact-email",
+                          href: `mailto:${RESUME_DATA.contact.email}`,
+                          external: false,
+                          label: "Email",
+                          icon: <RiMailFill className="size-4" />,
+                        },
+                      ]
+                    : []),
+                  ...RESUME_DATA.contact.social.map((social) => ({
+                    key: `contact-social-${social.name}`,
+                    href: social.url,
+                    external: true,
+                    label: social.name,
+                    icon:
+                      typeof social.icon === "string" ? (
                         <img
                           src={social.icon}
                           alt={social.name}
@@ -134,7 +131,27 @@ export default function Page() {
                         />
                       ) : (
                         <social.icon className="size-4" />
-                      )}
+                      ),
+                  })),
+                ].map(({ key, href, external, label, icon }) => (
+                  <Button
+                    key={key}
+                    className="size-8"
+                    variant="outline"
+                    size="icon"
+                    asChild
+                  >
+                    <Link
+                      href={href}
+                      aria-label={label}
+                      {...(external
+                        ? ({
+                            target: "_blank",
+                            rel: "noopener noreferrer",
+                          } as const)
+                        : {})}
+                    >
+                      {icon}
                     </Link>
                   </Button>
                 ))}
