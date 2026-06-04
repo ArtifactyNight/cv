@@ -9,7 +9,6 @@ const navItems = [
   { label: "About", href: "/" },
   { label: "Thoughts", href: "/thoughts" },
   { label: "Playlists", href: "/playlists" },
-  { label: "Contact", href: "/contact" },
 ] as const
 
 function isNavActive(pathname: string, href: string) {

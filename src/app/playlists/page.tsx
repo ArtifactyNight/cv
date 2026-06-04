@@ -3,9 +3,9 @@ import type { Metadata } from "next"
 import { InConstructionPage } from "@/components/in-construction-page"
 
 export const metadata: Metadata = {
-  title: "Thoughts",
+  title: "Playlists",
 }
 
-export default function ThoughtsPage() {
+export default function PlaylistsPage() {
   return <InConstructionPage />
 }

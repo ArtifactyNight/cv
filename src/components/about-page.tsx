@@ -167,10 +167,6 @@ export function AboutPage() {
                   key={`${item.period}-${item.company}-${item.role}`}
                   className="relative"
                 >
-                  <span
-                    aria-hidden
-                    className="absolute top-1.5 -left-px size-2 -translate-x-1/2 rounded-full border border-border bg-background"
-                  />
                   <div className="flex flex-col gap-1.5">
                     <p className="font-mono text-xs leading-none text-muted-foreground tabular-nums">
                       {item.period}
@@ -183,7 +179,9 @@ export function AboutPage() {
                       </span>
                     </p>
                     {hasText(item.detail) ? (
-                      <ProseText className={proseDetail}>{item.detail}</ProseText>
+                      <ProseText className={proseDetail}>
+                        {item.detail}
+                      </ProseText>
                     ) : null}
                   </div>
                 </li>

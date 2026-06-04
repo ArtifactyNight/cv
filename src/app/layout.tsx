@@ -46,7 +46,9 @@ export default function RootLayout({
           <ThemeProvider>
             <div className="grid h-dvh md:grid-cols-[3fr_7fr]">
               <SiteNav />
-              <main className="min-h-0 overflow-y-auto">{children}</main>
+              <main className="flex min-h-0 flex-col overflow-y-auto">
+                {children}
+              </main>
             </div>
             <GooeyToaster position="bottom-center" />
           </ThemeProvider>
