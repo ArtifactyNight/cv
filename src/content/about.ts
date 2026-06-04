@@ -19,47 +19,92 @@ export type AboutProject = {
  * Photo: place an image in `public/` (e.g. `public/profile.jpg`) and set
  * `image` to `"/profile.jpg"`.
  */
-export const aboutContent = {
+export type AboutContent = {
+  name: string
+  title: string
+  location: string
+  now: string
+  availability: string | null
+  image: string | null
+  links: {
+    email: string
+    github: string
+    linkedin: string
+  }
+  experience: AboutExperience[]
+  projects: AboutProject[]
+  stack: string[]
+}
+
+export const aboutContent: AboutContent = {
   name: "Kidsanaphon Kaeopha",
   title: "Fullstack Developer",
   location: "Bangkok, Thailand",
 
-  /** One sentence on what you are focused on right now. */
-  now: "",
+  now: "Building product-facing web apps with TypeScript, React, and Next.js. Most of my time goes to UI polish, API design, and shipping small features end to end.",
 
-  /** e.g. "Open to full-time roles" — shown under the hero when set. */
-  availability: "",
+  availability: null,
 
-  /** Path under `public/`, or null to hide the photo. */
-  image: null as string | null,
+  image: null,
 
   links: {
-    email: "",
-    github: "",
-    linkedin: "",
+    email: "hello@kidsanaphon.dev",
+    github: "https://github.com/kidsanaphon",
+    linkedin: "https://www.linkedin.com/in/kidsanaphon",
   },
 
   experience: [
-    // {
-    //   period: "2024 – Present",
-    //   role: "Fullstack Developer",
-    //   company: "Company name",
-    //   detail: "What you built or owned, in one line.",
-    // },
-  ] satisfies AboutExperience[],
+    {
+      period: "2023 – Present",
+      role: "Fullstack Developer",
+      company: "Northline Studio",
+      detail:
+        "Owns the customer dashboard: React front end, Node APIs, and Postgres. Cut time-to-ship for internal tools by standardizing on a shared component kit.",
+    },
+    {
+      period: "2021 – 2023",
+      role: "Frontend Engineer",
+      company: "Wavepay",
+      detail:
+        "Shipped the merchant onboarding flow and design-system primitives used across three product surfaces.",
+    },
+    {
+      period: "2019 – 2021",
+      role: "Software Engineer",
+      company: "Bangkok Digital Labs",
+      detail:
+        "Maintained legacy PHP services while migrating checkout to a Next.js + headless CMS stack.",
+    },
+  ],
 
   projects: [
-    // {
-    //   title: "Project name",
-    //   href: "https://github.com/you/project",
-    //   description: "One line on what it is and your role.",
-    // },
-  ] satisfies AboutProject[],
+    {
+      title: "cv",
+      href: "https://github.com/kidsanaphon/cv",
+      description:
+        "This site: Next.js App Router, Tailwind v4, typed content, and route transitions with GSAP.",
+    },
+    {
+      title: "Shelfmark",
+      href: "https://github.com/kidsanaphon/shelfmark",
+      description:
+        "Personal reading tracker with full-text search and OPDS export. Go API, SQLite, and a minimal React UI.",
+    },
+    {
+      title: "shiftboard",
+      href: "https://github.com/kidsanaphon/shiftboard",
+      description:
+        "Team shift planner with drag-and-drop scheduling and Slack reminders for open slots.",
+    },
+  ],
 
-  /** Tools you want recruiters to see first. Rendered as a single mono line. */
   stack: [
-    // "TypeScript",
-    // "React",
-    // "Next.js",
-  ] satisfies string[],
-} as const
+    "TypeScript",
+    "React",
+    "Next.js",
+    "Node.js",
+    "PostgreSQL",
+    "Tailwind CSS",
+    "Docker",
+  ],
+}

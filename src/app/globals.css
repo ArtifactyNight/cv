@@ -78,7 +78,7 @@
     --sidebar-accent-foreground: oklch(0.228 0.013 107.4);
     --sidebar-border: oklch(0.93 0.007 106.5);
     --sidebar-ring: oklch(0.737 0.021 106.9);
-    --background: oklch(1 0 0);
+    --background: #F5F5F5;
     --foreground: oklch(0.153 0.006 107.1);
 }
 
@@ -124,7 +124,7 @@
     @apply bg-background text-foreground;
     }
   html {
-    @apply font-serif;
+    @apply font-sans;
     }
   button:not(:disabled), [role="button"]:not(:disabled) {
     cursor: pointer;

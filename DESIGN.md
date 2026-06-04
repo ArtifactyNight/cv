@@ -1,6 +1,6 @@
 ---
 name: Kidsanaphon Kaeopha
-description: Personal engineering portfolio — recruiter scan path, craft in the details.
+description: Minimal engineering portfolio — serif headings, sans body, recruiter-first scan.
 colors:
   paper: "oklch(1 0 0)"
   ink: "oklch(0.153 0.006 107.1)"
@@ -11,31 +11,25 @@ colors:
   focus: "oklch(0.737 0.021 106.9)"
   alert: "oklch(0.577 0.245 27.325)"
 typography:
-  display:
+  heading:
     fontFamily: "var(--font-serif), Roboto Slab, Georgia, serif"
     fontSize: "clamp(1.75rem, 4vw, 2.5rem)"
     fontWeight: 700
     lineHeight: 1.15
     letterSpacing: "-0.02em"
-  headline:
+  section:
     fontFamily: "var(--font-serif), Roboto Slab, Georgia, serif"
-    fontSize: "1.5rem"
+    fontSize: "1rem"
     fontWeight: 600
     lineHeight: 1.2
-    letterSpacing: "-0.015em"
-  title:
-    fontFamily: "var(--font-sans), Geist, system-ui, sans-serif"
-    fontSize: "1.125rem"
-    fontWeight: 600
-    lineHeight: 1.3
-    letterSpacing: "normal"
+    letterSpacing: "-0.01em"
   body:
     fontFamily: "var(--font-sans), Geist, system-ui, sans-serif"
     fontSize: "1rem"
     fontWeight: 400
     lineHeight: 1.6
     letterSpacing: "normal"
-  label:
+  ui:
     fontFamily: "var(--font-sans), Geist, system-ui, sans-serif"
     fontSize: "0.875rem"
     fontWeight: 500
@@ -43,28 +37,22 @@ typography:
     letterSpacing: "-0.01em"
   mono:
     fontFamily: "var(--font-mono), Geist Mono, ui-monospace, monospace"
-    fontSize: "0.875rem"
+    fontSize: "0.75rem"
     fontWeight: 400
     lineHeight: 1.5
     letterSpacing: "normal"
 rounded:
-  sm: "0.375rem"
-  md: "0.5rem"
-  lg: "0.625rem"
-  xl: "0.875rem"
+  sm: "0.15rem"
+  md: "0.2rem"
+  lg: "0.25rem"
   pill: "2.6rem"
 spacing:
-  page-y: "2rem"
-  section: "1rem"
+  page-y: "2.5rem"
+  section-gap: "3.5rem"
   container-x: "1rem"
-  nav-gap: "2rem"
+  prose: "65ch"
 components:
   button-primary:
-    backgroundColor: "{colors.charcoal}"
-    textColor: "{colors.paper}"
-    rounded: "{rounded.pill}"
-    padding: "0.5rem 0.75rem"
-  button-primary-hover:
     backgroundColor: "{colors.charcoal}"
     textColor: "{colors.paper}"
     rounded: "{rounded.pill}"
@@ -75,11 +63,15 @@ components:
     rounded: "{rounded.pill}"
     padding: "0.5rem 0.75rem"
   nav-link:
-    typography: "{typography.label}"
+    typography: "{typography.ui}"
     textColor: "{colors.whisper}"
     padding: "0 0"
   nav-link-active:
-    typography: "{typography.label}"
+    typography: "{typography.ui}"
+    textColor: "{colors.ink}"
+    padding: "0 0"
+  section-heading:
+    typography: "{typography.section}"
     textColor: "{colors.ink}"
     padding: "0 0"
 ---
@@ -88,143 +80,137 @@ components:
 
 ## Overview
 
-**Creative North Star: "The Workbench Proof"**
+**Creative North Star: "Less, Pairing"**
 
-This system treats the site as a working surface, not a marketing funnel. Recruiters should read role, location, and credibility in seconds; everything else supports that scan without decorative chrome. Playfulness lives in intentional details (route motion, tabular nav indices, touch-target craft), not in section templates or hero widgets.
+The site says only what hiring needs: who you are, what you do, how to reach you. Less is more: every extra border, badge, card, or animation must earn its place or it goes. Visual interest comes from a single disciplined move, **serif for headings, sans for everything else**, not from decoration.
 
-The palette is deliberately restrained: ink on paper with olive-tinted neutrals from the shadcn olive base. Craft is proven through typography discipline, contrast, responsive behavior, and interaction polish. The system rejects SaaS landing grammar, generic AI portfolio tells, and resume-as-PDF density.
+Roboto Slab carries identity on `h1` and `h2`. Geist carries body copy, navigation, metadata, and UI. Geist Mono appears only for dates and stack lines. Color stays ink-on-paper (olive-tinted neutrals); motion stays a short route crossfade. The About page (`about-page.tsx`) is the reference layout: open sections, `max-w-prose` text, timeline with a hairline border, project list with dividers only.
 
 **Key Characteristics:**
 
-- Recruiter-first hierarchy: name and reachability before personality routes
-- Ink-on-paper neutrals with whisper for secondary copy only when contrast holds
-- Serif display (Roboto Slab) over sans body (Geist); mono for code or metadata when needed
-- Flat surfaces at rest; hover/focus lift reserved for interactive elements
-- Sharp minimal components: links carry navigation; buttons stay rare and purposeful
-- Route transitions (GSAP) as the primary motion signature, not section stagger reflexes
+- Minimal surface area: type and spacing do the work; no card grids or hero widgets
+- **Serif headings / sans body** as the non-negotiable pairing axis
+- True white paper, ink body text, whisper only for short secondary lines
+- Small base radius (`0.25rem`); pills reserved for primary buttons
+- Generous vertical rhythm (`space-y-14` between sections on About)
+- GSAP route transition as the one motion signature; reduced-motion fallback required
 
 ## Colors
 
-A restrained ink-on-paper system: true white ground, near-black olive ink, whisper for secondary labels when legible.
+Restrained ink-on-paper. One accent family (charcoal/ink), no decorative second hue.
 
 ### Primary
 
-- **Charcoal** (oklch(0.228 0.013 107.4)): Primary actions, emphasis fills, dark-mode inverted surfaces. The committed interactive ink, not a marketing accent flood.
+- **Charcoal** (oklch(0.228 0.013 107.4)): Primary button fill, emphasis in dark mode.
 
 ### Neutral
 
-- **Paper** (oklch(1 0 0)): Page background in light mode. True white at chroma 0; warmth comes from typography and copy, not cream-tinted body fill.
-- **Ink** (oklch(0.153 0.006 107.1)): Body and navigation active text. Default reading color on paper.
-- **Whisper** (oklch(0.58 0.031 107.3)): Muted labels, inactive nav, metadata (location line, 404 sublabel). Never for long body paragraphs without contrast check.
-- **Mist** (oklch(0.966 0.005 106.5)): Secondary fills, hover washes on ghost controls.
-- **Line** (oklch(0.93 0.007 106.5)): Borders and input strokes in light mode.
+- **Paper** (oklch(1 0 0)): Light-mode background. Chroma 0 white, not cream.
+- **Ink** (oklch(0.153 0.006 107.1)): Body copy, active nav, timeline role lines.
+- **Whisper** (oklch(0.58 0.031 107.3)): Location, inactive nav, company suffix in timeline, period labels when paired with mono.
+- **Mist** (oklch(0.966 0.005 106.5)): Photo placeholder, subtle fills.
+- **Line** (oklch(0.93 0.007 106.5)): Timeline axis, list dividers, outlines.
 
 ### Tertiary
 
-- **Alert** (oklch(0.577 0.245 27.325)): Destructive actions and validation only. Rare on a portfolio surface.
+- **Alert** (oklch(0.577 0.245 27.325)): Errors/destructive only.
 
 ### Named Rules
 
-**The Paper Rule.** Light-mode body background stays true white (chroma 0). No cream, sand, parchment, or warm near-white fills.
+**The Paper Rule.** Body background stays true white in light mode.
 
-**The Whisper Rule.** Muted foreground is for short secondary lines (nav inactive, captions, tabular indices). Body copy stays ink unless a contrast audit passes at 4.5:1.
+**The Less Color Rule.** If a new color does not improve scan or affordance, do not add it.
 
-**The One Ink Rule.** Charcoal and ink carry hierarchy; no second saturated accent color until a deliberate brand moment earns it.
+**The Whisper Rule.** Muted text is for labels and metadata, never multi-sentence body paragraphs.
 
 ## Typography
 
-**Display Font:** Roboto Slab (Georgia, serif fallback) via `--font-serif`
+**Heading Font (serif):** Roboto Slab via `--font-serif` / `font-serif`
 
-**Body Font:** Geist (system-ui, sans-serif fallback) via `--font-sans`
+**Body Font (sans):** Geist via `--font-sans` / `font-sans` on `<html>` in `layout.tsx`
 
-**Label/Mono Font:** Geist for labels; Geist Mono for code or fixed-width metadata
+**Mono Font:** Geist Mono for periods and stack only
 
-**Character:** Serif gives name and section titles a human, crafted weight; sans keeps UI and supporting copy fast to scan. Pairing follows a contrast axis (slab serif + geometric sans), not two competing sans families.
+**Character:** Minimal pairing with contrast on the axis: slab serif names the structure; geometric sans reads fast for everything operational. Do not add a third sans or a second serif.
 
 ### Hierarchy
 
-- **Display** (700, clamp(1.75rem, 4vw, 2.5rem), 1.15): Page title and primary identity (name on About). Use `text-wrap: balance` on h1–h3.
-- **Headline** (600, 1.5rem, 1.2): Section titles on inner routes.
-- **Title** (600, 1.125rem, 1.3): Subsections, card-less group labels.
-- **Body** (400, 1rem, 1.6): Prose and descriptions; cap measure at 65–75ch inside `Container` (max-width 56rem / 4xl).
-- **Label** (500, 0.875rem, -0.01em tracking): Navigation links, buttons, short UI labels. Tabular nums for ordered nav indices (`01`, `02`).
-- **Mono** (400, 0.875rem): Code snippets, technical metadata when distinct from label style.
+- **Heading / h1** (serif, 700, clamp(1.75rem, 4vw, 2.5rem), 1.15, -0.02em): Person name and page identity. `text-balance`.
+- **Section / h2** (serif, 600, 1rem, 1.2, -0.01em): `Now`, `Experience`, `Selected work`, `Stack`. Same family as h1, smaller step.
+- **Role line** (sans, 600, 1.125rem): Job title under the name; not a heading level, stays sans for scan speed.
+- **Body** (sans, 400, 1rem, 1.6): Paragraphs inside `max-w-prose`. `text-pretty` on long copy.
+- **UI** (sans, 500, 0.875rem): Nav, buttons, inline links, availability line.
+- **Mono** (mono, 400, 0.75rem): Timeline periods, stack `·` line.
 
 ### Named Rules
 
-**The Slab Name Rule.** The person's name and primary route headings use display serif; everything operational stays sans.
+**The Pairing Rule.** Serif is only for `h1` and `h2`. Sans is mandatory for body, nav, buttons, role line, project titles, and timeline role text. Mono is only for dates and stack.
 
-**The Flat Scale Rule.** Maintain ≥1.25 ratio between type steps; avoid stacking similar sizes (e.g. text-lg beside text-xl with no weight change).
+**The Less Type Rule.** Use at most five distinct size/weight combos on a page. If a sixth is needed, remove something first.
+
+**The Flat Scale Rule.** ≥1.25 ratio between heading and body steps; no adjacent sizes without weight change.
 
 ## Elevation
 
-Flat at rest. Depth is tonal: paper, mist, and line separate layers before any shadow appears. On hover or focus, interactive elements may gain a subtle lift (translate, ring, or light shadow) as feedback, not as default decoration.
+No shadows on static content. Depth is a 1px line (`border-border`) on the experience timeline and `divide-y` between projects. Buttons may use focus ring and 1px press (`translate-y-px`).
 
 ### Shadow Vocabulary
 
-- **Focus ring** (`ring-3 ring-ring/30` on buttons): Structural focus for keyboard users; tied to `{colors.focus}`.
-- **Hover lift** (`active:translate-y-px` on buttons): Tactile press feedback only on pressable controls, not static text blocks.
+- **Focus ring** (`ring-3 ring-ring/30`): Keyboard focus on interactive controls only.
 
 ### Named Rules
 
-**The Flat-By-Default Rule.** No ambient card shadows on static content. Cards are not the default layout affordance.
+**The Flat Page Rule.** Pages are paper plus type. No cards, no panels, no glass.
 
-**The Hover-Only Lift Rule.** Elevation motion appears on interactive elements in response to state, never on passive paragraphs or section wrappers.
+**The Line-Only Rule.** Separators are full-width hairlines or a single timeline border, never colored side stripes.
 
 ## Components
 
-Sharp and minimal: navigation is typographic; buttons appear for actions (404 return, future contact CTAs). Pill radius on buttons (`rounded-4xl`, ~2.6rem) contrasts with tighter layout chrome.
-
 ### Buttons
 
-- **Shape:** Full pill (rounded-4xl, base radius token 0.625rem on smaller controls)
-- **Primary:** Charcoal fill, paper text, h-9 default, text-sm font-medium
-- **Outline:** Paper fill, line border, ink text; used for secondary actions (e.g. Back Home)
-- **Hover / Focus:** Primary hovers to 80% opacity; focus-visible uses ring on border color; active translates 1px on press
-- **Ghost / Destructive:** Available in library; use sparingly on portfolio surfaces
+- **Shape:** Pill (`rounded-4xl`) for primary CTA only
+- **Primary:** Charcoal on paper; label sans, verb + object (`Get in touch`)
+- **Outline:** Paper fill, line border; 404 and secondary actions
+- **Use sparingly:** One primary CTA per viewport when possible
 
 ### Navigation
 
-- **Style:** Centered horizontal nav inside `Container`, no background bar
-- **Typography:** Label scale, medium weight, tight tracking; tabular-nums prefix for index (`01`–`04`) only where order is meaningful sitewide
-- **Default:** Whisper text; **Active:** Ink text; hover shifts whisper toward ink
-- **Touch:** `hit-area-8` utility expands tap targets without visual padding bloat
-- **Mobile:** `flex-wrap` with gap-x-8 gap-y-2; stays readable without hamburger until content demands it
+- **Style:** Centered text links in `Container`; no bar, no icons
+- **Typography:** Sans UI scale; tabular `01`–`04` prefixes sitewide
+- **States:** Whisper default, ink active, hover toward ink
+- **Touch:** `hit-area-8` on links
+
+### About page patterns (shipped)
+
+- **Hero:** Optional photo (`rounded-lg`, `size-28`/`32`), serif name, sans role + location, CTA row
+- **Sections:** `space-y-14 sm:space-y-16` between blocks; `max-w-prose` on prose
+- **Timeline:** `border-l` + dot markers; mono periods, sans role/company, ink detail
+- **Projects:** `divide-y divide-border`; sans title links, sans descriptions
+- **Stack:** Single mono line joined with ` · `
 
 ### Cards / Containers
 
-- **Container:** max-w-4xl (56rem), horizontal padding 1rem; primary content width constraint
-- **Cards:** Not in active use on shipped routes; prefer open layout and type hierarchy
+- **Container:** `max-w-4xl`, `px-4`. No card wrappers.
 
-### Inputs / Fields
+### Route shell
 
-- **Style:** shadcn/base-ui patterns when forms ship; line border, mist hover, ring focus (not yet on primary routes)
-- **Focus:** ring-3 on ring token
-- **Error:** destructive border and ring variants
-
-### Route shell (signature)
-
-- **TransitionRouter + GSAP:** On route change, `main` fades and shifts ±8px over 0.2–0.25s ease. Respect `prefers-reduced-motion` when extending motion (instant or opacity-only fallback required for new animations).
+- **GSAP:** `main` opacity + ±8px over 0.2–0.25s, `power2.out`, skip transform when `prefers-reduced-motion: reduce`
 
 ## Do's and Don'ts
 
-Concrete guardrails aligned with PRODUCT.md anti-references.
-
 ### Do:
 
-- **Do** keep About and Contact hire signals above the fold on their routes: name, role, location, clear next step.
-- **Do** use ink for readable body copy and reserve whisper for short secondary lines with verified contrast.
-- **Do** use serif display for identity headings and sans for UI and supporting text.
-- **Do** expand hit areas on nav links (`hit-area-8`) and show visible focus rings on interactive controls.
-- **Do** treat GSAP route transitions as the primary motion signature; add reduced-motion alternatives for any new animation.
-- **Do** prefer spacing and type rhythm over cards, badges, and decorative wrappers.
+- **Do** pair serif headings with sans body on every page; keep the split obvious.
+- **Do** remove UI before adding UI; default to one column and prose width.
+- **Do** keep hire signal in the first screen: name, role, location, contact path.
+- **Do** use ink for readable paragraphs; whisper for metadata only.
+- **Do** respect reduced motion on route transitions and any new animation.
 
 ### Don't:
 
-- **Don't** use SaaS landing patterns: hero metrics, identical feature card grids, buzzword copy, or gradient accents as decoration.
-- **Don't** ship generic AI portfolio tells: cream or sand body backgrounds, gradient text, uppercase eyebrow on every section, or numbered section markers as default scaffolding across the site.
-- **Don't** dump a PDF resume on the web: dense bullet walls without hierarchy or scan path.
-- **Don't** use border-left or border-right greater than 1px as a colored stripe on lists or callouts.
-- **Don't** apply glassmorphism, gradient text, or identical icon+heading+text card grids.
-- **Don't** gate content visibility on entrance animations; content must be readable if motion is reduced or paused.
-- **Don't** use muted whisper for long paragraphs; bump toward ink when contrast is borderline.
+- **Don't** set body or section titles in serif while headings stay sans (breaks the pairing rule).
+- **Don't** add cards, eyebrows, hero metrics, or gradient decoration.
+- **Don't** use cream/sand backgrounds, gradient text, or numbered section markers as filler.
+- **Don't** dump resume-density bullets; keep timeline entries to one line of detail when possible.
+- **Don't** introduce a second sans family or decorative display face.
+- **Don't** gate content on entrance animations.
