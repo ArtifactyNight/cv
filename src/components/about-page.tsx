@@ -144,34 +144,6 @@ export function AboutPage() {
                   <p className="text-foreground">{availability}</p>
                 ) : null}
               </div>
-
-              {/* <div className="mt-6 flex flex-wrap items-center gap-x-5 gap-y-3 sm:mt-8">
-                <Link
-                  href="/contact"
-                  className={cn(buttonVariants(), linkFocus)}
-                >
-                  Get in touch
-                </Link>
-                {hasLinks ? (
-                  <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-sm">
-                    {hasText(links.email) ? (
-                      <ExternalLink href={`mailto:${links.email}`}>
-                        Send email
-                      </ExternalLink>
-                    ) : null}
-                    {hasText(links.github) ? (
-                      <ExternalLink href={links.github}>
-                        View GitHub profile
-                      </ExternalLink>
-                    ) : null}
-                    {hasText(links.linkedin) ? (
-                      <ExternalLink href={links.linkedin}>
-                        View LinkedIn profile
-                      </ExternalLink>
-                    ) : null}
-                  </div>
-                ) : null}
-              </div> */}
             </div>
           </header>
 

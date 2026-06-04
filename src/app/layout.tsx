@@ -4,7 +4,7 @@ import { ThemeProvider } from "@/components/theme-provider"
 import { cn } from "@/lib/utils"
 
 import { Providers } from "@/components/providers"
-import { SiteHeader } from "@/components/site-header"
+import { SiteNav } from "@/components/site-nav"
 import { GooeyToaster } from "@/components/ui/goey-toaster"
 import "./globals.css"
 
@@ -34,18 +34,20 @@ export default function RootLayout({
       lang="en"
       suppressHydrationWarning
       className={cn(
-        "antialiased",
+        "h-dvh overflow-hidden antialiased",
         fontSans.variable,
         fontMono.variable,
         "font-sans",
         sourceSerif.variable
       )}
     >
-      <body>
+      <body className="h-dvh overflow-hidden">
         <Providers>
           <ThemeProvider>
-            <SiteHeader />
-            <main>{children}</main>
+            <div className="grid h-dvh grid-rows-[auto_1fr] md:grid-cols-[3fr_7fr] md:grid-rows-1">
+              <SiteNav />
+              <main className="min-h-0 overflow-y-auto">{children}</main>
+            </div>
             <GooeyToaster position="bottom-center" />
           </ThemeProvider>
         </Providers>
