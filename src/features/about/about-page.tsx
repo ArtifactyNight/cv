@@ -1,10 +1,10 @@
 import Image from "next/image"
 
-import { aboutContent } from "@/content/about"
 import { cn } from "@/lib/utils"
+import { aboutContent } from "./content"
 
+import { Container } from "@/components/container"
 import { Icon } from "@iconify/react"
-import { Container } from "./container"
 import { ProseText } from "./prose-text"
 import { StackSection } from "./stack-section"
 

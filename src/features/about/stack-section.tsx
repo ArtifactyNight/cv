@@ -1,5 +1,7 @@
-import type { AboutStackCategory, AboutStackItem } from "@/content/about"
+"use client"
+
 import { cn } from "@/lib/utils"
+import type { AboutStackCategory, AboutStackItem } from "./content"
 
 const linkFocus =
   "rounded-sm outline-none focus-visible:ring-3 focus-visible:ring-ring/30"

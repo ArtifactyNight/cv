@@ -1,11 +1,11 @@
 import { Geist, JetBrains_Mono, Source_Serif_4 } from "next/font/google"
 
-import { ThemeProvider } from "@/components/theme-provider"
 import { cn } from "@/lib/utils"
+import { ThemeProvider } from "@/providers/theme-provider"
 
-import { Providers } from "@/components/providers"
 import { SiteNav } from "@/components/site-nav"
 import { GooeyToaster } from "@/components/ui/goey-toaster"
+import { Providers } from "@/providers/providers"
 import "./globals.css"
 
 const sourceSerif = Source_Serif_4({
