@@ -3,6 +3,7 @@ import { Geist, Geist_Mono, Roboto_Slab } from "next/font/google"
 import { ThemeProvider } from "@/components/theme-provider"
 import { cn } from "@/lib/utils"
 
+import { Providers } from "@/components/providers"
 import { SiteHeader } from "@/components/site-header"
 import { GooeyToaster } from "@/components/ui/goey-toaster"
 import "./globals.css"
@@ -37,11 +38,13 @@ export default function RootLayout({
       )}
     >
       <body>
-        <ThemeProvider>
-          <SiteHeader />
-          <main>{children}</main>
-          <GooeyToaster position="bottom-center" />
-        </ThemeProvider>
+        <Providers>
+          <ThemeProvider>
+            <SiteHeader />
+            <main>{children}</main>
+            <GooeyToaster position="bottom-center" />
+          </ThemeProvider>
+        </Providers>
       </body>
     </html>
   )
