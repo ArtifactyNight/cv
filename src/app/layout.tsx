@@ -1,4 +1,4 @@
-import { JetBrains_Mono, Poppins, Source_Serif_4 } from "next/font/google"
+import { Geist, JetBrains_Mono, Source_Serif_4 } from "next/font/google"
 
 import { ThemeProvider } from "@/components/theme-provider"
 import { cn } from "@/lib/utils"
@@ -13,7 +13,7 @@ const sourceSerif = Source_Serif_4({
   variable: "--font-serif",
 })
 
-const fontSans = Poppins({
+const fontSans = Geist({
   subsets: ["latin"],
   variable: "--font-sans",
   weight: ["400", "500", "600", "700"],
@@ -44,7 +44,7 @@ export default function RootLayout({
       <body className="h-dvh overflow-hidden">
         <Providers>
           <ThemeProvider>
-            <div className="grid h-dvh grid-rows-[auto_1fr] md:grid-cols-[3fr_7fr] md:grid-rows-1">
+            <div className="grid h-dvh md:grid-cols-[3fr_7fr]">
               <SiteNav />
               <main className="min-h-0 overflow-y-auto">{children}</main>
             </div>

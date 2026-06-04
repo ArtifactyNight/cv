@@ -1,17 +1,8 @@
 "use client"
 
-import { MenuIcon } from "lucide-react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
-import * as React from "react"
 
-import { Button } from "@/components/ui/button"
-import {
-  Sheet,
-  SheetContent,
-  SheetTitle,
-  SheetTrigger,
-} from "@/components/ui/sheet"
 import { cn } from "@/lib/utils"
 
 const navItems = [
@@ -29,13 +20,7 @@ function isNavActive(pathname: string, href: string) {
 const linkClassName =
   "hit-area-2 inline-flex items-baseline gap-2 rounded-sm text-base font-medium tracking-tight transition-colors outline-none focus-visible:ring-3 focus-visible:ring-ring/30"
 
-function NavLinks({
-  pathname,
-  onNavigate,
-}: {
-  pathname: string
-  onNavigate?: () => void
-}) {
+function NavLinks({ pathname }: { pathname: string }) {
   return (
     <>
       {navItems.map((item, index) => {
@@ -45,7 +30,6 @@ function NavLinks({
           <Link
             key={item.href}
             href={item.href}
-            onClick={onNavigate}
             className={cn(
               linkClassName,
               active
@@ -64,31 +48,9 @@ function NavLinks({
   )
 }
 
-function MobileNav({ pathname }: { pathname: string }) {
-  const [open, setOpen] = React.useState(false)
+export function SiteNav() {
+  const pathname = usePathname()
 
-  return (
-    <div className="flex h-14 shrink-0 items-center border-b border-border px-4 md:hidden">
-      <Sheet open={open} onOpenChange={setOpen}>
-        <SheetTrigger
-          render={
-            <Button variant="outline" size="icon-sm" aria-label="Open menu" />
-          }
-        >
-          <MenuIcon data-icon="inline-start" />
-        </SheetTrigger>
-        <SheetContent side="left" className="bg-muted">
-          <SheetTitle className="sr-only">Main navigation</SheetTitle>
-          <nav aria-label="Main" className="flex flex-col gap-5 px-2 pt-10">
-            <NavLinks pathname={pathname} onNavigate={() => setOpen(false)} />
-          </nav>
-        </SheetContent>
-      </Sheet>
-    </div>
-  )
-}
-
-function DesktopNav({ pathname }: { pathname: string }) {
   return (
     <aside className="hidden min-h-0 flex-col border-r border-border bg-muted md:flex">
       <div className="flex flex-1 flex-col justify-center px-8 py-10 lg:px-12">
@@ -97,16 +59,5 @@ function DesktopNav({ pathname }: { pathname: string }) {
         </nav>
       </div>
     </aside>
-  )
-}
-
-export function SiteNav() {
-  const pathname = usePathname()
-
-  return (
-    <div className="min-h-0 md:contents">
-      <MobileNav pathname={pathname} />
-      <DesktopNav pathname={pathname} />
-    </div>
   )
 }

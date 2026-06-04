@@ -5,6 +5,7 @@ import { cn } from "@/lib/utils"
 
 import { Icon } from "@iconify/react"
 import { Container } from "./container"
+import { StackSection } from "./stack-section"
 
 const proseBody =
   "max-w-prose text-base leading-relaxed text-pretty text-foreground"
@@ -86,6 +87,7 @@ export function AboutPage() {
     hasText(links.email) || hasText(links.github) || hasText(links.linkedin)
 
   const showIntro = hasText(now)
+  const hasStack = stack.some((category) => category.items.length > 0)
 
   return (
     <article
@@ -158,13 +160,8 @@ export function AboutPage() {
           ) : null}
         </div>
 
-        {(experience.length > 0 || projects.length > 0 || stack.length > 0) && (
-          <div
-            className={cn(
-              "mt-[clamp(2.5rem,6vw,4rem)] flex flex-col gap-[clamp(2rem,5vw,3rem)]",
-              showIntro && "sm:mt-[clamp(3rem,7vw,4.5rem)]"
-            )}
-          >
+        {(experience.length > 0 || projects.length > 0 || hasStack) && (
+          <div className={cn("mt-8 flex flex-col gap-[clamp(2rem,5vw,3rem)]")}>
             {experience.length > 0 ? (
               <section
                 aria-labelledby="about-experience"
@@ -227,15 +224,13 @@ export function AboutPage() {
               </section>
             ) : null}
 
-            {stack.length > 0 ? (
+            {hasStack ? (
               <section
                 aria-labelledby="about-stack"
-                className="flex max-w-prose flex-col gap-3"
+                className="flex max-w-3xl flex-col gap-5"
               >
                 <SectionHeading id="about-stack">Stack</SectionHeading>
-                <p className="font-mono text-sm leading-relaxed text-foreground">
-                  {stack.join(" · ")}
-                </p>
+                <StackSection categories={stack} />
               </section>
             ) : null}
           </div>
