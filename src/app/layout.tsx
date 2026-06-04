@@ -1,74 +1,46 @@
-import { Providers } from "@/components/providers";
-import { cn } from "@/lib/utils";
-import { Analytics } from "@vercel/analytics/react";
-import type { Metadata } from "next";
-import { Geist, Source_Serif_4 } from "next/font/google";
-import React from "react";
-import "./globals.css";
+import { Geist, Geist_Mono, Roboto_Slab } from "next/font/google"
 
-export const metadata: Metadata = {
-  title: "Kidsanaphon Kaeopha",
-  description: "a random enthusiastic, perfectionist guy that can code",
-  keywords: [
-    "NightKunGz",
-    "Kidsanaphon Kaeopha",
-    "Developer",
-    "Freelancer",
-    "Student",
-    "Portfolio",
-    "CV",
-  ],
-  authors: [{ name: "Kidsanaphon Kaeopha" }],
-  creator: "Kidsanaphon Kaeopha",
-  openGraph: {
-    title: "Kidsanaphon Kaeopha - cv",
-    description: "Just a Typescript enjoyer guy 😳",
-    type: "website",
-    locale: "en_US",
-    siteName: "Kidsanaphon Kaeopha Portfolio",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Kidsanaphon Kaeopha - cv",
-    description: "Just a Typescript enjoyer guy 😳",
-  },
-  robots: {
-    index: true,
-    follow: true,
-  },
-};
+import { ThemeProvider } from "@/components/theme-provider"
+import { cn } from "@/lib/utils"
 
-const serif = Source_Serif_4({
-  weight: ["200", "300", "400", "500", "600", "700", "800"],
+import { GooeyToaster } from "@/components/ui/goey-toaster"
+import "./globals.css"
+
+const robotoSlab = Roboto_Slab({ subsets: ["latin"], variable: "--font-serif" })
+
+const fontSans = Geist({
   subsets: ["latin"],
-  display: "swap",
-  variable: "--font-serif",
-});
+  variable: "--font-sans",
+})
 
-const sansSerif = Geist({
-  weight: ["100", "200", "300", "400", "500", "600", "700"],
+const fontMono = Geist_Mono({
   subsets: ["latin"],
-  display: "swap",
-  variable: "--font-sans-serif",
-});
+  variable: "--font-mono",
+})
 
 export default function RootLayout({
   children,
-}: {
-  children: React.ReactNode;
-}) {
+}: Readonly<{
+  children: React.ReactNode
+}>) {
   return (
     <html
       lang="en"
-      className={cn(sansSerif.className, sansSerif.variable, serif.variable)}
+      suppressHydrationWarning
+      className={cn(
+        "antialiased",
+        fontSans.variable,
+        fontMono.variable,
+        "font-serif",
+        robotoSlab.variable
+      )}
     >
-      <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-      </head>
       <body>
-        <Providers>{children}</Providers>
-        <Analytics />
+        <ThemeProvider>
+          {children}
+          <GooeyToaster position="bottom-center" />
+        </ThemeProvider>
       </body>
     </html>
-  );
+  )
 }
