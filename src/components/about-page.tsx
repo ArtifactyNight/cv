@@ -5,6 +5,7 @@ import { cn } from "@/lib/utils"
 
 import { Icon } from "@iconify/react"
 import { Container } from "./container"
+import { ProseText } from "./prose-text"
 import { StackSection } from "./stack-section"
 
 const proseBody =
@@ -80,12 +81,14 @@ export function AboutPage() {
     now,
     availability,
     image,
+    sections,
     experience,
     projects,
     stack,
   } = aboutContent
 
   const showIntro = hasText(now)
+  const showProjects = sections.projects && projects.length > 0
   const hasStack = stack.some((category) => category.items.length > 0)
 
   return (
@@ -148,7 +151,7 @@ export function AboutPage() {
             className={cn(sectionBlock, "max-w-prose")}
           >
             <SectionHeading id="about-now">About</SectionHeading>
-            <p className={proseBody}>{now}</p>
+            <ProseText className={proseBody}>{now}</ProseText>
           </section>
         ) : null}
 
@@ -180,7 +183,7 @@ export function AboutPage() {
                       </span>
                     </p>
                     {hasText(item.detail) ? (
-                      <p className={proseDetail}>{item.detail}</p>
+                      <ProseText className={proseDetail}>{item.detail}</ProseText>
                     ) : null}
                   </div>
                 </li>
@@ -189,7 +192,7 @@ export function AboutPage() {
           </section>
         ) : null}
 
-        {projects.length > 0 ? (
+        {showProjects ? (
           <section
             aria-labelledby="about-projects"
             className={cn(sectionBlock, "max-w-prose")}

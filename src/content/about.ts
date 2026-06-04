@@ -64,12 +64,23 @@ export type AboutStackItem = {
  * Edit this file to update the About page. Sections with empty arrays or
  * strings are hidden until you add content.
  *
+ * In `now` and experience `detail`, wrap phrases in `**double asterisks**`
+ * for semibold emphasis on the About page.
+ *
+ * Set `sections.projects` to `true` to show Selected work (still requires
+ * at least one entry in `projects`).
+ *
  * Photo: place an image in `public/` (e.g. `public/profile.jpg`) and set
  * `image` to `"/profile.jpg"`.
  */
 export type AboutStackCategory = {
   label: string
   items: AboutStackItem[]
+}
+
+/** Toggle About page sections without deleting their content. */
+export type AboutSections = {
+  projects: boolean
 }
 
 export type AboutContent = {
@@ -84,6 +95,7 @@ export type AboutContent = {
     github: string
     linkedin: string
   }
+  sections: AboutSections
   experience: AboutExperience[]
   projects: AboutProject[]
   stack: AboutStackCategory[]
@@ -103,39 +115,36 @@ export const aboutContent: AboutContent = {
   title: "Fullstack Developer",
   location: "Bangkok, Thailand",
 
-  now: "Building product-facing web apps with TypeScript, React, and Next.js. Most of my time goes to UI polish, API design, and shipping small features end to end.",
+  now: "Fullstack developer shipping scalable web platforms, from **type-safe APIs** and **payment integrations** to **production AI features**. Recent graduate with production experience shipping scalable web and mobile applications end to end—**secure payment integrations**, type-safe APIs for **500+ daily users**, and **AI-powered features** (chatbots, agent-skill optimization). Focused on **scalable systems**, clean code, and measurable user impact.",
 
   availability: null,
 
   image: null,
 
   links: {
-    email: "hello@kidsanaphon.dev",
-    github: "https://github.com/kidsanaphon",
+    email: "kidsanaphon.ka@gmail.com",
+    github: "https://github.com/ArtifactyNight",
     linkedin: "https://www.linkedin.com/in/kidsanaphon",
+  },
+
+  sections: {
+    projects: false,
   },
 
   experience: [
     {
-      period: "2023 – Present",
+      period: "Sep 2023 – Present",
       role: "Fullstack Developer",
-      company: "Northline Studio",
+      company: "RDCW",
       detail:
-        "Owns the customer dashboard: React front end, Node APIs, and Postgres. Cut time-to-ship for internal tools by standardizing on a shared component kit.",
+        "Delivered and optimized enterprise e-commerce platforms for **100,000+ users** with **secure payments**, scalable architecture for **500+ daily active users**, and **AI-assisted delivery** (Cursor, Claude Code, agent skills, Redis, GitHub Actions).",
     },
     {
-      period: "2021 – 2023",
-      role: "Frontend Engineer",
-      company: "Wavepay",
+      period: "Nov 2025 – Feb 2026",
+      role: "Fullstack Developer Intern",
+      company: "MFEC Public Company Limited",
       detail:
-        "Shipped the merchant onboarding flow and design-system primitives used across three product surfaces.",
-    },
-    {
-      period: "2019 – 2021",
-      role: "Software Engineer",
-      company: "Bangkok Digital Labs",
-      detail:
-        "Maintained legacy PHP services while migrating checkout to a Next.js + headless CMS stack.",
+        "Built an Appsmith self-service **Request VM** platform, a **Nest.js** multi-cloud billing backend (**AWS**, **GCP**, **Huawei**), and **Pentaho ETL** for consolidated usage reporting.",
     },
   ],
 
