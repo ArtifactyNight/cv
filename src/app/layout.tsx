@@ -3,6 +3,7 @@ import { Geist, Geist_Mono, Roboto_Slab } from "next/font/google"
 import { ThemeProvider } from "@/components/theme-provider"
 import { cn } from "@/lib/utils"
 
+import { SiteHeader } from "@/components/site-header"
 import { GooeyToaster } from "@/components/ui/goey-toaster"
 import "./globals.css"
 
@@ -31,13 +32,14 @@ export default function RootLayout({
         "antialiased",
         fontSans.variable,
         fontMono.variable,
-        "font-serif",
+        "font-sans",
         robotoSlab.variable
       )}
     >
       <body>
         <ThemeProvider>
-          {children}
+          <SiteHeader />
+          <main>{children}</main>
           <GooeyToaster position="bottom-center" />
         </ThemeProvider>
       </body>
