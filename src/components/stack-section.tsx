@@ -40,16 +40,16 @@ export function StackSection({
   if (visible.length === 0) return null
 
   return (
-    <ul className={cn("flex flex-col gap-5", className)}>
+    <ul className={cn("flex flex-col gap-6", className)}>
       {visible.map((category) => (
         <li
           key={category.label}
-          className="grid gap-3 sm:grid-cols-[minmax(6.5rem,7.5rem)_1fr] sm:items-start sm:gap-x-6"
+          className="flex flex-col gap-2 sm:grid sm:grid-cols-[5.5rem_1fr] sm:items-start sm:gap-x-5"
         >
-          <p className="text-sm leading-snug text-foreground/65">
+          <p className="text-sm leading-snug text-muted-foreground">
             {category.label}
           </p>
-          <ul className="flex flex-wrap gap-x-4 gap-y-2">
+          <ul className="flex flex-wrap gap-x-3 gap-y-2.5">
             {category.items.map((item) => (
               <li key={item.name}>
                 <StackItem item={item} />
