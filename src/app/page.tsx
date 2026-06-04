@@ -5,10 +5,8 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
-import { GridPattern } from "@/components/ui/grid-pattern";
 import { Section } from "@/components/ui/section";
 import { RESUME_DATA } from "@/data/resume-data";
-import { cn } from "@/lib/utils";
 import { LucideGlobe } from "lucide-react";
 import { Metadata } from "next";
 import Link from "next/link";
@@ -71,7 +69,7 @@ export default function Page() {
   return (
     <main className="relative mx-auto scroll-my-12 p-4 md:p-16 print:p-12">
       {/* Grid background */}
-      <GridPattern
+      {/* <GridPattern
         width={20}
         height={20}
         x={-1}
@@ -80,14 +78,14 @@ export default function Page() {
           "[mask-image:linear-gradient(to_bottom_right,white,transparent,transparent)] opacity-50",
           "print:hidden",
         )}
-      />
+      /> */}
 
       <section className="relative mx-auto w-full max-w-(--breakpoint-md) space-y-8 print:space-y-6">
         <BlurFade delay={sectionDelay}>
           <div className="flex items-center justify-between">
             <div className="flex-1 space-y-1.5">
-              <h1 className="text-2xl font-bold">{RESUME_DATA.name}</h1>
-              <p className="text-muted-foreground max-w-md text-sm text-pretty">
+              <h1 className="font-serif text-3xl italic">{RESUME_DATA.name}</h1>
+              <p className="text-muted-foreground max-w-md font-serif text-sm text-pretty italic">
                 {RESUME_DATA.about}
               </p>
               <div className="flex flex-col gap-1">
@@ -181,7 +179,7 @@ export default function Page() {
 
         <BlurFade delay={(sectionDelay += 0.05)}>
           <Section>
-            <h2 className="text-xl font-bold">About</h2>
+            <h2 className="text-primary text-xl font-medium">About</h2>
             <p className="text-muted-foreground text-sm text-pretty">
               {RESUME_DATA.summary}
             </p>
@@ -189,7 +187,7 @@ export default function Page() {
         </BlurFade>
         <BlurFade delay={(sectionDelay += 0.1)}>
           <Section>
-            <h2 className="text-xl font-bold">Work Experience</h2>
+            <h2 className="text-xl font-medium">Work Experience</h2>
             {RESUME_DATA.work.map((work) => {
               return (
                 <Card key={work.company}>

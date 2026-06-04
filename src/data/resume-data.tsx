@@ -199,12 +199,12 @@ const softSkillsData: SkillItem[] = [
 ];
 
 export const RESUME_DATA: ResumeData = {
-  name: "Kidsanaphon (Night) Kaeopha",
+  name: "Kidsanaphon Kaeopha",
   initials: "Mr",
-  location: "Nakhon Ratchasima, Thailand",
-  locationLink: "https://www.google.com/maps/place/Nakhonratchasima",
+  location: "Bangkok, Thailand",
+  locationLink: "https://www.google.com/maps/place/Bangkok",
   openToWork: true,
-  about: "Full-stack developer enthusiast with an eye for clean design. ✨",
+  about: "a random enthusiastic, perfectionist guy that can code",
   summary:
     "An indie Full-stack developer with a focus on modern web design. Right now, I work as a freelance developer, constantly learning and exploring new technologies to enhance my skills in both development and design.",
   avatarUrl: "https://m1r.ai/VxFsA.png",
