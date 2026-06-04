@@ -1,0 +1,261 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-06-04T00:00:00.000Z",
+  "title": "Design System: Kidsanaphon Kaeopha",
+  "extensions": {
+    "colorMeta": {
+      "paper": {
+        "role": "neutral",
+        "displayName": "Paper",
+        "canonical": "oklch(1 0 0)",
+        "tonalRamp": [
+          "oklch(0.15 0.006 107)",
+          "oklch(0.28 0.013 107)",
+          "oklch(0.4 0.02 107)",
+          "oklch(0.58 0.031 107)",
+          "oklch(0.74 0.015 107)",
+          "oklch(0.88 0.008 107)",
+          "oklch(0.96 0.005 107)",
+          "oklch(1 0 0)"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Ink",
+        "canonical": "oklch(0.153 0.006 107.1)",
+        "tonalRamp": [
+          "oklch(0.08 0.004 107)",
+          "oklch(0.12 0.005 107)",
+          "oklch(0.153 0.006 107)",
+          "oklch(0.22 0.012 107)",
+          "oklch(0.35 0.018 107)",
+          "oklch(0.5 0.025 107)",
+          "oklch(0.65 0.028 107)",
+          "oklch(0.8 0.02 107)"
+        ]
+      },
+      "charcoal": {
+        "role": "primary",
+        "displayName": "Charcoal",
+        "canonical": "oklch(0.228 0.013 107.4)",
+        "tonalRamp": [
+          "oklch(0.1 0.008 107)",
+          "oklch(0.15 0.01 107)",
+          "oklch(0.2 0.012 107)",
+          "oklch(0.228 0.013 107)",
+          "oklch(0.32 0.016 107)",
+          "oklch(0.45 0.02 107)",
+          "oklch(0.6 0.025 107)",
+          "oklch(0.75 0.02 107)"
+        ]
+      },
+      "whisper": {
+        "role": "neutral",
+        "displayName": "Whisper",
+        "canonical": "oklch(0.58 0.031 107.3)",
+        "tonalRamp": [
+          "oklch(0.2 0.015 107)",
+          "oklch(0.3 0.02 107)",
+          "oklch(0.4 0.025 107)",
+          "oklch(0.5 0.03 107)",
+          "oklch(0.58 0.031 107)",
+          "oklch(0.68 0.025 107)",
+          "oklch(0.78 0.018 107)",
+          "oklch(0.9 0.01 107)"
+        ]
+      },
+      "line": {
+        "role": "neutral",
+        "displayName": "Line",
+        "canonical": "oklch(0.93 0.007 106.5)",
+        "tonalRamp": [
+          "oklch(0.2 0.01 107)",
+          "oklch(0.35 0.012 107)",
+          "oklch(0.5 0.015 107)",
+          "oklch(0.65 0.012 107)",
+          "oklch(0.78 0.01 107)",
+          "oklch(0.86 0.008 107)",
+          "oklch(0.93 0.007 107)",
+          "oklch(0.98 0.003 107)"
+        ]
+      },
+      "alert": {
+        "role": "tertiary",
+        "displayName": "Alert",
+        "canonical": "oklch(0.577 0.245 27.325)",
+        "tonalRamp": [
+          "oklch(0.25 0.12 27)",
+          "oklch(0.35 0.16 27)",
+          "oklch(0.45 0.2 27)",
+          "oklch(0.52 0.22 27)",
+          "oklch(0.577 0.245 27)",
+          "oklch(0.65 0.2 27)",
+          "oklch(0.75 0.15 27)",
+          "oklch(0.88 0.08 27)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Name and primary page titles; Roboto Slab."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Prose and descriptions; Geist sans, max 65–75ch."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Nav links, buttons, tabular nav indices."
+      },
+      "mono": {
+        "displayName": "Mono",
+        "purpose": "Code and fixed-width metadata."
+      }
+    },
+    "shadows": [
+      {
+        "name": "focus-ring",
+        "value": "0 0 0 3px oklch(0.737 0.021 106.9 / 0.3)",
+        "purpose": "Keyboard focus on buttons and controls."
+      }
+    ],
+    "motion": [
+      {
+        "name": "route-leave",
+        "value": "opacity 0.2s, translateY -8px 0.2s",
+        "purpose": "GSAP leave on main during route change."
+      },
+      {
+        "name": "route-enter",
+        "value": "opacity 0.25s, translateY 8px to 0 0.25s",
+        "purpose": "GSAP enter on main after route change."
+      },
+      {
+        "name": "ease-standard",
+        "value": "cubic-bezier(0.25, 0.1, 0.25, 1)",
+        "purpose": "Default UI transitions when not using GSAP."
+      }
+    ],
+    "breakpoints": [
+      { "name": "sm", "value": "640px" },
+      { "name": "md", "value": "768px" },
+      { "name": "lg", "value": "1024px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Default CTA; charcoal on paper, pill shape.",
+      "html": "<button type=\"button\" class=\"ds-btn-primary\">Contact me</button>",
+      "css": ".ds-btn-primary { display: inline-flex; align-items: center; justify-content: center; height: 2.25rem; padding: 0 0.75rem; font-family: var(--font-sans), system-ui, sans-serif; font-size: 0.875rem; font-weight: 500; line-height: 1; color: oklch(0.988 0.003 106.5); background: oklch(0.228 0.013 107.4); border: 1px solid transparent; border-radius: 2.6rem; cursor: pointer; transition: background 0.15s ease, transform 0.1s ease; } .ds-btn-primary:hover { background: oklch(0.228 0.013 107.4 / 0.8); } .ds-btn-primary:focus-visible { outline: none; box-shadow: 0 0 0 3px oklch(0.737 0.021 106.9 / 0.3); } .ds-btn-primary:active { transform: translateY(1px); }"
+    },
+    {
+      "name": "Outline Button",
+      "kind": "button",
+      "refersTo": "button-outline",
+      "description": "Secondary action; paper fill with line border.",
+      "html": "<button type=\"button\" class=\"ds-btn-outline\">Back Home</button>",
+      "css": ".ds-btn-outline { display: inline-flex; align-items: center; justify-content: center; gap: 0.375rem; height: 2.25rem; padding: 0 0.75rem; font-family: var(--font-sans), system-ui, sans-serif; font-size: 0.875rem; font-weight: 500; color: oklch(0.153 0.006 107.1); background: oklch(1 0 0); border: 1px solid oklch(0.93 0.007 106.5); border-radius: 2.6rem; cursor: pointer; transition: background 0.15s ease, color 0.15s ease; } .ds-btn-outline:hover { background: oklch(0.966 0.005 106.5); } .ds-btn-outline:focus-visible { outline: none; box-shadow: 0 0 0 3px oklch(0.737 0.021 106.9 / 0.3); }"
+    },
+    {
+      "name": "Nav Link",
+      "kind": "nav",
+      "refersTo": "nav-link",
+      "description": "Inactive nav item with tabular index prefix.",
+      "html": "<a href=\"#\" class=\"ds-nav-link\"><span class=\"ds-nav-index\">01</span> About</a>",
+      "css": ".ds-nav-link { display: inline-flex; align-items: baseline; gap: 0.5rem; font-family: var(--font-sans), system-ui, sans-serif; font-size: 1rem; font-weight: 500; letter-spacing: -0.01em; color: oklch(0.58 0.031 107.3); text-decoration: none; transition: color 0.15s ease; } .ds-nav-index { font-variant-numeric: tabular-nums; } .ds-nav-link:hover { color: oklch(0.153 0.006 107.1); } .ds-nav-link:focus-visible { outline: 2px solid oklch(0.737 0.021 106.9); outline-offset: 4px; }"
+    },
+    {
+      "name": "Nav Link Active",
+      "kind": "nav",
+      "refersTo": "nav-link-active",
+      "description": "Current route in main navigation.",
+      "html": "<a href=\"#\" aria-current=\"page\" class=\"ds-nav-active\"><span class=\"ds-nav-index\">01</span> About</a>",
+      "css": ".ds-nav-active { display: inline-flex; align-items: baseline; gap: 0.5rem; font-family: var(--font-sans), system-ui, sans-serif; font-size: 1rem; font-weight: 500; letter-spacing: -0.01em; color: oklch(0.153 0.006 107.1); text-decoration: none; } .ds-nav-index { font-variant-numeric: tabular-nums; } .ds-nav-active:focus-visible { outline: 2px solid oklch(0.737 0.021 106.9); outline-offset: 4px; }"
+    },
+    {
+      "name": "Page Title",
+      "kind": "custom",
+      "refersTo": "display",
+      "description": "Identity heading on About; serif display scale.",
+      "html": "<h1 class=\"ds-page-title\">Kidsanaphon Kaeopha</h1>",
+      "css": ".ds-page-title { margin: 0; font-family: var(--font-serif), Roboto Slab, Georgia, serif; font-size: clamp(1.75rem, 4vw, 2.5rem); font-weight: 700; line-height: 1.15; letter-spacing: -0.02em; color: oklch(0.153 0.006 107.1); text-wrap: balance; }"
+    },
+    {
+      "name": "Metadata Line",
+      "kind": "custom",
+      "description": "Location or short secondary line under the title.",
+      "html": "<p class=\"ds-meta\"><span class=\"ds-meta-icon\" aria-hidden=\"true\">◎</span> Bangkok, Thailand</p>",
+      "css": ".ds-meta { display: flex; align-items: center; gap: 0.375rem; margin: 0; font-family: var(--font-sans), system-ui, sans-serif; font-size: 0.875rem; font-weight: 400; color: oklch(0.58 0.031 107.3); } .ds-meta-icon { font-size: 0.75rem; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Workbench Proof",
+    "overview": "This system treats the site as a working surface, not a marketing funnel. Recruiters should read role, location, and credibility in seconds; everything else supports that scan without decorative chrome. Playfulness lives in intentional details (route motion, tabular nav indices, touch-target craft), not in section templates or hero widgets. The palette is deliberately restrained: ink on paper with olive-tinted neutrals from the shadcn olive base.",
+    "keyCharacteristics": [
+      "Recruiter-first hierarchy: name and reachability before personality routes",
+      "Ink-on-paper neutrals with whisper for secondary copy only when contrast holds",
+      "Serif display (Roboto Slab) over sans body (Geist)",
+      "Flat surfaces at rest; hover/focus lift reserved for interactive elements",
+      "Sharp minimal components: links carry navigation; buttons stay rare",
+      "Route transitions (GSAP) as the primary motion signature"
+    ],
+    "rules": [
+      {
+        "name": "The Paper Rule",
+        "body": "Light-mode body background stays true white (chroma 0). No cream, sand, parchment, or warm near-white fills.",
+        "section": "colors"
+      },
+      {
+        "name": "The Whisper Rule",
+        "body": "Muted foreground is for short secondary lines (nav inactive, captions, tabular indices). Body copy stays ink unless a contrast audit passes at 4.5:1.",
+        "section": "colors"
+      },
+      {
+        "name": "The One Ink Rule",
+        "body": "Charcoal and ink carry hierarchy; no second saturated accent color until a deliberate brand moment earns it.",
+        "section": "colors"
+      },
+      {
+        "name": "The Slab Name Rule",
+        "body": "The person's name and primary route headings use display serif; everything operational stays sans.",
+        "section": "typography"
+      },
+      {
+        "name": "The Flat Scale Rule",
+        "body": "Maintain ≥1.25 ratio between type steps; avoid stacking similar sizes with no weight change.",
+        "section": "typography"
+      },
+      {
+        "name": "The Flat-By-Default Rule",
+        "body": "No ambient card shadows on static content. Cards are not the default layout affordance.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Hover-Only Lift Rule",
+        "body": "Elevation motion appears on interactive elements in response to state, never on passive paragraphs or section wrappers.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do keep About and Contact hire signals above the fold on their routes: name, role, location, clear next step.",
+      "Do use ink for readable body copy and reserve whisper for short secondary lines with verified contrast.",
+      "Do use serif display for identity headings and sans for UI and supporting text.",
+      "Do expand hit areas on nav links (hit-area-8) and show visible focus rings on interactive controls.",
+      "Do treat GSAP route transitions as the primary motion signature; add reduced-motion alternatives for any new animation.",
+      "Do prefer spacing and type rhythm over cards, badges, and decorative wrappers."
+    ],
+    "donts": [
+      "Don't use SaaS landing patterns: hero metrics, identical feature card grids, buzzword copy, or gradient accents as decoration.",
+      "Don't ship generic AI portfolio tells: cream or sand body backgrounds, gradient text, uppercase eyebrow on every section, or numbered section markers as default scaffolding across the site.",
+      "Don't dump a PDF resume on the web: dense bullet walls without hierarchy or scan path.",
+      "Don't use border-left or border-right greater than 1px as a colored stripe on lists or callouts.",
+      "Don't apply glassmorphism, gradient text, or identical icon+heading+text card grids.",
+      "Don't gate content visibility on entrance animations; content must be readable if motion is reduced or paused.",
+      "Don't use muted whisper for long paragraphs; bump toward ink when contrast is borderline."
+    ]
+  }
+}
