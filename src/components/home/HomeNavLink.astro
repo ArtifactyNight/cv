@@ -1,0 +1,19 @@
+---
+interface Props {
+  href: string;
+  nav: "home" | "work" | "writing";
+  label: string;
+  active: boolean;
+}
+
+const { href, nav, label, active } = Astro.props;
+---
+
+<a
+  href={href}
+  data-nav={nav}
+  class:list={["home-nav-link", { "home-nav-link--active": active }]}
+  {...active ? { "aria-current": "page" } : {}}
+>
+  {label}
+</a>

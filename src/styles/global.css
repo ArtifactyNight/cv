@@ -5,7 +5,7 @@
   --font-sans: var(--font-schibsted-grotesk), var(--font-thai), system-ui, sans-serif;
 
   /* Primary brown (brand) */
-  --color-primary: #bfa28c;
+  --color-primary: #978F66;
   --color-primary-deep: #a38872;
 
   /* Semantic aliases */
@@ -23,7 +23,7 @@
     color: var(--color-ink);
     -webkit-font-smoothing: antialiased;
     scroll-behavior: smooth;
-    @apply scrollbar-thin scrollbar-thumb-olive-200 scrollbar-track-olive-50;
+    @apply scrollbar-thin scrollbar-thumb-olive-200 scrollbar-track-olive-50 scrollbar-gutter-both
   }
 
   body {
@@ -86,6 +86,17 @@
   .home-nav-link--active {
     color: var(--color-ink);
     font-weight: 500;
+  }
+
+  .home-nav-link--active::before {
+    content: "";
+    display: inline-block;
+    width: 0.5rem;
+    height: 0.5rem;
+    margin-right: 0.25rem;
+    border-radius: 9999px;
+    background-color: var(--color-ink);
+    vertical-align: middle;
   }
 
   .home-nav-link--active:hover {

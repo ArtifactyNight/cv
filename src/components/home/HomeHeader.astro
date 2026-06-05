@@ -1,5 +1,6 @@
 ---
 import { profile } from "../../data/profile";
+import HomeNavLink from "./HomeNavLink.astro";
 
 interface Props {
   current?: "home" | "work" | "writing";
@@ -12,6 +13,12 @@ const initials = profile.name
   .map((part) => part[0])
   .slice(0, 2)
   .join("");
+
+const navItems = [
+  { nav: "home", href: "/", label: "หน้าหลัก" },
+  { nav: "work", href: "/work", label: "ผลงาน" },
+  { nav: "writing", href: "/writing", label: "บทความ" },
+] as const;
 ---
 
 <header id="top" class="scroll-mt-8" transition:persist="site-header">
@@ -27,91 +34,30 @@ const initials = profile.name
     <h1 class="text-balance text-xl font-bold leading-[1.15] text-ink">
       {profile.name}
     </h1>
-    <!-- <p class="mt-1 text-sm italic text-ink-muted">
-      aka {profile.handle}
-    </p> -->
   </div>
 
   <nav aria-label="หน้าหลัก">
     <ul class="flex flex-wrap gap-x-5 gap-y-2" role="list">
-      <li>
-        <a
-          href="/"
-          data-nav="home"
-          class:list={[
-            "home-nav-link",
-            { "home-nav-link--active": current === "home" },
-          ]}
-          {...current === "home" ? { "aria-current": "page" } : {}}
-        >
-          {
-            current === "home" ? (
-              <>
-                <span class="inline-block mr-1 size-2 rounded-full bg-ink align-middle" />
-                <span class="align-middle">หน้าหลัก</span>
-              </>
-            ) : (
-              "หน้าหลัก"
-            )
-          }
-        </a>
-      </li>
-      <li>
-        <a
-          href="/work"
-          data-nav="work"
-          class:list={[
-            "home-nav-link",
-            { "home-nav-link--active": current === "work" },
-          ]}
-          {...current === "work" ? { "aria-current": "page" } : {}}
-        >
-          {
-            current === "work" ? (
-              <>
-                <span class="inline-block mr-1 size-2 rounded-full bg-ink align-middle" />
-                <span class="align-middle">ผลงาน</span>
-              </>
-            ) : (
-              "ผลงาน"
-            )
-          }
-        </a>
-      </li>
-      <li>
-        <a
-          href="/writing"
-          data-nav="writing"
-          class:list={[
-            "home-nav-link",
-            { "home-nav-link--active": current === "writing" },
-          ]}
-          {...current === "writing" ? { "aria-current": "page" } : {}}
-        >
-          {
-            current === "writing" ? (
-              <>
-                <span class="inline-block mr-1 size-2 rounded-full bg-ink align-middle" />
-                <span class="align-middle">บทความ</span>
-              </>
-            ) : (
-              "บทความ"
-            )
-          }
-        </a>
-      </li>
+      {
+        navItems.map((item) => (
+          <li>
+            <HomeNavLink
+              href={item.href}
+              nav={item.nav}
+              label={item.label}
+              active={current === item.nav}
+            />
+          </li>
+        ))
+      }
     </ul>
   </nav>
 </header>
 
 <script>
-  const navLabels = {
-    home: "หน้าหลัก",
-    work: "ผลงาน",
-    writing: "บทความ",
-  } as const;
+  type NavId = "home" | "work" | "writing";
 
-  function getCurrentNav(pathname: string) {
+  function getCurrentNav(pathname: string): NavId | null {
     if (pathname === "/" || pathname === "") return "home";
     if (pathname.startsWith("/work")) return "work";
     if (pathname.startsWith("/writing") || pathname.startsWith("/blog"))
@@ -122,23 +68,21 @@ const initials = profile.name
   function updateNav() {
     const current = getCurrentNav(window.location.pathname);
 
-    document.querySelectorAll<HTMLAnchorElement>("[data-nav]").forEach((link) => {
-      const nav = link.dataset.nav as keyof typeof navLabels;
-      const isActive = nav === current;
-      const label = navLabels[nav];
+    document
+      .querySelectorAll<HTMLAnchorElement>("[data-nav]")
+      .forEach((link) => {
+        const isActive = link.dataset.nav === current;
 
-      link.classList.toggle("home-nav-link--active", isActive);
+        link.classList.toggle("home-nav-link--active", isActive);
 
-      if (isActive) {
-        link.setAttribute("aria-current", "page");
-        link.innerHTML = `<span class="inline-block mr-1 size-2 rounded-full bg-ink align-middle"></span><span class="align-middle">${label}</span>`;
-      } else {
-        link.removeAttribute("aria-current");
-        link.textContent = label;
-      }
-    });
+        if (isActive) {
+          link.setAttribute("aria-current", "page");
+        } else {
+          link.removeAttribute("aria-current");
+        }
+      });
   }
 
-  updateNav();
   document.addEventListener("astro:page-load", updateNav);
+  updateNav();
 </script>
