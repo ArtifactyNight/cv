@@ -42,7 +42,7 @@
 
   a:hover {
     color: var(--color-accent-deep);
-    text-decoration: underline;
+    @apply underline-offset-2 decoration-2
   }
 
   a:focus-visible {
@@ -50,6 +50,7 @@
     outline-offset: 2px;
     border-radius: 2px;
   }
+
 }
 
 @layer utilities {
@@ -78,8 +79,7 @@
 
   .home-nav-link:hover {
     color: var(--color-accent);
-    text-decoration: underline;
-    @apply underline-offset-2 decoration-2
+    @apply underline underline-offset-2 decoration-2
   }
 
   .home-nav-link--active {

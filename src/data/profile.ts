@@ -23,16 +23,18 @@ export const profile = {
   handle: "@night",
   experience: [
     {
-      role: "Frontend Developer",
-      company: "ชื่อบริษัท",
-      period: "2022–ปัจจุบัน",
-      description: "พัฒนาและดูแลเว็บแอปพลิเคชันด้วย React, TypeScript และ Astro",
+      role: "Fullstack Developer",
+      company: "RDCW",
+      period: "ก.ย. 2023 ถึง ปัจจุบัน",
+      description:
+        "พัฒนาแพลตฟอร์ม e-commerce สำหรับลูกค้า enterprise ใช้งานรวมกว่า 100,000 คน ออกแบบสถาปัตยกรรมรองรับ 500+ daily active users โดยไม่มี downtime",
     },
     {
-      role: "Web Developer",
-      company: "ชื่อบริษัทก่อนหน้า",
-      period: "2020–2022",
-      description: "ออกแบบและพัฒนาเว็บไซต์สำหรับลูกค้า B2B",
+      role: "Fullstack Developer Internship",
+      company: "MFEC Public Company Limited",
+      period: "พ.ย. 2025 ถึง ก.พ. 2026",
+      description:
+        "สร้างแพลตฟอร์ม Request VM ภายในองค์กรด้วย Appsmith และระบบ billing แบบ multi-cloud ด้วย Nest.js",
     },
   ] satisfies ExperienceItem[],
   work: [

@@ -43,7 +43,16 @@ const initials = profile.name
           ]}
           {...current === "home" ? { "aria-current": "page" } : {}}
         >
-          Home
+          {
+            current === "home" ? (
+              <>
+                <span class="inline-block mr-1 size-2 rounded-full bg-ink align-middle" />
+                <span class="align-middle">หน้าหลัก</span>
+              </>
+            ) : (
+              "หน้าหลัก"
+            )
+          }
         </a>
       </li>
       <li>
@@ -55,7 +64,16 @@ const initials = profile.name
           ]}
           {...current === "work" ? { "aria-current": "page" } : {}}
         >
-          Work
+          {
+            current === "work" ? (
+              <>
+                <span class="inline-block mr-1 size-2 rounded-full bg-ink align-middle" />
+                <span class="align-middle">ผลงาน</span>
+              </>
+            ) : (
+              "ผลงาน"
+            )
+          }
         </a>
       </li>
       <li>
@@ -67,7 +85,16 @@ const initials = profile.name
           ]}
           {...current === "writing" ? { "aria-current": "page" } : {}}
         >
-          Writing
+          {
+            current === "writing" ? (
+              <>
+                <span class="inline-block mr-1 size-2 rounded-full bg-ink align-middle" />
+                <span class="align-middle">บทความ</span>
+              </>
+            ) : (
+              "บทความ"
+            )
+          }
         </a>
       </li>
     </ul>
