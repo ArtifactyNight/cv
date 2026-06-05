@@ -40,7 +40,7 @@ export const profile = {
   work: [
     {
       name: "cv",
-      description: "Portfolio และ blog ส่วนตัว สร้างด้วย Astro",
+      description: "Portfolio และ Blog ส่วนตัว สร้างด้วย Astro",
       href: "/",
     },
     {

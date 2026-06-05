@@ -10,7 +10,7 @@ export const skills = [
   },
   {
     label: "Backend Frameworks",
-    items: ["Express", "NestJS", "Hono", "Elysia", "Cloudflare Workers"],
+    items: ["Express", "Nest.js", "Hono", "Elysia.js"],
   },
   {
     label: "Languages & Runtime",
