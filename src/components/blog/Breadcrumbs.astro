@@ -1,0 +1,47 @@
+---
+interface Crumb {
+  label: string;
+  href?: string;
+}
+
+interface Props {
+  crumbs: Crumb[];
+}
+
+const { crumbs } = Astro.props;
+---
+
+<nav class="mb-10 md:mb-12" aria-label="เส้นทางนำทาง">
+  <ol class="flex flex-wrap items-center gap-x-2 gap-y-1 text-sm text-ink-muted" role="list">
+    {
+      crumbs.map((crumb, index) => {
+        const isLast = index === crumbs.length - 1;
+
+        return (
+          <li class="flex items-center gap-x-2">
+            {index > 0 && (
+              <span class="text-rule select-none" aria-hidden="true">
+                /
+              </span>
+            )}
+            {isLast || !crumb.href ? (
+              <span
+                class="text-ink font-medium"
+                aria-current={isLast ? "page" : undefined}
+              >
+                {crumb.label}
+              </span>
+            ) : (
+              <a
+                href={crumb.href}
+                class="text-accent no-underline hover:text-accent-deep hover:underline"
+              >
+                {crumb.label}
+              </a>
+            )}
+          </li>
+        );
+      })
+    }
+  </ol>
+</nav>

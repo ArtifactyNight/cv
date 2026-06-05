@@ -1,0 +1,76 @@
+---
+import type { CollectionEntry } from "astro:content";
+import { formatWritingDate } from "../../lib/format-date";
+
+interface Props {
+  newer: CollectionEntry<"blog"> | null;
+  older: CollectionEntry<"blog"> | null;
+}
+
+const { newer, older } = Astro.props;
+---
+
+<footer class="mt-16 md:mt-20 pt-8 border-t border-rule" aria-label="อ่านต่อ">
+  <p class="text-sm font-medium text-ink-muted mb-6">อ่านต่อ</p>
+
+  {
+    (newer || older) && (
+      <div class="grid gap-6 sm:grid-cols-2">
+    {
+      newer ? (
+        <div>
+          <p class="text-sm font-medium text-ink-muted mb-2">บทความใหม่กว่า</p>
+          <a
+            href={`/blog/${newer.id}/`}
+            class="group block no-underline hover:no-underline"
+          >
+            <span class="block text-sm font-semibold text-ink group-hover:text-accent transition-colors">
+              {newer.data.title}
+            </span>
+            <time
+              class="mt-1 block text-sm text-ink-muted tabular-nums"
+              datetime={newer.data.pubDate.toISOString()}
+            >
+              {formatWritingDate(newer.data.pubDate)}
+            </time>
+          </a>
+        </div>
+      ) : (
+        <div class="hidden sm:block" aria-hidden="true" />
+      )
+    }
+
+    {
+      older ? (
+        <div class="sm:text-right">
+          <p class="text-sm font-medium text-ink-muted mb-2">บทความเก่ากว่า</p>
+          <a
+            href={`/blog/${older.id}/`}
+            class="group block no-underline hover:no-underline"
+          >
+            <span class="block text-sm font-semibold text-ink group-hover:text-accent transition-colors">
+              {older.data.title}
+            </span>
+            <time
+              class="mt-1 block text-sm text-ink-muted tabular-nums"
+              datetime={older.data.pubDate.toISOString()}
+            >
+              {formatWritingDate(older.data.pubDate)}
+            </time>
+          </a>
+        </div>
+      ) : null
+    }
+      </div>
+    )
+  }
+
+  <p class={(newer || older) ? "mt-8" : ""}>
+    <a
+      href="/writing"
+      class="text-sm text-accent no-underline hover:text-accent-deep hover:underline"
+    >
+      ดูบทความทั้งหมด
+    </a>
+  </p>
+</footer>

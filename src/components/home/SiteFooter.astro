@@ -1,0 +1,27 @@
+---
+import { Icon } from "astro-icon/components";
+import { profile } from "../../data/profile";
+---
+
+<footer class="pt-8 border-t border-rule" aria-label="ช่องทางติดต่อ">
+  <nav aria-label="ลิงก์ภายนอก">
+    <ul class="flex flex-wrap gap-x-5 gap-y-2" role="list">
+      {
+        profile.social.map((link) => (
+          <li>
+            <a
+              href={link.href}
+              class="text-sm flex items-center gap-1 text-accent no-underline hover:text-accent-deep hover:underline"
+              {...(link.href.startsWith("http")
+                ? { target: "_blank", rel: "noopener noreferrer" }
+                : {})}
+            >
+              <Icon name={link.icon} class="size-4" />
+              {link.label}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </nav>
+</footer>

@@ -1,9 +1,7 @@
 ---
 import { getCollection } from "astro:content";
-import About from "../components/home/About.astro";
 import HomeHeader from "../components/home/HomeHeader.astro";
 import SiteFooter from "../components/home/SiteFooter.astro";
-import WorkList from "../components/home/WorkList.astro";
 import WritingList from "../components/home/WritingList.astro";
 import Layout from "../layouts/Layout.astro";
 
@@ -12,10 +10,8 @@ const posts = (await getCollection("blog")).sort(
 );
 ---
 
-<Layout>
-  <HomeHeader current="home" />
-  <About />
-  <WorkList />
+<Layout title="Writing">
+  <HomeHeader current="writing" />
   <WritingList posts={posts} />
   <SiteFooter />
 </Layout>

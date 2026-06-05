@@ -1,0 +1,199 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-06-05T13:15:00.000Z",
+  "title": "Design System: CV",
+  "extensions": {
+    "colorMeta": {
+      "primary": {
+        "role": "primary",
+        "displayName": "Warm Umber",
+        "canonical": "oklch(72% 0.04 65)",
+        "tonalRamp": [
+          "oklch(45% 0.05 65)",
+          "oklch(52% 0.05 65)",
+          "oklch(58% 0.05 65)",
+          "oklch(62% 0.05 65)",
+          "oklch(68% 0.04 65)",
+          "oklch(72% 0.04 65)",
+          "oklch(80% 0.03 65)",
+          "oklch(90% 0.02 65)"
+        ]
+      },
+      "page": {
+        "role": "neutral",
+        "displayName": "Olive Mist",
+        "canonical": "oklch(97% 0.012 130)",
+        "tonalRamp": [
+          "oklch(18% 0.02 130)",
+          "oklch(28% 0.025 130)",
+          "oklch(38% 0.03 130)",
+          "oklch(48% 0.03 130)",
+          "oklch(58% 0.025 130)",
+          "oklch(72% 0.02 130)",
+          "oklch(85% 0.015 130)",
+          "oklch(97% 0.012 130)"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Body Ink",
+        "canonical": "oklch(22% 0.025 130)",
+        "tonalRamp": [
+          "oklch(14% 0.02 130)",
+          "oklch(18% 0.022 130)",
+          "oklch(22% 0.025 130)",
+          "oklch(30% 0.028 130)",
+          "oklch(40% 0.03 130)",
+          "oklch(52% 0.025 130)",
+          "oklch(65% 0.02 130)",
+          "oklch(78% 0.015 130)"
+        ]
+      },
+      "accent": {
+        "role": "secondary",
+        "displayName": "Link Olive",
+        "canonical": "oklch(35% 0.03 130)",
+        "tonalRamp": [
+          "oklch(18% 0.025 130)",
+          "oklch(24% 0.028 130)",
+          "oklch(30% 0.03 130)",
+          "oklch(35% 0.03 130)",
+          "oklch(45% 0.028 130)",
+          "oklch(55% 0.025 130)",
+          "oklch(68% 0.02 130)",
+          "oklch(82% 0.015 130)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Home intro name and one primary title per fold."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Intro paragraphs, essay prose, project descriptions. Max 65–75ch."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Dates beside writing entries and secondary metadata."
+      }
+    },
+    "shadows": [],
+    "motion": [
+      {
+        "name": "ease-standard",
+        "value": "cubic-bezier(0.25, 1, 0.5, 1)",
+        "purpose": "Link color and underline transitions only."
+      }
+    ],
+    "breakpoints": [
+      { "name": "sm", "value": "640px" },
+      { "name": "md", "value": "768px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Primary brown fill for contact or subscribe actions.",
+      "html": "<button class=\"ds-btn-primary\">Say hello</button>",
+      "css": ".ds-btn-primary { background: #BFA28C; color: #2c3028; padding: 12px 20px; font-family: Satoshi, IBM Plex Sans Thai, system-ui, sans-serif; font-size: 1rem; font-weight: 500; border: none; border-radius: 4px; cursor: pointer; transition: background 0.2s cubic-bezier(0.25, 1, 0.5, 1); } .ds-btn-primary:hover { background: #A38872; } .ds-btn-primary:focus-visible { outline: 2px solid #BFA28C; outline-offset: 2px; }"
+    },
+    {
+      "name": "Text Link",
+      "kind": "custom",
+      "refersTo": "link-default",
+      "description": "Default inline link using dark olive for contrast.",
+      "html": "<a class=\"ds-link\" href=\"#\">Taste Can't Be Prompted</a>",
+      "css": ".ds-link { color: #464f41; font-family: Satoshi, IBM Plex Sans Thai, system-ui, sans-serif; font-size: 1rem; font-weight: 400; text-decoration: none; transition: color 0.2s cubic-bezier(0.25, 1, 0.5, 1); } .ds-link:hover { color: #383f34; text-decoration: underline; } .ds-link:focus-visible { outline: 2px solid #BFA28C; outline-offset: 2px; }"
+    },
+    {
+      "name": "Writing List Row",
+      "kind": "custom",
+      "description": "Dated essay index row.",
+      "html": "<div class=\"ds-writing-row\"><time class=\"ds-writing-date\" datetime=\"2026-04-17\">17.Apr.2026</time><a class=\"ds-writing-title\" href=\"#\">Taste Can't Be Prompted</a></div>",
+      "css": ".ds-writing-row { display: flex; flex-wrap: wrap; align-items: baseline; gap: 8px 16px; padding: 8px 0; font-family: Satoshi, IBM Plex Sans Thai, system-ui, sans-serif; } .ds-writing-date { font-size: 0.875rem; font-weight: 500; color: #5a6352; white-space: nowrap; } .ds-writing-title { font-size: 1.125rem; font-weight: 600; color: #2c3028; text-decoration: none; transition: color 0.2s cubic-bezier(0.25, 1, 0.5, 1); } .ds-writing-title:hover { color: #464f41; }"
+    },
+    {
+      "name": "Work Entry",
+      "kind": "custom",
+      "description": "Project line with name and short descriptor.",
+      "html": "<div class=\"ds-work-entry\"><a class=\"ds-work-name\" href=\"#\">Peerlist</a><span class=\"ds-work-desc\">/ Professional network for builders</span></div>",
+      "css": ".ds-work-entry { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px; padding: 6px 0; font-family: Satoshi, IBM Plex Sans Thai, system-ui, sans-serif; } .ds-work-name { font-size: 1.125rem; font-weight: 600; color: #2c3028; text-decoration: none; } .ds-work-name:hover { color: #464f41; } .ds-work-desc { font-size: 1rem; font-weight: 400; color: #5a6352; }"
+    },
+    {
+      "name": "Section Headline",
+      "kind": "custom",
+      "description": "Plain section header without eyebrow kicker.",
+      "html": "<h2 class=\"ds-section-headline\">Writing</h2>",
+      "css": ".ds-section-headline { font-family: Satoshi, IBM Plex Sans Thai, system-ui, sans-serif; font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 600; line-height: 1.2; letter-spacing: -0.02em; color: #2c3028; margin: 0 0 16px 0; }"
+    },
+    {
+      "name": "Text Input",
+      "kind": "input",
+      "description": "Newsletter or contact field if added later.",
+      "html": "<input class=\"ds-input\" type=\"email\" placeholder=\"you@example.com\" aria-label=\"Email address\" />",
+      "css": ".ds-input { width: 100%; max-width: 20rem; padding: 12px 14px; font-family: Satoshi, IBM Plex Sans Thai, system-ui, sans-serif; font-size: 1rem; color: #2c3028; background: #f4f6f0; border: 1px solid #d6dbd0; border-radius: 4px; transition: outline 0.2s cubic-bezier(0.25, 1, 0.5, 1); } .ds-input::placeholder { color: #5a6352; } .ds-input:focus-visible { outline: 2px solid #BFA28C; outline-offset: 0; border-color: #BFA28C; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Margin Note",
+    "overview": "This system treats the site as a narrow column of ink on paper: one voice, one measure, no decorative scaffolding. The color world is olive with primary brown #BFA28C for brand fills and dark olive for readable link text.",
+    "keyCharacteristics": [
+      "Narrow reading measure (~42rem) centered on the page",
+      "Olive neutral scale with primary brown #BFA28C",
+      "Flat surfaces: no drop shadows at rest",
+      "Bilingual-ready type stack (Satoshi + IBM Plex Sans Thai)",
+      "Lists over cards; dates beside titles, not inside tiles"
+    ],
+    "rules": [
+      {
+        "name": "The Primary Brown Rule",
+        "body": "#BFA28C is the sole primary brand color. Use it on filled controls, selection highlights, and focus outlines. Do not substitute a different tan or gold.",
+        "section": "colors"
+      },
+      {
+        "name": "The Olive Ground Rule",
+        "body": "Page and surface neutrals stay on the olive hue axis (olive-50 through olive-300). Gray blues and warm cream defaults are out of register.",
+        "section": "colors"
+      },
+      {
+        "name": "The Contrast Split Rule",
+        "body": "Brown primary for brand fills; dark olive for link text. Never set #BFA28C as default body or link color on olive-50.",
+        "section": "colors"
+      },
+      {
+        "name": "The One Family Rule",
+        "body": "Satoshi carries display through label roles. Do not add a reflex display serif or monospace accent font.",
+        "section": "typography"
+      },
+      {
+        "name": "The Margin Measure Rule",
+        "body": "Prose and profile content stay within max-width: 42rem. Wider only for full-bleed photography when imagery ships.",
+        "section": "typography"
+      },
+      {
+        "name": "The Flat-By-Default Rule",
+        "body": "If a section needs separation, add space or a hairline rule. Never reach for a card shadow to create hierarchy.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do use the olive scale (text-olive-600, bg-olive-50, etc.) for neutrals.",
+      "Do use #BFA28C as primary on buttons, selection, and focus rings.",
+      "Do use dark olive (olive-700 / accent) for link text on light backgrounds.",
+      "Do keep the home structure as intro → work → writing.",
+      "Do use Satoshi + IBM Plex Sans Thai for all text roles."
+    ],
+    "donts": [
+      "Don't use #BFA28C for body copy or default links on olive-50 (fails contrast).",
+      "Don't revert to cool blue-gray ink or navy link colors from the previous palette.",
+      "Don't ship SaaS landing-page grammar or dark-mode dev portfolio clichés.",
+      "Don't add side-stripe borders, gradient text, or glassmorphism cards.",
+      "Don't repeat tiny uppercase tracked eyebrows above every section heading.",
+      "Don't add a third display typeface from the reflex-reject list."
+    ]
+  }
+}
