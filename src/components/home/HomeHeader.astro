@@ -18,11 +18,7 @@ const navItems = [
 ] as const;
 ---
 
-<header
-  id="top"
-  class="scroll-mt-8 flex items-start justify-between gap-5"
-  transition:persist="site-header"
->
+<header id="top" class="scroll-mt-8 flex items-start justify-between gap-5">
   <div>
     <div class="mb-5 flex items-center gap-2">
       <h1
@@ -87,6 +83,5 @@ const navItems = [
       });
   }
 
-  document.addEventListener("astro:page-load", updateNav);
   updateNav();
 </script>

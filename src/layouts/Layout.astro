@@ -1,21 +1,7 @@
 ---
-import { fade } from "astro:transitions";
 import BaseHead from "../components/BaseHead.astro";
 import { SITE_DESCRIPTION, SITE_TITLE } from "../const";
 import "../styles/global.css";
-
-const baseFade = fade({ duration: "100ms" });
-
-const pageTransition = {
-  forwards: {
-    old: baseFade.forwards.old,
-    new: { ...baseFade.forwards.new, delay: "0.1s" },
-  },
-  backwards: {
-    old: baseFade.backwards.old,
-    new: { ...baseFade.backwards.new, delay: "0.1s" },
-  },
-};
 
 interface Props {
   title?: string;
@@ -37,7 +23,7 @@ const {
   </head>
   <body>
     <main class="mx-auto w-full max-w-2xl px-4 py-10 flex flex-col">
-      <div class="flex flex-col gap-12" transition:animate={pageTransition}>
+      <div class="flex flex-col gap-12">
         <slot />
       </div>
     </main>
