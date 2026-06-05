@@ -1,1 +1,9 @@
 @import "tailwindcss";
+
+body {
+  @apply font-sans;
+}
+
+@theme inline {
+  --font-sans: var(--font-satoshi), var(--font-thai), sans-serif;
+}
