@@ -11,7 +11,7 @@
   /* Semantic aliases */
   --color-page: var(--color-olive-50);
   --color-ink: var(--color-olive-900);
-  --color-ink-muted: var(--color-olive-500);
+  --color-ink-muted: var(--color-olive-600);
   --color-accent: var(--color-olive-700);
   --color-accent-deep: var(--color-olive-800);
   --color-rule: var(--color-olive-200);

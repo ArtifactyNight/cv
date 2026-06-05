@@ -1,7 +1,7 @@
 ---
 title: "ทำไมผมถึงย้ายมาใช้ Astro ให้กับเว็ป Blog ของผมแทน Next.js"
 description: "เหตุผลที่ย้าย portfolio และ blog จาก Next.js มาใช้ Astro เพื่อให้ได้ HTML ล้วนๆ โหลดเร็ว และลด JavaScript ฝั่ง client"
-pubDate: "Jul 08 2022"
+pubDate: "Jun 05 2026"
 heroImage: "../../assets/blog-placeholder.jpg"
 ---
 

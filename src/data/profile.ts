@@ -4,6 +4,14 @@ export type WorkItem = {
   href: string;
 };
 
+export type ExperienceItem = {
+  role: string;
+  company: string;
+  period: string;
+  description?: string;
+  href?: string;
+};
+
 export type SocialLink = {
   icon: string;
   label: string;
@@ -13,6 +21,20 @@ export type SocialLink = {
 export const profile = {
   name: "Kidsanaphon Kaeopha",
   handle: "@night",
+  experience: [
+    {
+      role: "Frontend Developer",
+      company: "ชื่อบริษัท",
+      period: "2022–ปัจจุบัน",
+      description: "พัฒนาและดูแลเว็บแอปพลิเคชันด้วย React, TypeScript และ Astro",
+    },
+    {
+      role: "Web Developer",
+      company: "ชื่อบริษัทก่อนหน้า",
+      period: "2020–2022",
+      description: "ออกแบบและพัฒนาเว็บไซต์สำหรับลูกค้า B2B",
+    },
+  ] satisfies ExperienceItem[],
   work: [
     {
       name: "cv",

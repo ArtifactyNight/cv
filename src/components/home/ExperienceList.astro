@@ -1,0 +1,62 @@
+---
+import { profile, type ExperienceItem } from "../../data/profile";
+import SectionHeadline from "./SectionHeadline.astro";
+
+const experience = profile.experience as ExperienceItem[];
+---
+
+<section class="scroll-mt-8" aria-labelledby="experience-heading">
+  <SectionHeadline id="experience-heading">Experience</SectionHeadline>
+
+  {
+    experience.length === 0 ? (
+      <p class="text-sm text-ink-muted">ยังไม่มีข้อมูลประสบการณ์ทำงาน</p>
+    ) : (
+      <ul role="list">
+        {experience.map((item, index) => (
+          <li class="flex gap-4">
+            <div
+              class="flex w-3 shrink-0 flex-col items-center"
+              aria-hidden="true"
+            >
+              <span class="mt-1 size-2 shrink-0 rounded-full bg-olive-400" />
+              {index < experience.length - 1 && (
+                <span class="my-1 w-px grow bg-rule" />
+              )}
+            </div>
+
+            <div class={index < experience.length - 1 ? "pb-6" : undefined}>
+              <p class="mb-1 text-sm font-medium tabular-nums text-ink-muted">
+                {item.period}
+              </p>
+
+              <p class="text-sm font-semibold leading-snug text-ink">
+                {item.role}
+                <span class="font-normal text-ink-muted" aria-hidden="true">
+                  {" "}
+                  ·{" "}
+                </span>
+                {item.href ? (
+                  <a
+                    href={item.href}
+                    class="font-normal text-ink-muted no-underline hover:text-accent hover:underline"
+                  >
+                    {item.company}
+                  </a>
+                ) : (
+                  <span class="font-normal text-ink-muted">{item.company}</span>
+                )}
+              </p>
+
+              {item.description && (
+                <p class="mt-0.5 text-pretty text-sm text-ink-muted">
+                  {item.description}
+                </p>
+              )}
+            </div>
+          </li>
+        ))}
+      </ul>
+    )
+  }
+</section>
