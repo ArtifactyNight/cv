@@ -1,0 +1,19 @@
+---
+import { skills } from "../../data/skills";
+import SectionHeadline from "./SectionHeadline.astro";
+---
+
+<section class="scroll-mt-8" aria-labelledby="skills-heading">
+  <SectionHeadline id="skills-heading">Tech Stacks</SectionHeadline>
+
+  <dl class="flex flex-col gap-4">
+    {
+      skills.map((category) => (
+        <div class="grid gap-x-4 gap-y-1 sm:grid-cols-[9.5rem_1fr]">
+          <dt class="text-sm text-ink-muted">{category.label}</dt>
+          <dd class="m-0 text-sm text-ink">{category.items.join(", ")}</dd>
+        </div>
+      ))
+    }
+  </dl>
+</section>
