@@ -6,10 +6,13 @@ import SectionHeadline from "./SectionHeadline.astro";
 <section class="scroll-mt-8" aria-labelledby="work-heading">
   <SectionHeadline id="work-heading">Work</SectionHeadline>
 
-  <ul class="space-y-2" role="list">
+  <ol
+    class="list-outside pl-6 marker:text-xs marker:font-normal marker:tabular-nums marker:text-ink-muted"
+    role="list"
+  >
     {
       profile.work.map((item) => (
-        <li class="flex flex-wrap items-baseline gap-x-1 gap-y-0.5 py-1.5">
+        <li class="flex flex-wrap items-baseline gap-x-1 gap-y-0.5 py-1.5 pl-1">
           <a
             href={item.href}
             class="text-sm font-semibold leading-snug text-ink no-underline hover:text-accent hover:underline"
@@ -23,5 +26,5 @@ import SectionHeadline from "./SectionHeadline.astro";
         </li>
       ))
     }
-  </ul>
+  </ol>
 </section>
