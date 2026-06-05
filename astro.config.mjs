@@ -34,7 +34,7 @@ export default defineConfig({
     },
     {
       provider: fontProviders.google(),
-      name: "IBM Plex Sans Thai",
+      name: "Noto Sans Thai",
       cssVariable: "--font-thai",
       subsets: ["thai"],
     },

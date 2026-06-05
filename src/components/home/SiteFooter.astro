@@ -6,27 +6,37 @@ import { profile } from "../../data/profile";
 ---
 
 <footer
-  class="pt-4 flex flex-col items-center gap-8"
+  class="pt-4 flex flex-col items-center gap-4"
   aria-label="ช่องทางติดต่อ"
 >
   <Image src={signature} alt="Signature" class="h-16 w-auto" />
 
   <nav aria-label="ลิงก์ภายนอก">
-    <ul class="flex flex-wrap justify-center gap-x-5 gap-y-2" role="list">
+    <ul
+      class="flex flex-wrap items-center justify-center gap-x-2 gap-y-2"
+      role="list"
+    >
       {
-        profile.social.map((link) => (
-          <li>
-            <a
-              href={link.href}
-              class="text-sm flex items-center gap-1 text-accent no-underline hover:text-accent-deep hover:underline"
-              {...(link.href.startsWith("http")
-                ? { target: "_blank", rel: "noopener noreferrer" }
-                : {})}
-            >
-              <Icon name={link.icon} class="size-4" />
-              {link.label}
-            </a>
-          </li>
+        profile.social.map((link, index) => (
+          <>
+            {index > 0 && (
+              <li aria-hidden="true" class="text-sm text-ink-muted select-none">
+                ·
+              </li>
+            )}
+            <li>
+              <a
+                href={link.href}
+                class="text-sm flex items-center gap-1 font-sentient text-accent no-underline hover:text-accent-deep hover:underline"
+                {...(link.href.startsWith("http")
+                  ? { target: "_blank", rel: "noopener noreferrer" }
+                  : {})}
+              >
+                <Icon name={link.icon} class="size-4" />
+                {link.label}
+              </a>
+            </li>
+          </>
         ))
       }
     </ul>

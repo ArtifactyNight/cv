@@ -60,6 +60,11 @@ export const profile = {
       label: "GitHub",
       href: "https://github.com/ArtifactyNight",
     },
+    {
+      icon: "mdi:linkedin",
+      label: "LinkedIn",
+      href: "https://www.linkedin.com/in/kidsanaphon/",
+    },
   ] satisfies SocialLink[],
   contactLine: "เปิดรับบทสนทนาเรื่องการทำเว็บ เครื่องมือ และ Astro",
 } as const;
