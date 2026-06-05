@@ -7,7 +7,7 @@ const experience = profile.experience as ExperienceItem[];
 ---
 
 <section class="scroll-mt-8" aria-labelledby="experience-heading">
-  <SectionHeadline id="experience-heading">ประวบก</SectionHeadline>
+  <SectionHeadline id="experience-heading">ประสบการณ์</SectionHeadline>
 
   {
     experience.length === 0 ? (
@@ -39,12 +39,12 @@ const experience = profile.experience as ExperienceItem[];
                 {item.href ? (
                   <a
                     href={item.href}
-                    class="font-normal text-ink-muted no-underline hover:text-accent hover:underline"
+                    class="font-normal text-ink-muted no-underline hover:text-accent hover:underline "
                   >
                     {item.company}
                   </a>
                 ) : (
-                  <span class="font-normal text-ink-muted">{item.company}</span>
+                  <span class="font-semibold text-ink">{item.company}</span>
                 )}
               </p>
 

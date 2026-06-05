@@ -1,0 +1,133 @@
+---
+// Self-contained: handles button UI, click, and `d` keydown across all pages.
+---
+
+<button
+  id="theme-toggle"
+  type="button"
+  class="inline-flex size-7 shrink-0 cursor-pointer items-center justify-center rounded text-ink-muted transition-colors duration-150 hover:text-accent focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+  aria-label="ธีม: อัตโนมัติ (D)"
+  title="สลับธีม (D)"
+>
+  <!-- Auto / system: half-filled circle -->
+  <svg id="icon-auto" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true" class="size-[0.875rem]">
+    <path d="M8 2a6 6 0 1 0 0 12V2z"/>
+    <circle cx="8" cy="8" r="6" fill="none" stroke="currentColor" stroke-width="1.5"/>
+  </svg>
+  <!-- Light: sun -->
+  <svg id="icon-light" viewBox="0 0 16 16" fill="currentColor" stroke="currentColor" stroke-linecap="round" aria-hidden="true" class="size-[0.875rem] hidden">
+    <circle cx="8" cy="8" r="2.5" stroke="none"/>
+    <line x1="8" y1="1" x2="8" y2="3" stroke-width="1.5"/>
+    <line x1="8" y1="13" x2="8" y2="15" stroke-width="1.5"/>
+    <line x1="1" y1="8" x2="3" y2="8" stroke-width="1.5"/>
+    <line x1="13" y1="8" x2="15" y2="8" stroke-width="1.5"/>
+    <line x1="2.93" y1="2.93" x2="4.34" y2="4.34" stroke-width="1.5"/>
+    <line x1="11.66" y1="11.66" x2="13.07" y2="13.07" stroke-width="1.5"/>
+    <line x1="2.93" y1="13.07" x2="4.34" y2="11.66" stroke-width="1.5"/>
+    <line x1="11.66" y1="4.34" x2="13.07" y2="2.93" stroke-width="1.5"/>
+  </svg>
+  <!-- Dark: crescent moon -->
+  <svg id="icon-dark" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true" class="size-[0.875rem] hidden">
+    <path d="M6.75 1.5A6.5 6.5 0 1 0 14.5 9.25 5.25 5.25 0 0 1 6.75 1.5z"/>
+  </svg>
+</button>
+
+<script>
+  const THEMES = ["auto", "light", "dark"] as const;
+  type Theme = (typeof THEMES)[number];
+  const LS_KEY = "cv-theme";
+
+  function getTheme(): Theme {
+    try {
+      const t = localStorage.getItem(LS_KEY);
+      if (t === "light" || t === "dark") return t;
+    } catch (_) {}
+    return "auto";
+  }
+
+  function applyTheme(theme: Theme): void {
+    document.documentElement.classList.add("theme-transitioning");
+    if (theme === "auto") {
+      document.documentElement.removeAttribute("data-theme");
+      try { localStorage.removeItem(LS_KEY); } catch (_) {}
+    } else {
+      document.documentElement.setAttribute("data-theme", theme);
+      try { localStorage.setItem(LS_KEY, theme); } catch (_) {}
+    }
+    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    const isDark = theme === "dark" || (theme === "auto" && prefersDark);
+    document.documentElement.classList.toggle("dark", isDark);
+    window.dispatchEvent(new CustomEvent("cv:theme-change", { detail: { theme } }));
+    requestAnimationFrame(() => {
+      setTimeout(() => document.documentElement.classList.remove("theme-transitioning"), 220);
+    });
+  }
+
+  function cycleTheme(): void {
+    const current = getTheme();
+    const next = THEMES[(THEMES.indexOf(current) + 1) % THEMES.length];
+    applyTheme(next);
+    updateIcon(next);
+  }
+
+  function updateIcon(theme?: Theme): void {
+    const t = theme ?? getTheme();
+    const iconIds: Record<Theme, string> = {
+      auto: "icon-auto",
+      light: "icon-light",
+      dark: "icon-dark",
+    };
+    const labels: Record<Theme, string> = {
+      auto: "ธีม: อัตโนมัติ (D)",
+      light: "ธีม: สว่าง (D)",
+      dark: "ธีม: มืด (D)",
+    };
+    THEMES.forEach((name) => {
+      const el = document.getElementById(iconIds[name]);
+      if (el) el.classList.toggle("hidden", name !== t);
+    });
+    const btn = document.getElementById("theme-toggle");
+    if (btn) btn.setAttribute("aria-label", labels[t]);
+  }
+
+  function setupButton(): void {
+    const btn = document.getElementById("theme-toggle");
+    if (!btn) return;
+    if (!btn.dataset.themeReady) {
+      btn.dataset.themeReady = "1";
+      btn.addEventListener("click", cycleTheme);
+    }
+    updateIcon();
+  }
+
+  // System preference change — updates .dark class when in auto mode
+  const win = window as Window & { __cvThemeReady?: boolean; __cvMqReady?: boolean };
+  if (!win.__cvMqReady) {
+    win.__cvMqReady = true;
+    window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", (e) => {
+      if (getTheme() === "auto") {
+        document.documentElement.classList.toggle("dark", e.matches);
+      }
+    });
+  }
+
+  // Keydown — guarded so it's registered once even across page navigations
+  if (!win.__cvThemeReady) {
+    win.__cvThemeReady = true;
+    document.addEventListener("keydown", (e: KeyboardEvent) => {
+      if (e.key !== "d" && e.key !== "D") return;
+      if (e.metaKey || e.ctrlKey || e.altKey) return;
+      const target = e.target as HTMLElement;
+      if (
+        target.tagName === "INPUT" ||
+        target.tagName === "TEXTAREA" ||
+        target.isContentEditable
+      )
+        return;
+      cycleTheme();
+    });
+  }
+
+  document.addEventListener("astro:page-load", setupButton);
+  setupButton();
+</script>

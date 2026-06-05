@@ -1,7 +1,9 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
 
-@theme inline {
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
   --font-sans: var(--font-schibsted-grotesk), var(--font-thai), system-ui, sans-serif;
   --font-sentient: var(--font-sentient), system-ui, sans-serif;
   --font-google-sans: var(--font-google-sans), system-ui, sans-serif;
@@ -118,4 +120,77 @@
   --tw-prose-pre-bg: color-mix(in oklch, var(--color-ink) 6%, var(--color-page));
   --tw-prose-th-borders: var(--color-rule);
   --tw-prose-td-borders: var(--color-rule);
+}
+
+/* ── Dark mode tokens ─────────────────────────────── */
+
+html[data-theme="dark"] {
+  --color-page: #191c18;
+  --color-ink: #e8ebe3;
+  --color-ink-muted: #848e7c;
+  --color-accent: #a0aa97;
+  --color-accent-deep: #bac3b1;
+  --color-rule: #2e3329;
+  --color-primary: #b8a878;
+  --color-primary-deep: #9d8b5e;
+  scrollbar-color: #2e3329 #191c18;
+}
+
+@media (prefers-color-scheme: dark) {
+  html:not([data-theme="light"]) {
+    --color-page: #191c18;
+    --color-ink: #e8ebe3;
+    --color-ink-muted: #848e7c;
+    --color-accent: #a0aa97;
+    --color-accent-deep: #bac3b1;
+    --color-rule: #2e3329;
+    --color-primary: #b8a878;
+    --color-primary-deep: #9d8b5e;
+    scrollbar-color: #2e3329 #191c18;
+  }
+}
+
+/* Inline code bg in dark mode (prose uses bg-olive-200/70 directly) */
+html[data-theme="dark"] :not(pre) > code,
+html[data-theme="dark"] .prose code:not(pre code) {
+  background-color: color-mix(in oklch, var(--color-ink) 12%, var(--color-page)) !important;
+}
+
+@media (prefers-color-scheme: dark) {
+  html:not([data-theme="light"]) :not(pre) > code,
+  html:not([data-theme="light"]) .prose code:not(pre code) {
+    background-color: color-mix(in oklch, var(--color-ink) 12%, var(--color-page)) !important;
+  }
+}
+
+/* Signature invert in dark mode */
+html[data-theme="dark"] .signature-img {
+  filter: invert(0.88) brightness(0.95);
+}
+
+@media (prefers-color-scheme: dark) {
+  html:not([data-theme="light"]) .signature-img {
+    filter: invert(0.88) brightness(0.95);
+  }
+}
+
+/* Momentary transition during theme switch only */
+html.theme-transitioning *,
+html.theme-transitioning *::before,
+html.theme-transitioning *::after {
+  transition:
+    background-color 180ms cubic-bezier(0.25, 1, 0.5, 1),
+    color 180ms cubic-bezier(0.25, 1, 0.5, 1),
+    border-color 180ms cubic-bezier(0.25, 1, 0.5, 1),
+    fill 180ms cubic-bezier(0.25, 1, 0.5, 1),
+    stroke 180ms cubic-bezier(0.25, 1, 0.5, 1),
+    filter 180ms cubic-bezier(0.25, 1, 0.5, 1) !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html.theme-transitioning *,
+  html.theme-transitioning *::before,
+  html.theme-transitioning *::after {
+    transition: none !important;
+  }
 }

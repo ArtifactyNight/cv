@@ -21,6 +21,21 @@ const resolvedOgImage = ogImage
   : new URL(image.src, Astro.url);
 ---
 
+<!-- Theme: apply stored preference before first paint (prevents flash) -->
+<script is:inline>
+  (function () {
+    try {
+      var t = localStorage.getItem("cv-theme");
+      if (t === "light" || t === "dark") {
+        document.documentElement.setAttribute("data-theme", t);
+      }
+      var prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+      var isDark = t === "dark" || (t !== "light" && prefersDark);
+      if (isDark) document.documentElement.classList.add("dark");
+    } catch (_) {}
+  })();
+</script>
+
 <!-- Global Metadata -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />

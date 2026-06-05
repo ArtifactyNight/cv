@@ -25,19 +25,19 @@ export const profile = {
     {
       role: "Fullstack Developer",
       company: "RDCW",
-      period: "กันยายน 2023 ถึง ปัจจุบัน",
+      period: "ก.ย. 2023 ถึง ปัจจุบัน",
       description:
-        "พัฒนาแพลตฟอร์ม e-commerce สำหรับลูกค้า enterprise ใช้งานรวมกว่า 100,000 คน ออกแบบสถาปัตยกรรมรองรับ 500+ daily active users โดยไม่มี downtime",
+        "พัฒนาแพลตฟอร์ม e-commerce สำหรับลูกค้ารายใหญ่ที่มีผู้ใช้งานรวมกว่า 100,000 คน ตั้งแต่รับ Requirement ไปจนถึง Deployment ออกแบบสถาปัตยกรรมรองรับ 500+ daily active users โดยไม่มี downtime",
     },
     {
       role: "Fullstack Developer Internship",
       company: "MFEC Public Company Limited",
-      period: "พฤศจิกายน 2025 ถึง กุมภาพันธ์ 2026",
+      period: "พ.ย. 2025 ถึง ก.พ. 2026",
       description:
-        "สร้างแพลตฟอร์ม Request VM ภายในองค์กรด้วย Appsmith และระบบ billing แบบ multi-cloud ด้วย Nest.js",
+        "พัฒนาแพลตฟอร์ม Request VM ภายในองค์กรด้วย Appsmith และระบบ billing แบบ multi-cloud ด้วย Nest.js",
     },
   ] satisfies ExperienceItem[],
-work: [
+  work: [
     {
       name: "cv",
       description: "Portfolio และ Blog ส่วนตัว สร้างด้วย Astro",
