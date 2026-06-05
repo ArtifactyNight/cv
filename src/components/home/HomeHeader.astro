@@ -14,7 +14,7 @@ const initials = profile.name
   .join("");
 ---
 
-<header id="top" class="scroll-mt-8">
+<header id="top" class="scroll-mt-8" transition:persist="site-header">
   <div
     class="mb-5 flex size-11 items-center justify-center rounded-full bg-olive-200 text-sm font-medium text-ink-muted"
     role="img"
@@ -37,6 +37,7 @@ const initials = profile.name
       <li>
         <a
           href="/"
+          data-nav="home"
           class:list={[
             "home-nav-link",
             { "home-nav-link--active": current === "home" },
@@ -58,6 +59,7 @@ const initials = profile.name
       <li>
         <a
           href="/work"
+          data-nav="work"
           class:list={[
             "home-nav-link",
             { "home-nav-link--active": current === "work" },
@@ -79,6 +81,7 @@ const initials = profile.name
       <li>
         <a
           href="/writing"
+          data-nav="writing"
           class:list={[
             "home-nav-link",
             { "home-nav-link--active": current === "writing" },
@@ -100,3 +103,42 @@ const initials = profile.name
     </ul>
   </nav>
 </header>
+
+<script>
+  const navLabels = {
+    home: "หน้าหลัก",
+    work: "ผลงาน",
+    writing: "บทความ",
+  } as const;
+
+  function getCurrentNav(pathname: string) {
+    if (pathname === "/" || pathname === "") return "home";
+    if (pathname.startsWith("/work")) return "work";
+    if (pathname.startsWith("/writing") || pathname.startsWith("/blog"))
+      return "writing";
+    return null;
+  }
+
+  function updateNav() {
+    const current = getCurrentNav(window.location.pathname);
+
+    document.querySelectorAll<HTMLAnchorElement>("[data-nav]").forEach((link) => {
+      const nav = link.dataset.nav as keyof typeof navLabels;
+      const isActive = nav === current;
+      const label = navLabels[nav];
+
+      link.classList.toggle("home-nav-link--active", isActive);
+
+      if (isActive) {
+        link.setAttribute("aria-current", "page");
+        link.innerHTML = `<span class="inline-block mr-1 size-2 rounded-full bg-ink align-middle"></span><span class="align-middle">${label}</span>`;
+      } else {
+        link.removeAttribute("aria-current");
+        link.textContent = label;
+      }
+    });
+  }
+
+  updateNav();
+  document.addEventListener("astro:page-load", updateNav);
+</script>

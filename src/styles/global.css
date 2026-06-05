@@ -23,6 +23,7 @@
     color: var(--color-ink);
     -webkit-font-smoothing: antialiased;
     scroll-behavior: smooth;
+    @apply scrollbar-thin scrollbar-thumb-olive-200 scrollbar-track-olive-50;
   }
 
   body {

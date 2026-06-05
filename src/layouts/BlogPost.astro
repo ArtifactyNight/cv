@@ -1,11 +1,10 @@
 ---
-import { Image } from "astro:assets";
 import type { CollectionEntry } from "astro:content";
 import Breadcrumbs from "../components/blog/Breadcrumbs.astro";
 import ReadFooter from "../components/blog/ReadFooter.astro";
-import { formatWritingDate } from "../lib/format-date";
-import type { AdjacentPosts } from "../lib/blog-nav";
 import { PROSE_CLASSES } from "../const";
+import type { AdjacentPosts } from "../lib/blog-nav";
+import { formatWritingDate } from "../lib/format-date";
 import Layout from "./Layout.astro";
 
 type BlogData = CollectionEntry<"blog">["data"];
@@ -15,15 +14,8 @@ interface Props extends BlogData {
   adjacent: AdjacentPosts;
 }
 
-const {
-  title,
-  description,
-  pubDate,
-  updatedDate,
-  heroImage,
-  slug,
-  adjacent,
-} = Astro.props;
+const { title, description, pubDate, updatedDate, heroImage, slug, adjacent } =
+  Astro.props;
 ---
 
 <Layout title={title} description={description}>
@@ -36,7 +28,7 @@ const {
       ]}
     />
 
-    <header class="mb-10 md:mb-12">
+    <header class="mb-6">
       <time
         class="block text-sm font-medium text-ink-muted tabular-nums mb-4"
         datetime={pubDate.toISOString()}
@@ -44,7 +36,7 @@ const {
         {formatWritingDate(pubDate)}
       </time>
 
-      <h1 class="text-balance text-sm font-bold leading-[1.15] text-ink">
+      <h1 class="text-balance text-xl font-bold leading-[1.15] text-ink">
         {title}
       </h1>
 
@@ -59,7 +51,7 @@ const {
         )
       }
     </header>
-
+    <!-- 
     {
       heroImage && (
         <figure class="mb-10 md:mb-12">
@@ -73,7 +65,7 @@ const {
           />
         </figure>
       )
-    }
+    } -->
 
     <div class={PROSE_CLASSES}>
       <slot />
