@@ -1,11 +1,12 @@
 ---
 import { getCollection } from "astro:content";
 import About from "../components/home/About.astro";
+import ActivitySection from "../components/home/ActivitySection.astro";
 import ExperienceList from "../components/home/ExperienceList.astro";
 import HomeHeader from "../components/home/HomeHeader.astro";
-import SkillsList from "../components/home/SkillsList.astro";
 import SectionDivider from "../components/home/SectionDivider.astro";
 import SiteFooter from "../components/home/SiteFooter.astro";
+import SkillsList from "../components/home/SkillsList.astro";
 import WorkList from "../components/home/WorkList.astro";
 import WritingList from "../components/home/WritingList.astro";
 import Layout from "../layouts/Layout.astro";
@@ -22,6 +23,7 @@ const posts = (await getCollection("blog")).sort(
   <SkillsList />
   <WorkList />
   <WritingList posts={posts} />
+  <ActivitySection />
   <SectionDivider />
   <SiteFooter />
 </Layout>

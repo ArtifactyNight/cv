@@ -1,0 +1,17 @@
+---
+import { profile } from "../../data/profile";
+import HomeActivityCalendar from "./ActivityCalendar";
+import SectionHeadline from "./SectionHeadline.astro";
+
+const githubUsername = new URL(
+  profile.social.find((link) => link.icon === "mdi:github-box")!.href,
+).pathname.slice(1);
+---
+
+<section class="scroll-mt-8" aria-labelledby="activity-heading">
+  <SectionHeadline id="activity-heading">Activity</SectionHeadline>
+
+  <div class="overflow-x-auto text-ink-muted">
+    <HomeActivityCalendar client:only="react" username={githubUsername} />
+  </div>
+</section>

@@ -8,10 +8,12 @@ import { defineConfig, fontProviders } from 'astro/config';
 import icon from "astro-icon";
 import rehypeAttrs from 'rehype-attr';
 
+import react from "@astrojs/react";
+
 // https://astro.build/config
 export default defineConfig({
   site: "https://www.example.com",
-  integrations: [mdx(), sitemap(), icon()],
+  integrations: [mdx(), sitemap(), icon(), react()],
   vite: {
     plugins: [tailwindcss()],
   },
