@@ -44,8 +44,8 @@ export const profile = {
       href: "/",
     },
     {
-      name: "blog",
-      description: "บทความภาษาไทยเกี่ยวกับการทำเว็บและเครื่องมือที่ใช้",
+      name: "hr-recruitment-pipeline",
+      description: "เครื่องมือจัดการ Recruitment Pipeline ที่มี AI Assistant",
       href: "/writing",
     },
   ] satisfies WorkItem[],

@@ -3,6 +3,7 @@ import { getCollection } from "astro:content";
 import About from "../components/home/About.astro";
 import ExperienceList from "../components/home/ExperienceList.astro";
 import HomeHeader from "../components/home/HomeHeader.astro";
+import SectionDivider from "../components/home/SectionDivider.astro";
 import SiteFooter from "../components/home/SiteFooter.astro";
 import WorkList from "../components/home/WorkList.astro";
 import WritingList from "../components/home/WritingList.astro";
@@ -19,5 +20,6 @@ const posts = (await getCollection("blog")).sort(
   <ExperienceList />
   <WorkList />
   <WritingList posts={posts} />
+  <SectionDivider />
   <SiteFooter />
 </Layout>

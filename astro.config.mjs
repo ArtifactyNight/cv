@@ -25,6 +25,12 @@ export default defineConfig({
       name: "IBM Plex Sans Thai",
       cssVariable: "--font-thai",
       subsets: ["thai"],
+    },
+    {
+      provider: fontProviders.fontshare(),
+      name: "Sentient",
+      cssVariable: "--font-sentient",
+      subsets: ["latin"],
     }
   ]
 });

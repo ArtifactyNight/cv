@@ -1,11 +1,18 @@
 ---
 import { Icon } from "astro-icon/components";
+import { Image } from "astro:assets";
+import signature from "../../assets/signature.svg";
 import { profile } from "../../data/profile";
 ---
 
-<footer class="pt-8 border-t border-rule" aria-label="ช่องทางติดต่อ">
+<footer
+  class="pt-4 flex flex-col items-center gap-8"
+  aria-label="ช่องทางติดต่อ"
+>
+  <Image src={signature} alt="Signature" class="h-16 w-auto" />
+
   <nav aria-label="ลิงก์ภายนอก">
-    <ul class="flex flex-wrap gap-x-5 gap-y-2" role="list">
+    <ul class="flex flex-wrap justify-center gap-x-5 gap-y-2" role="list">
       {
         profile.social.map((link) => (
           <li>

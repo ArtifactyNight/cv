@@ -3,8 +3,8 @@
 
 @theme inline {
   --font-sans: var(--font-schibsted-grotesk), var(--font-thai), system-ui, sans-serif;
+  --font-sentient: var(--font-sentient), system-ui, sans-serif;
 
-  /* Primary brown (brand) */
   --color-primary: #978F66;
   --color-primary-deep: #a38872;
 
@@ -85,20 +85,9 @@
 
   .home-nav-link--active {
     color: var(--color-ink);
-    font-weight: 500;
+    @apply font-bold;
   }
-
-  .home-nav-link--active::before {
-    content: "";
-    display: inline-block;
-    width: 0.5rem;
-    height: 0.5rem;
-    margin-right: 0.25rem;
-    border-radius: 9999px;
-    background-color: var(--color-ink);
-    vertical-align: middle;
-  }
-
+  
   .home-nav-link--active:hover {
     color: var(--color-ink);
     text-decoration: none;
