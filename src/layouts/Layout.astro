@@ -20,15 +20,16 @@ const pageTransition = {
 interface Props {
   title?: string;
   description?: string;
+  ogImage?: string;
 }
 
-const { title = SITE_TITLE, description = SITE_DESCRIPTION } = Astro.props;
+const { title = SITE_TITLE, description = SITE_DESCRIPTION, ogImage } = Astro.props;
 ---
 
 <!doctype html>
 <html lang="th">
   <head>
-    <BaseHead title={title} description={description} />
+    <BaseHead title={title} description={description} ogImage={ogImage} />
   </head>
   <body>
     <main class="mx-auto w-full max-w-2xl px-4 py-10 flex flex-col gap-6">

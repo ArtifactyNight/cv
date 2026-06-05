@@ -1,6 +1,6 @@
 ---
 title: "ลองกลับไปสร้างเว็ปไซต์ด้วยมือของเราเอง (แทบไม่ใช้ AI)"
-description: "เหตุผลที่ย้าย portfolio และ blog จาก Next.js มาใช้ Astro เพื่อให้ได้ HTML ล้วนๆ โหลดเร็ว และลด JavaScript ฝั่ง client"
+description: "จะมาแชร์ประสบการณ์ย้าย portfolio และ blog จาก Next.js มาใช้ Astro เพื่อสร้างเว็ปไซต์ HTML ล้วน โหลดเร็ว เบา และลด JavaScript ฝั่ง client"
 pubDate: "Jun 05 2026"
 heroImage: "https://placehold.co/600x400"
 ---
