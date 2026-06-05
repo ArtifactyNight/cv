@@ -46,7 +46,7 @@ export const profile = {
     {
       name: "hr-recruitment-pipeline",
       description: "เครื่องมือจัดการ Recruitment Pipeline ที่มี AI Assistant",
-      href: "/writing",
+      href: "https://github.com/ArtifactyNight/hr-recruitment-pipeline",
     },
   ] satisfies WorkItem[],
   social: [

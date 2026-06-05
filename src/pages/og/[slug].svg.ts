@@ -1,17 +1,15 @@
 import type { APIRoute, GetStaticPaths } from "astro";
 import { getCollection } from "astro:content";
-import { Resvg } from "@resvg/resvg-js";
 import { format } from "date-fns";
 import { th } from "date-fns/locale";
 import { readFile } from "fs/promises";
 import { join } from "path";
 import satori from "satori";
-import { SITE_TITLE } from "../../const";
 
 // Colors from the design system (resolved oklch → hex)
 const C = {
-  bg: "#FAFAF5",    // olive-50
-  ink: "#292820",   // olive-900
+  bg: "#FAFAF5", // olive-50
+  ink: "#292820", // olive-900
   muted: "#726A4D", // olive-600
   accent: "#978F66", // primary
 };
@@ -55,35 +53,6 @@ export const GET: APIRoute = async ({ props }) => {
         position: "relative",
       },
       children: [
-        // Site name — top right
-        {
-          type: "div",
-          props: {
-            style: {
-              position: "absolute",
-              top: "64px",
-              right: "64px",
-              fontSize: "18px",
-              fontWeight: 400,
-              color: C.muted,
-              letterSpacing: "0.01em",
-            },
-            children: SITE_TITLE,
-          },
-        },
-        // Accent bar
-        {
-          type: "div",
-          props: {
-            style: {
-              width: "36px",
-              height: "3px",
-              backgroundColor: C.accent,
-              marginBottom: "24px",
-              borderRadius: "2px",
-            },
-          },
-        },
         // Title
         {
           type: "div",
@@ -120,19 +89,31 @@ export const GET: APIRoute = async ({ props }) => {
     width: 1200,
     height: 630,
     fonts: [
-      { name: "Schibsted Grotesk", data: fontRegular, weight: 400, style: "normal" },
-      { name: "Schibsted Grotesk", data: fontBold, weight: 700, style: "normal" },
-      { name: "Noto Sans Thai", data: thaiRegular, weight: 400, style: "normal" },
+      {
+        name: "Schibsted Grotesk",
+        data: fontRegular,
+        weight: 400,
+        style: "normal",
+      },
+      {
+        name: "Schibsted Grotesk",
+        data: fontBold,
+        weight: 700,
+        style: "normal",
+      },
+      {
+        name: "Noto Sans Thai",
+        data: thaiRegular,
+        weight: 400,
+        style: "normal",
+      },
       { name: "Noto Sans Thai", data: thaiBold, weight: 700, style: "normal" },
     ],
   });
 
-  const resvg = new Resvg(svg, { fitTo: { mode: "width", value: 1200 } });
-  const png = resvg.render().asPng();
-
-  return new Response(png, {
+  return new Response(svg, {
     headers: {
-      "Content-Type": "image/png",
+      "Content-Type": "image/svg+xml",
       "Cache-Control": "public, max-age=31536000, immutable",
     },
   });

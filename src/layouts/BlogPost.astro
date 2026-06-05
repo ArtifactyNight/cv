@@ -11,13 +11,14 @@ type BlogData = CollectionEntry<"blog">["data"];
 interface Props extends BlogData {
   slug: string;
   adjacent: AdjacentPosts;
+  description: string;
 }
 
-const { title, description, pubDate, updatedDate, heroImage, slug, adjacent } =
+const { title, description, pubDate, updatedDate, slug, adjacent } =
   Astro.props;
 ---
 
-<Layout title={title} description={description} ogImage={`/og/${slug}.png`}>
+<Layout title={title} description={description} ogImage={`/og/${slug}.svg`}>
   <article>
     <Breadcrumbs
       crumbs={[

@@ -1,6 +1,7 @@
 ---
 import { type CollectionEntry, getCollection, render } from "astro:content";
 import { getAdjacentPosts } from "../../lib/blog-nav";
+import { excerptFromBody } from "../../lib/excerpt";
 import BlogPost from "../../layouts/BlogPost.astro";
 
 export async function getStaticPaths() {
@@ -22,8 +23,14 @@ interface Props {
 
 const { post, adjacent } = Astro.props;
 const { Content } = await render(post);
+const description = excerptFromBody(post.body ?? "");
 ---
 
-<BlogPost {...post.data} slug={post.id} adjacent={adjacent}>
+<BlogPost
+  {...post.data}
+  description={description}
+  slug={post.id}
+  adjacent={adjacent}
+>
   <Content />
 </BlogPost>
