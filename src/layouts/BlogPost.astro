@@ -1,7 +1,6 @@
 ---
 import type { CollectionEntry } from "astro:content";
 import Breadcrumbs from "../components/blog/Breadcrumbs.astro";
-import ReadFooter from "../components/blog/ReadFooter.astro";
 import { PROSE_CLASSES } from "../const";
 import type { AdjacentPosts } from "../lib/blog-nav";
 import { formatWritingDate } from "../lib/format-date";
@@ -71,6 +70,6 @@ const { title, description, pubDate, updatedDate, heroImage, slug, adjacent } =
       <slot />
     </div>
 
-    <ReadFooter newer={adjacent.newer} older={adjacent.older} />
+    <!-- <ReadFooter newer={adjacent.newer} older={adjacent.older} /> -->
   </article>
 </Layout>
