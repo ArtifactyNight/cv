@@ -4,6 +4,7 @@
 @theme inline {
   --font-sans: var(--font-schibsted-grotesk), var(--font-thai), system-ui, sans-serif;
   --font-sentient: var(--font-sentient), system-ui, sans-serif;
+  --font-google-sans: var(--font-google-sans), system-ui, sans-serif;
 
   --color-primary: #978F66;
   --color-primary-deep: #a38872;

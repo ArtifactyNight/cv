@@ -39,6 +39,12 @@ export default defineConfig({
       subsets: ["thai"],
     },
     {
+      provider: fontProviders.google(),
+      name: "Google Sans",
+      cssVariable: "--font-google-sans",
+      subsets: ["thai"],
+    },
+    {
       provider: fontProviders.fontshare(),
       name: "Sentient",
       cssVariable: "--font-sentient",
