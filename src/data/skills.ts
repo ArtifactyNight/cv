@@ -5,14 +5,6 @@ export type SkillCategory = {
 
 export const skills = [
   {
-    label: "Frontend Frameworks",
-    items: ["React", "Next.js", "Astro", "SvelteKit", "Tailwind CSS"],
-  },
-  {
-    label: "Backend Frameworks",
-    items: ["Express", "Nest.js", "Hono", "Elysia.js"],
-  },
-  {
     label: "Languages & Runtime",
     items: [
       "TypeScript",
@@ -21,26 +13,32 @@ export const skills = [
       "Bun",
       "Python",
       "Java",
+      "Kotlin",
       "C#",
+      "Swift",
     ],
   },
   {
-    label: "Database & ORM",
-    items: ["PostgreSQL", "MySQL", "MongoDB", "Redis", "Prisma", "DrizzleORM"],
+    label: "Frontend",
+    items: ["Astro", "React", "Next.js", "TailwindCSS", "SvelteKit"],
   },
   {
-    label: "Real-time Communication",
-    items: ["WebSocket", "Socket.IO", "EventStream"],
+    label: "Backend",
+    items: ["Nest.js", "Hono", "Express", "Elysia.js"],
+  },
+  {
+    label: "Database & ORM",
+    items: ["PostgreSQL", "Prisma", "Redis", "MySQL", "MongoDB", "DrizzleORM"],
   },
   {
     label: "DevOps & Infrastructure",
     items: [
       "Docker",
-      "PM2",
-      "Nginx",
       "Vercel",
       "Cloudflare",
       "GitHub Actions",
+      "Nginx",
+      "PM2",
       "Ubuntu",
       "Windows Server",
     ],
