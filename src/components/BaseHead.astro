@@ -29,7 +29,9 @@ const resolvedOgImage = ogImage
       if (t === "light" || t === "dark") {
         document.documentElement.setAttribute("data-theme", t);
       }
-      var prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+      var prefersDark = window.matchMedia(
+        "(prefers-color-scheme: dark)",
+      ).matches;
       var isDark = t === "dark" || (t !== "light" && prefersDark);
       if (isDark) document.documentElement.classList.add("dark");
     } catch (_) {}
@@ -50,10 +52,10 @@ const resolvedOgImage = ogImage
 <meta name="generator" content={Astro.generator} />
 <ClientRouter />
 
-<Font cssVariable="--font-schibsted-grotesk" />
-<Font cssVariable="--font-thai" />
-<Font cssVariable="--font-sentient" />
-<Font cssVariable="--font-google-sans" />
+<Font cssVariable="--font-schibsted-grotesk" preload />
+<Font cssVariable="--font-thai" preload />
+<Font cssVariable="--font-sentient" preload />
+<Font cssVariable="--font-google-sans" preload />
 
 <!-- Canonical URL -->
 <link rel="canonical" href={canonicalURL} />
