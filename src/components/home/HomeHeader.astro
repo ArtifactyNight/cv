@@ -10,6 +10,7 @@ interface Props {
 }
 
 const { current = "home" } = Astro.props;
+const showPfp = false;
 
 const navItems = [
   { nav: "home", href: "/", label: "หน้าหลัก" },
@@ -71,11 +72,15 @@ const navItems = [
 
   <div class="flex shrink-0 flex-col items-end gap-2">
     {/* <ThemeToggle /> */}
-    <Image
-      src={me}
-      alt={`รูปโปรไฟล์ ${profile.name}`}
-      class="size-16 rounded-lg object-cover"
-    />
+    {
+      showPfp && (
+        <Image
+          src={me}
+          alt={`รูปโปรไฟล์ ${profile.name}`}
+          class="size-16 rounded-lg object-cover"
+        />
+      )
+    }
   </div>
 </header>
 
