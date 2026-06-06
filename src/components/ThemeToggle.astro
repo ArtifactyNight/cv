@@ -90,6 +90,20 @@
     if (btn) btn.setAttribute("aria-label", labels[t]);
   }
 
+  function syncThemeState(): void {
+    const theme = getTheme();
+    if (theme === "auto") {
+      document.documentElement.removeAttribute("data-theme");
+    } else {
+      document.documentElement.setAttribute("data-theme", theme);
+    }
+    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    document.documentElement.classList.toggle(
+      "dark",
+      theme === "dark" || (theme === "auto" && prefersDark),
+    );
+  }
+
   function setupButton(): void {
     const btn = document.getElementById("theme-toggle");
     if (!btn) return;
@@ -98,6 +112,11 @@
       btn.addEventListener("click", cycleTheme);
     }
     updateIcon();
+  }
+
+  function initThemeUi(): void {
+    syncThemeState();
+    setupButton();
   }
 
   // System preference change — updates .dark class when in auto mode
@@ -128,5 +147,6 @@
     });
   }
 
-  setupButton();
+  initThemeUi();
+  document.addEventListener("astro:page-load", initThemeUi);
 </script>

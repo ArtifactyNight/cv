@@ -3,7 +3,7 @@ import { Image } from "astro:assets";
 import me from "../../assets/me.jpeg";
 import { profile } from "../../data/profile";
 import HomeNavLink from "./HomeNavLink.astro";
-import ThemeToggle from "../ThemeToggle.astro";
+// import ThemeToggle from "../ThemeToggle.astro";
 
 interface Props {
   current?: "home" | "work" | "writing";
@@ -70,7 +70,7 @@ const navItems = [
   </div>
 
   <div class="flex shrink-0 flex-col items-end gap-2">
-    <ThemeToggle />
+    {/* <ThemeToggle /> */}
     <Image
       src={me}
       alt={`รูปโปรไฟล์ ${profile.name}`}

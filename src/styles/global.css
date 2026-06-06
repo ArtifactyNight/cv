@@ -41,7 +41,7 @@
     color: var(--color-ink);
     -webkit-font-smoothing: antialiased;
     scroll-behavior: smooth;
-    @apply scrollbar-thin scrollbar-thumb-fresco-200 scrollbar-track-fresco-50 scrollbar-gutter-both
+    @apply scrollbar-thin scrollbar-thumb-fresco-200 scrollbar-track-fresco-50 scrollbar-gutter-stable
   }
 
   body {
