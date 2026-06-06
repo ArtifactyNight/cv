@@ -2,6 +2,8 @@ import { animate, eases, type JSAnimation } from "animejs";
 
 const ENTER_DURATION = 2000;
 const ENTER_EASE = eases.outExpo;
+const LEFT_ENTER_ROTATE = "-90deg";
+const RIGHT_ENTER_ROTATE = "90deg";
 
 let leftAnim: JSAnimation | null = null;
 let rightAnim: JSAnimation | null = null;
@@ -30,18 +32,23 @@ function readTimeMs(raw: string, fallback: number) {
 }
 
 function readEnterDuration(container: HTMLElement) {
-  const raw = getComputedStyle(container).getPropertyValue("--adam-enter-duration");
+  const raw = getComputedStyle(container).getPropertyValue(
+    "--adam-enter-duration",
+  );
   const parsed = readTimeMs(raw, ENTER_DURATION);
   return parsed > 0 ? parsed : ENTER_DURATION;
 }
 
 function readEnterDelay(container: HTMLElement) {
-  const raw = getComputedStyle(container).getPropertyValue("--adam-enter-delay");
+  const raw =
+    getComputedStyle(container).getPropertyValue("--adam-enter-delay");
   return readTimeMs(raw, 0);
 }
 
 function readEase(container: HTMLElement) {
-  const raw = getComputedStyle(container).getPropertyValue("--adam-ease").trim();
+  const raw = getComputedStyle(container)
+    .getPropertyValue("--adam-ease")
+    .trim();
   if (!raw) return ENTER_EASE;
 
   const named = raw as keyof typeof eases;
@@ -96,6 +103,7 @@ export function initAdamHands() {
     ...params,
     translateX: { from: "-100%" },
     translateY: { from: "100%" },
+    rotate: { from: LEFT_ENTER_ROTATE, to: 0 },
     opacity: { from: 0, to: 1 },
   });
 
@@ -103,6 +111,7 @@ export function initAdamHands() {
     ...params,
     translateX: { from: "100%" },
     translateY: { from: "-100%" },
+    rotate: { from: RIGHT_ENTER_ROTATE, to: 0 },
     opacity: { from: 0, to: 1 },
   });
 }

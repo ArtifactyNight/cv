@@ -265,14 +265,14 @@ html.section-transitions-ready main section:not([data-section-revealed]) {
   bottom: 0;
   left: 0;
   opacity: 0;
-  transform: translate(-100%, 100%);
+  transform: translate(-100%, 100%) rotate(-7deg);
 }
 
 .adam-hand--right {
   top: 0;
   right: 0;
   opacity: 0;
-  transform: translate(100%, -100%);
+  transform: translate(100%, -100%) rotate(7deg);
 }
 
 @media (prefers-reduced-motion: reduce) {
