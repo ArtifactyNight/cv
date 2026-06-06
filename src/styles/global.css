@@ -234,7 +234,7 @@ html.theme-transitioning *::after {
   --adam-hand-size: clamp(12rem, 18vw, 20rem);
   --adam-hands-opacity: 0.42;
   --adam-ease: ease-out;
-  --adam-enter-duration: 4s;
+  --adam-enter-duration: 3s;
   --adam-enter-delay: 100ms;
   opacity: var(--adam-hands-opacity);
 }
