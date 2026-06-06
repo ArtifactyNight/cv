@@ -8,8 +8,8 @@
   --font-sentient: var(--font-sentient), system-ui, sans-serif;
   --font-google-sans: var(--font-google-sans), system-ui, sans-serif;
 
-  --color-primary: #978F66;
-  --color-primary-deep: #a38872;
+  --color-primary: #C3CC9B;
+  --color-primary-deep: #9AB17A;
 
   /* Semantic aliases */
   --color-page: var(--color-olive-50);
