@@ -10,21 +10,27 @@ import rehypeAttrs from 'rehype-attr';
 
 import react from "@astrojs/react";
 
+import vercel from "@astrojs/vercel";
+
 // https://astro.build/config
 export default defineConfig({
   site: "https://nightz.me",
   integrations: [mdx(), sitemap(), icon(), react()],
+
   vite: {
     plugins: [tailwindcss()],
   },
+
   image: {
     domains: ["*"]
   },
+
   markdown: {
     processor: unified({
       rehypePlugins: [rehypeAttrs],
     })
   },
+
   fonts: [
     {
       provider: fontProviders.google(),
@@ -50,5 +56,7 @@ export default defineConfig({
       cssVariable: "--font-sentient",
       subsets: ["latin"],
     }
-  ]
+  ],
+
+  adapter: vercel()
 });
