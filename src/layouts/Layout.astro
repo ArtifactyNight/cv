@@ -1,8 +1,8 @@
 ---
 import { Image } from "astro:assets";
-import BaseHead from "../components/BaseHead.astro";
 import adamLeft from "../assets/adam/left.png";
 import adamRight from "../assets/adam/right.png";
+import BaseHead from "../components/BaseHead.astro";
 import { SITE_DESCRIPTION, SITE_TITLE } from "../const";
 import "../styles/global.css";
 
@@ -44,7 +44,9 @@ const {
         class="adam-hand adam-hand--right"
       />
     </div>
-    <main class="relative z-10 mx-auto w-full max-w-2xl px-4 py-10 flex flex-col">
+    <main
+      class="relative z-10 mx-auto w-full max-w-2xl px-4 py-10 flex flex-col"
+    >
       <div class="flex flex-col gap-12">
         <slot />
       </div>

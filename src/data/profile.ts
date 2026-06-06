@@ -20,6 +20,10 @@ export type SocialLink = {
 
 export const profile = {
   name: "Kidsanaphon Kaeopha",
+  quote: {
+    text: "Trifles make perfection, and perfection is no trifle.",
+    author: "Michelangelo",
+  },
   handle: "@night",
   experience: [
     {

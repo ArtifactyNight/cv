@@ -8,10 +8,10 @@ import satori from "satori";
 
 // Colors from the design system (resolved oklch → hex)
 const C = {
-  bg: "#FAFAF5", // olive-50
-  ink: "#292820", // olive-900
-  muted: "#726A4D", // olive-600
-  accent: "#978F66", // primary
+  bg: "#f2ede3", // fresco-50
+  ink: "#2a231c", // fresco-900
+  muted: "#5c5244", // fresco-600
+  accent: "#2b4570", // lapis
 };
 
 // process.cwd() is the project root during Astro build
