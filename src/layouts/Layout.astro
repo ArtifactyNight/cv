@@ -26,7 +26,7 @@ const {
   </head>
   <body>
     <div
-      class="adam-hands pointer-events-none fixed inset-0 z-0 hidden min-[900px]:block"
+      class="adam-hands adam-hands--enter pointer-events-none fixed inset-0 z-0 hidden min-[900px]:block"
       aria-hidden="true"
     >
       <Image
@@ -53,3 +53,27 @@ const {
     </main>
   </body>
 </html>
+
+<script>
+  function playAdamHandsEnter() {
+    const hands = document.querySelector(".adam-hands");
+    if (!hands) return;
+
+    hands.classList.remove("adam-hands--enter");
+    void hands.offsetWidth;
+    hands.classList.add("adam-hands--enter");
+  }
+
+  let skipNextAdamHandsEnter = document
+    .querySelector(".adam-hands")
+    ?.classList.contains("adam-hands--enter");
+
+  document.addEventListener("astro:page-load", () => {
+    if (skipNextAdamHandsEnter) {
+      skipNextAdamHandsEnter = false;
+      return;
+    }
+
+    playAdamHandsEnter();
+  });
+</script>

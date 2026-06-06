@@ -180,7 +180,7 @@ html[data-theme="dark"] .prose code:not(pre code) {
 
 /* Adam hands: deepen in dark chapel mode */
 html[data-theme="dark"] .adam-hands {
-  opacity: 0.28;
+  --adam-hands-opacity: 0.28;
 }
 
 html[data-theme="dark"] .adam-hand {
@@ -189,7 +189,7 @@ html[data-theme="dark"] .adam-hand {
 
 @media (prefers-color-scheme: dark) {
   html:not([data-theme="light"]) .adam-hands {
-    opacity: 0.28;
+    --adam-hands-opacity: 0.28;
   }
 
   html:not([data-theme="light"]) .adam-hand {
@@ -233,7 +233,11 @@ html.theme-transitioning *::after {
 
 .adam-hands {
   --adam-hand-size: clamp(12rem, 18vw, 20rem);
-  opacity: 0.42;
+  --adam-hands-opacity: 0.42;
+  --adam-ease: cubic-bezier(0.16, 1, 0.3, 1);
+  --adam-enter-duration: 4s;
+  --adam-enter-delay: 100ms;
+  opacity: var(--adam-hands-opacity);
 }
 
 .adam-hand {
@@ -241,6 +245,7 @@ html.theme-transitioning *::after {
   width: var(--adam-hand-size);
   height: auto;
   filter: sepia(0.18) saturate(0.9);
+  will-change: transform;
 }
 
 .adam-hand--left {
@@ -251,4 +256,41 @@ html.theme-transitioning *::after {
 .adam-hand--right {
   top: 0;
   right: 0;
+}
+
+@keyframes adam-hand-align-left {
+  from {
+    transform: translate(-100%, 100%);
+  }
+
+  to {
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes adam-hand-align-right {
+  from {
+    transform: translate(100%, -100%);
+  }
+
+  to {
+    transform: translate(0, 0);
+  }
+}
+
+.adam-hands--enter .adam-hand--left {
+  animation: adam-hand-align-left var(--adam-enter-duration) var(--adam-ease)
+    var(--adam-enter-delay) both;
+}
+
+.adam-hands--enter .adam-hand--right {
+  animation: adam-hand-align-right var(--adam-enter-duration) var(--adam-ease)
+    var(--adam-enter-delay) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .adam-hands--enter .adam-hand--left,
+  .adam-hands--enter .adam-hand--right {
+    animation: none;
+  }
 }
