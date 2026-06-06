@@ -16,6 +16,7 @@ export const skills = [
       "Kotlin",
       "C#",
       "Swift",
+      "Dart",
     ],
   },
   {

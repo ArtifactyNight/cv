@@ -1,5 +1,8 @@
 ---
+import { Image } from "astro:assets";
 import BaseHead from "../components/BaseHead.astro";
+import adamLeft from "../assets/adam/left.png";
+import adamRight from "../assets/adam/right.png";
 import { SITE_DESCRIPTION, SITE_TITLE } from "../const";
 import "../styles/global.css";
 
@@ -21,8 +24,27 @@ const {
   <head>
     <BaseHead title={title} description={description} ogImage={ogImage} />
   </head>
-  <body>
-    <main class="mx-auto w-full max-w-2xl px-4 py-10 flex flex-col">
+  <body class="overflow-x-hidden">
+    <div
+      class="adam-hands pointer-events-none fixed inset-0 z-0 hidden min-[900px]:block"
+      aria-hidden="true"
+    >
+      <Image
+        src={adamLeft}
+        alt=""
+        widths={[240, 360]}
+        sizes="(min-width: 900px) 18rem, 0px"
+        class="adam-hand adam-hand--left"
+      />
+      <Image
+        src={adamRight}
+        alt=""
+        widths={[240, 360]}
+        sizes="(min-width: 900px) 18rem, 0px"
+        class="adam-hand adam-hand--right"
+      />
+    </div>
+    <main class="relative z-10 mx-auto w-full max-w-2xl px-4 py-10 flex flex-col">
       <div class="flex flex-col gap-12">
         <slot />
       </div>

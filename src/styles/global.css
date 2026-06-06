@@ -194,3 +194,25 @@ html.theme-transitioning *::after {
     transition: none !important;
   }
 }
+
+/* ── Creation of Adam hands (viewport edges) ─────── */
+
+.adam-hands {
+  --adam-hand-size: clamp(12rem, 18vw, 20rem);
+}
+
+.adam-hand {
+  position: absolute;
+  width: var(--adam-hand-size);
+  height: auto;
+}
+
+.adam-hand--left {
+  bottom: 0;
+  left: 0;
+}
+
+.adam-hand--right {
+  top: 0;
+  right: 0;
+}
