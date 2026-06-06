@@ -56,6 +56,12 @@ const {
 
 <script>
   import { initAdamHands } from "../lib/adam-hands";
+  import { initSectionTransitions } from "../lib/section-transition";
 
-  document.addEventListener("astro:page-load", initAdamHands);
+  function initPageMotion() {
+    initAdamHands();
+    initSectionTransitions();
+  }
+
+  document.addEventListener("astro:page-load", initPageMotion);
 </script>

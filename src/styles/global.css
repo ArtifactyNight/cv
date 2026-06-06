@@ -228,6 +228,20 @@ html.theme-transitioning *::after {
   }
 }
 
+/* ── Section scroll reveal (anime.js) ────────────── */
+
+html.section-transitions-ready main section:not([data-section-revealed]) {
+  opacity: 0;
+  transform: translateY(0.75rem);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html.section-transitions-ready main section:not([data-section-revealed]) {
+    opacity: 1;
+    transform: none;
+  }
+}
+
 /* ── Creation of Adam hands (viewport edges) ─────── */
 
 .adam-hands {
