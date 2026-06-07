@@ -12,10 +12,14 @@ import react from "@astrojs/react";
 
 import vercel from "@astrojs/vercel";
 
+import sanity from "@sanity/astro";
+
 // https://astro.build/config
 export default defineConfig({
   site: "https://nightz.me",
-  integrations: [mdx(), sitemap(), icon(), react()],
+  integrations: [mdx(), sitemap(), icon(), react(), sanity({
+    projectId: import.meta.env.SANITY_PROJECT_ID,
+  })],
 
   vite: {
     plugins: [tailwindcss()],
