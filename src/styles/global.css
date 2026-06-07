@@ -20,17 +20,17 @@
   --color-fresco-900: oklch(22% 0.038 44);
 
   /* Renaissance pigments: gold ochre primary, lapis accent */
-  --color-primary: oklch(68% 0.11 78);
-  --color-primary-deep: oklch(56% 0.12 72);
-  --color-lapis: oklch(38% 0.1 255);
-  --color-lapis-deep: oklch(30% 0.09 255);
+  --color-primary: #97a97c;
+  --color-primary-deep: #718355;
+  --color-lapis: #2b4570;
+  --color-lapis-deep: #1e3050;
 
   /* Semantic aliases */
   --color-page: var(--color-fresco-50);
   --color-ink: var(--color-fresco-900);
   --color-ink-muted: var(--color-fresco-600);
-  --color-accent: var(--color-lapis);
-  --color-accent-deep: var(--color-lapis-deep);
+  --color-accent: var(--color-primary);
+  --color-accent-deep: var(--color-primary-deep);
   --color-rule: var(--color-fresco-200);
 }
 
@@ -189,19 +189,6 @@ html.section-transitions-ready main section:not([data-section-revealed]) {
     opacity: 1;
     transform: none;
   }
-}
-
-/* ── GitHub calendar placeholder ─────────────────── */
-
-.activity-calendar-placeholder {
-  width: min(100%, 636px);
-  height: 84px;
-  background-color: #e9ece4;
-  background-image:
-    linear-gradient(#d6dbd0 9px, transparent 9px),
-    linear-gradient(90deg, #d6dbd0 9px, transparent 9px);
-  background-size: 12px 12px;
-  border-radius: 2px;
 }
 
 /* ── Creation of Adam hands (viewport edges) ─────── */
