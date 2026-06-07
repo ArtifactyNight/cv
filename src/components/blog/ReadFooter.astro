@@ -1,10 +1,10 @@
 ---
-import type { CollectionEntry } from "astro:content";
+import type { BlogPostListItem } from "../../types/blog";
 import { formatWritingDate } from "../../lib/format-date";
 
 interface Props {
-  newer: CollectionEntry<"blog"> | null;
-  older: CollectionEntry<"blog"> | null;
+  newer: BlogPostListItem | null;
+  older: BlogPostListItem | null;
 }
 
 const { newer, older } = Astro.props;
@@ -21,17 +21,17 @@ const { newer, older } = Astro.props;
         <div>
           <p class="text-sm font-medium text-ink-muted mb-2">บทความใหม่กว่า</p>
           <a
-            href={`/blog/${newer.id}/`}
+            href={`/blog/${newer.slug}/`}
             class="group block no-underline hover:no-underline"
           >
             <span class="block text-sm font-semibold text-ink group-hover:text-accent transition-colors">
-              {newer.data.title}
+              {newer.title}
             </span>
             <time
               class="mt-1 block text-sm text-ink-muted tabular-nums"
-              datetime={newer.data.pubDate.toISOString()}
+              datetime={newer.pubDate}
             >
-              {formatWritingDate(newer.data.pubDate)}
+              {formatWritingDate(new Date(newer.pubDate))}
             </time>
           </a>
         </div>
@@ -45,17 +45,17 @@ const { newer, older } = Astro.props;
         <div class="sm:text-right">
           <p class="text-sm font-medium text-ink-muted mb-2">บทความเก่ากว่า</p>
           <a
-            href={`/blog/${older.id}/`}
+            href={`/blog/${older.slug}/`}
             class="group block no-underline hover:no-underline"
           >
             <span class="block text-sm font-semibold text-ink group-hover:text-accent transition-colors">
-              {older.data.title}
+              {older.title}
             </span>
             <time
               class="mt-1 block text-sm text-ink-muted tabular-nums"
-              datetime={older.data.pubDate.toISOString()}
+              datetime={older.pubDate}
             >
-              {formatWritingDate(older.data.pubDate)}
+              {formatWritingDate(new Date(older.pubDate))}
             </time>
           </a>
         </div>

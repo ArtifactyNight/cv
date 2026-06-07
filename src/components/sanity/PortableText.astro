@@ -1,0 +1,23 @@
+---
+import type { PortableTextBlock } from "@portabletext/types";
+import { PortableText as PortableTextInternal } from "astro-portabletext";
+import PortableTextLink from "./PortableTextLink.astro";
+import SanityImage from "./SanityImage.astro";
+
+interface Props {
+  value: PortableTextBlock[];
+}
+
+const { value } = Astro.props;
+
+const components = {
+  type: {
+    image: SanityImage,
+  },
+  mark: {
+    link: PortableTextLink,
+  },
+};
+---
+
+<PortableTextInternal value={value} components={components} />

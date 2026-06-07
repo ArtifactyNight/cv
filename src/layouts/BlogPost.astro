@@ -1,15 +1,15 @@
 ---
-import type { CollectionEntry } from "astro:content";
 import Breadcrumbs from "../components/blog/Breadcrumbs.astro";
 import { PROSE_CLASSES } from "../const";
 import type { AdjacentPosts } from "../lib/blog-nav";
 import { formatWritingDate } from "../lib/format-date";
 import Layout from "./Layout.astro";
 
-type BlogData = CollectionEntry<"blog">["data"];
-
-interface Props extends BlogData {
+interface Props {
+  title: string;
   slug: string;
+  pubDate: Date;
+  updatedDate?: Date;
   adjacent: AdjacentPosts;
   description: string;
 }

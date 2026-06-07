@@ -1,36 +1,42 @@
 ---
-import { type CollectionEntry, getCollection, render } from "astro:content";
+import PortableText from "../../components/sanity/PortableText.astro";
 import { getAdjacentPosts } from "../../lib/blog-nav";
-import { excerptFromBody } from "../../lib/excerpt";
+import { excerptFromDescription } from "../../lib/excerpt";
+import { getAllPosts, getPostBySlug } from "../../lib/sanity/posts";
 import BlogPost from "../../layouts/BlogPost.astro";
 
 export async function getStaticPaths() {
-  const posts = await getCollection("blog");
+  const posts = await getAllPosts();
 
   return posts.map((post) => ({
-    params: { slug: post.id },
+    params: { slug: post.slug },
     props: {
-      post,
-      adjacent: getAdjacentPosts(posts, post.id),
+      adjacent: getAdjacentPosts(posts, post.slug),
     },
   }));
 }
 
-interface Props {
-  post: CollectionEntry<"blog">;
-  adjacent: ReturnType<typeof getAdjacentPosts>;
+const slugParam = Astro.params.slug;
+const slug = Array.isArray(slugParam) ? slugParam.join("/") : slugParam;
+const post = slug ? await getPostBySlug(slug) : null;
+
+if (!post) {
+  return Astro.redirect("/404");
 }
 
-const { post, adjacent } = Astro.props;
-const { Content } = await render(post);
-const description = excerptFromBody(post.body ?? "");
+const { adjacent } = Astro.props;
+const description = excerptFromDescription(post.description, post.body);
+const pubDate = new Date(post.pubDate);
+const updatedDate = post.updatedDate ? new Date(post.updatedDate) : undefined;
 ---
 
 <BlogPost
-  {...post.data}
+  title={post.title}
   description={description}
-  slug={post.id}
+  slug={post.slug}
+  pubDate={pubDate}
+  updatedDate={updatedDate}
   adjacent={adjacent}
 >
-  <Content />
+  {post.body && <PortableText value={post.body} />}
 </BlogPost>

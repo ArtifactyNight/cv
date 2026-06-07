@@ -1,32 +1,30 @@
 import type { APIRoute, GetStaticPaths } from "astro";
-import { getCollection } from "astro:content";
 import { format } from "date-fns";
 import { th } from "date-fns/locale";
 import { readFile } from "fs/promises";
 import { join } from "path";
 import satori from "satori";
+import { getAllPosts } from "../../lib/sanity/posts";
 
-// Colors from the design system (resolved oklch → hex)
 const C = {
-  bg: "#f2ede3", // fresco-50
-  ink: "#2a231c", // fresco-900
-  muted: "#5c5244", // fresco-600
-  accent: "#2b4570", // lapis
+  bg: "#f2ede3",
+  ink: "#2a231c",
+  muted: "#5c5244",
+  accent: "#2b4570",
 };
 
-// process.cwd() is the project root during Astro build
 const FONT_DIR = join(process.cwd(), "src/assets/fonts");
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const posts = await getCollection("blog");
+  const posts = await getAllPosts();
   return posts.map((post) => ({
-    params: { slug: post.id },
-    props: { title: post.data.title, pubDate: post.data.pubDate },
+    params: { slug: post.slug },
+    props: { title: post.title, pubDate: post.pubDate },
   }));
 };
 
 export const GET: APIRoute = async ({ props }) => {
-  const { title, pubDate } = props as { title: string; pubDate: Date };
+  const { title, pubDate } = props as { title: string; pubDate: string };
 
   const [fontRegular, fontBold, thaiRegular, thaiBold] = await Promise.all([
     readFile(join(FONT_DIR, "SchibstedGrotesk-Regular.ttf")),
@@ -35,7 +33,7 @@ export const GET: APIRoute = async ({ props }) => {
     readFile(join(FONT_DIR, "NotoSansThai-Bold.ttf")),
   ]);
 
-  const dateStr = format(pubDate, "d MMM yyyy", { locale: th });
+  const dateStr = format(new Date(pubDate), "d MMM yyyy", { locale: th });
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const element: any = {
@@ -53,7 +51,6 @@ export const GET: APIRoute = async ({ props }) => {
         position: "relative",
       },
       children: [
-        // Title
         {
           type: "div",
           props: {
@@ -68,7 +65,6 @@ export const GET: APIRoute = async ({ props }) => {
             children: title,
           },
         },
-        // Date
         {
           type: "div",
           props: {

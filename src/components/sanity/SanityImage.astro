@@ -1,0 +1,22 @@
+---
+import type { Props as PortableTextProps } from "astro-portabletext/types";
+import type { SanityImageSource } from "@sanity/image-url/lib/types/types";
+import { urlFor } from "../../lib/sanity/image";
+
+type ImageNode = {
+  _type: "image";
+  alt?: string;
+  asset?: SanityImageSource;
+};
+
+type Props = PortableTextProps<ImageNode>;
+
+const { node } = Astro.props;
+
+const src = node.asset
+  ? urlFor(node).width(1200).auto("format").url()
+  : null;
+const alt = node.alt ?? "";
+---
+
+{src && <img src={src} alt={alt} loading="lazy" decoding="async" />}

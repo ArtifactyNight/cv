@@ -1,24 +1,24 @@
-import type { CollectionEntry } from "astro:content";
+import type { BlogPostListItem } from "../types/blog";
 
 export function sortPostsByDate(
-  posts: CollectionEntry<"blog">[],
-): CollectionEntry<"blog">[] {
+  posts: BlogPostListItem[],
+): BlogPostListItem[] {
   return [...posts].sort(
-    (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+    (a, b) => new Date(b.pubDate).valueOf() - new Date(a.pubDate).valueOf(),
   );
 }
 
 export type AdjacentPosts = {
-  newer: CollectionEntry<"blog"> | null;
-  older: CollectionEntry<"blog"> | null;
+  newer: BlogPostListItem | null;
+  older: BlogPostListItem | null;
 };
 
 export function getAdjacentPosts(
-  posts: CollectionEntry<"blog">[],
-  currentId: string,
+  posts: BlogPostListItem[],
+  currentSlug: string,
 ): AdjacentPosts {
   const sorted = sortPostsByDate(posts);
-  const index = sorted.findIndex((post) => post.id === currentId);
+  const index = sorted.findIndex((post) => post.slug === currentSlug);
 
   if (index === -1) {
     return { newer: null, older: null };
