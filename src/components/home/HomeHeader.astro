@@ -9,7 +9,7 @@ interface Props {
   current?: "home" | "work" | "writing";
 }
 
-const { current = "home" } = Astro.props;
+const { current } = Astro.props;
 const showPfp = false;
 
 const navItems = [
