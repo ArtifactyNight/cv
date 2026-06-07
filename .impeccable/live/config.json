@@ -1,7 +1,6 @@
 {
   "files": [
-    "src/layouts/Layout.astro",
-    "src/layouts/BlogPost.astro"
+    "src/layouts/Layout.astro"
   ],
   "insertBefore": "</body>",
   "commentSyntax": "html",

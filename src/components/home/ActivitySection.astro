@@ -9,6 +9,12 @@ const githubUsername = new URL(
 
 <section class="scroll-mt-8" aria-labelledby="activity-heading">
   <div class="overflow-x-auto text-ink-muted">
-    <HomeActivityCalendar client:only="react" username={githubUsername} />
+    <HomeActivityCalendar
+      client:visible={{ rootMargin: "200px" }}
+      username={githubUsername}
+    >
+      <div class="activity-calendar-placeholder" aria-hidden="true" slot="fallback">
+      </div>
+    </HomeActivityCalendar>
   </div>
 </section>

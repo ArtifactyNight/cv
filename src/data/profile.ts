@@ -24,7 +24,6 @@ export const profile = {
     text: "Trifles make perfection, and perfection is no trifle.",
     author: "Michelangelo",
   },
-  handle: "@night",
   experience: [
     {
       role: "Fullstack Developer",
@@ -44,7 +43,7 @@ export const profile = {
   work: [
     {
       name: "cv",
-      description: "Portfolio และ Blog ส่วนตัว สร้างด้วย Astro",
+      description: "Portfolio ส่วนตัว สร้างด้วย Astro",
       href: "/",
     },
     {

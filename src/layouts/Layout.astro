@@ -9,14 +9,12 @@ import "../styles/global.css";
 interface Props {
   title?: string;
   description?: string;
-  ogImage?: string;
   noindex?: boolean;
 }
 
 const {
   title = SITE_TITLE,
   description = SITE_DESCRIPTION,
-  ogImage,
   noindex,
 } = Astro.props;
 ---
@@ -24,12 +22,7 @@ const {
 <!doctype html>
 <html lang="th">
   <head>
-    <BaseHead
-      title={title}
-      description={description}
-      ogImage={ogImage}
-      noindex={noindex}
-    />
+    <BaseHead title={title} description={description} noindex={noindex} />
   </head>
   <body>
     <div
@@ -41,6 +34,8 @@ const {
         alt=""
         widths={[240, 360]}
         sizes="(min-width: 900px) 18rem, 0px"
+        loading="lazy"
+        decoding="async"
         class="adam-hand adam-hand--left"
       />
       <Image
@@ -48,6 +43,8 @@ const {
         alt=""
         widths={[240, 360]}
         sizes="(min-width: 900px) 18rem, 0px"
+        loading="lazy"
+        decoding="async"
         class="adam-hand adam-hand--right"
       />
     </div>
@@ -62,13 +59,17 @@ const {
 </html>
 
 <script>
-  import { initAdamHands } from "../lib/adam-hands";
-  import { initSectionTransitions } from "../lib/section-transition";
+  async function initPageMotion() {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
-  function initPageMotion() {
+    const [{ initAdamHands }, { initSectionTransitions }] = await Promise.all([
+      import("../lib/adam-hands"),
+      import("../lib/section-transition"),
+    ]);
+
     initAdamHands();
     initSectionTransitions();
   }
 
-  document.addEventListener("astro:page-load", initPageMotion);
+  initPageMotion();
 </script>
